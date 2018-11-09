@@ -1,0 +1,181 @@
+#!/bin/bash
+#########################################
+#########################################
+###          SCRIP VEIANEW            ###
+###          VERSION 4.0.0            ###
+###          DATE 05/11/2018          ###
+###          MARIO CARVALHO           ###
+###          RONALDO AZARIAS          ###
+#########################################
+#########################################
+
+# rsantos INICIO
+dirRoot="/bin"
+veianewIni="${dirRoot}/veianew.ini"
+atualizaSenha(){
+  echo "INFORME SEU USUARIO E SENHA DE ACESSO AO '192.168.0.15'"
+  echo -ne "USUARIO: "
+  read USUARIO_15
+  echo -ne "SENHA: "
+  read SENHA_15
+  echo "USUARIO_15=${USUARIO_15}" >  ${veianewIni}
+  echo "SENHA_15=${SENHA_15}"     >> ${veianewIni}
+}
+montar15(){
+  SERVIDOR='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
+  COMANDO="mount -t cifs -s -o username=$USUARIO_15,password=$SENHA_15,rw //$SERVIDOR /tmp/0.15"
+  $COMANDO
+  return $?
+}
+if [ -e "${veianewIni}" ]
+then
+ . ${veianewIni}
+else
+  atualizaSenha
+fi
+montar15
+if [ ${?} -ne "0" ]
+then
+  OPC=0
+  while [ ${OPC} -ne 1 -a ${OPC} -ne 2 ]
+  do
+    echo -e  "NÃO FOI POSSIVEL MONTAR O CAMINHO //$SERVIDOR UTILIZANDO O COMANDO ABAIXO\n ($COMANDO)"
+    echo     "O QUE VOCE DESEJA FAZER?"
+    echo     "1. PROSSEGUIR SEM MONTAR (utilizar versoes copiadas anteriormente)"
+    echo     "2. ATUALIZAR USUARIO E SENHA DE ACESSO AO '192.168.0.15'"
+    echo -ne "OPCAO: "
+    read     OPC
+    case ${OPC} in
+      1)
+        echo "PROSSEGUINDO ..."
+      ;;
+      2)
+        atualizaSenha
+        montar15
+        [ $? -ne 0 ] && OPC=0
+      ;;
+      *)
+        echo "DIGITE UMA OPCAO VALIDA!"
+      ;;
+    esac
+  done
+fi
+# rsantos FIM
+rsync -uv /tmp/0.15/php*.zip /usr/local/apache2/htdocs && 
+
+sleep 1 && umount /tmp/0.15
+
+cd /usr/local/apache2/htdocs/
+
+for arquivo in *.ZIP
+do
+newname=$(basename $arquivo ZIP)zip
+mv $arquivo $newname
+done
+
+cd /usr/local/apache2/htdocs/
+
+chown root.root /usr/local/apache2/htdocs/*
+chmod 777 /usr/local/apache2/htdocs/*.zip
+
+for file in *anager*.zip
+
+do 
+   if [ ! "$file" = `echo "$file"|sed "s/ /_/g"` ]; then
+   mv "$file" `echo "$file"|sed "s/ /_/g"`
+   fi
+# echo $file
+done
+
+find . -name "*anager*.zip"
+
+ListaArquivos(){
+if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
+clear; i=1
+
+echo -e "#\n#\t \t********************     VEIANEW     *********************"
+echo -e "#\t \t********************  VERSION 4.0.0  *********************"
+echo -e "#\t \t**********************************************************"
+
+echo -e "#\n#\tOPÇÕES \t*******************  PACOTES  MANAGER  *******************"
+
+CASE='case $opt in'
+
+for arq in `ls -1 *anager*.zip`
+do
+    echo -e "#\t$i \t $arq"
+    CASE="$CASE
+   $i) /usr/local/apache2/bin/apachectl stop ; rsync -uv "/usr/local/apache2/htdocs/\"$arq\"" /usr/local/apache2/htdocs/manager ; cd /usr/local/apache2/htdocs/manager ; unzip -oq \"$arq\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && /usr/local/apache2/bin/apachectl start && php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 start && chown -R zanthus.zanthus /usr/local/apache2/htdocs/manager/Logs/* ; chown zanthus.root /tmp/mirageservicephp.pid ;;"
+    i=$((i+1))
+done
+CASE="$CASE
+   99) /usr/local/apache2/bin/apachectl start ; sleep 3 && veianew ;;
+   98) /usr/local/apache2/bin/apachectl stop ; sleep 3 && veianew ;;
+   97) /usr/local/apache2/bin/apachectl stop & /usr/local/apache2/bin/apachectl start ; sleep 3 && veianew ;;
+   89) php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 start ; sleep 3 && veianew ;;
+   88) php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 stop ; pkill -9 php ; sleep 3 && veianew ;;
+   87) php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 stop ; pkill -9 php && php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 start ; sleep 3 && veianew ;;
+   79) php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 start ; /usr/local/apache2/bin/apachectl start ; sleep 3 && veianew ;;
+   78) sudo php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo /usr/local/apache2/bin/apachectl stop ; sleep 3 && veianew ;;
+   77) php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 stop ; pkill -9 php && /usr/local/apache2/bin/apachectl stop && php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 start && /usr/local/apache2/bin/apachectl start ; sleep 3 && veianew ;;
+   76) sudo php /usr/local/apache2/htdocs/manager/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo /usr/local/apache2/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 3 && veianew ;;
+   69) node /usr/local/apache22/htdocs/comet_zanthus/src/server-chat.js >> /usr/local/apache22/htdocs/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 3 && veianew ;;
+   68) pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 3 && veianew ;;
+   67) pkill node* & sleep 1 && echo -e NODE ENCERRADO &&  node /usr/local/apache22/htdocs/comet_zanthus/src/server-chat.js & sleep 2 && echo -e NODE REINICIADO ; sleep 3 && veianew ;;
+   59) rm -rf /usr/local/apache2/htdocs/manager/* && cp -rf /usr/local/apache2/htdocs/certificados /usr/local/apache2/htdocs/manager/ && cp -rf /usr/local/apache2/htdocs/ZMWSInfo_COMLOG.* /usr/local/apache2/htdocs/manager/ZMWSInfo.ini ; sleep 3 && veianew ;; 
+   58) cp -rf /usr/local/apache2/htdocs/ZMWSInfo_COMLOG.* /usr/local/apache2/htdocs/manager/ZMWSInfo.ini ; sleep 3 && veianew ;; 
+   57) cp -rf /usr/local/apache2/htdocs/ZMWSInfo_SEMLOG.* /usr/local/apache2/htdocs/manager/ZMWSInfo.ini ; sleep 3 && veianew ;; 
+   56) cp -rf /usr/local/apache22/htdocs/manager/certificados/* /usr/local/apache2/htdocs/certificados/ ; sleep 3 && veianew ;;
+   55) sudo find /usr/local/apache2/htdocs/manager/ -iname '*.zlg' -exec rm -rf {} \;  ; sudo find /usr/local/apache2/htdocs/manager/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 3 && veianew ;;
+   54) sudo find /usr/local/apache2/htdocs/ -iname '*.zlg' -exec rm -rf {} \;  ; sudo find /usr/local/apache2/htdocs/ -iname 'mirage_*.log' -exec rm -rf {} \;  ; sleep 3 && veianew ;;
+   53) cd /usr/local/apache2/htdocs/modulo_compilado && sudo php equalizar_pastas.php && sudo zip -r  /Zanthus/Zeus/path_comum/moduloPHPPDV/modulo_compilado_$(date +%d%m%y_%H%M).zip * ; sleep 3 && veianew ;;
+   00) exit ;;
+    *) echo 'OPCAO INVALIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos;;
+esac"
+
+echo -e ""
+echo -e "\t\t***** APACHE *****"
+echo -e "#\t99 \t START     APACHE"
+echo -e "#\t98 \t STOP      APACHE"
+echo -e "#\t97 \t RESTART   APACHE"
+echo -e ""
+echo -e "\t\t***** MIRAGE *****"
+echo -e "#\t89 \t START     MIRAGE"
+echo -e "#\t88 \t STOP      MIRAGE"
+echo -e "#\t87 \t RESTART   MIRAGE"
+echo -e ""
+echo -e "\t\t***** APACHE e MIRAGE *****"
+echo -e "#\t79 \t START     APACHE e MIRAGE"
+echo -e "#\t78 \t STOP      APACHE e MIRAGE"
+echo -e "#\t77 \t RESTART   APACHE e MIRAGE"
+echo -e "#\t76 \t STOP      APACHE, MIRAGE e NODE"
+echo -e ""
+echo -e "\t\t***** NODE *****"
+echo -e "#\t69 \t START     NODE"
+echo -e "#\t68 \t STOP      NODE"
+echo -e "#\t67 \t RESTART   NODE"
+echo -e ""
+echo -e "\t\t**********************************************************"
+echo -e "#\t59 \t LIMPAR DIRETORIO MANAGER + COPIAR CERTIFICADO e ZMWSInfo COM LOG"
+echo -e "#\t58 \t COPIAR CERTIFICADO e ZMWSInfo COM LOG"
+echo -e "#\t57 \t COPIAR CERTIFICADO e ZMWSInfo SEM LOG"
+echo -e "#\t56 \t FAZER BACKUP CERTIFICADO"
+echo -e "#\t55 \t LIMPAR LOGS ../MANAGER"
+echo -e "#\t54 \t LIMPAR LOGS ../HTDOCS"
+echo -e "#\t53 \t GERAR MODULOPHPPDV"
+echo -e "#\t00 \t SAIR"
+echo -e "#"
+
+read -p "#       INFORME A OPCAO DO ARQUIVO A SER EXTRAIDO: " opt
+eval "$CASE"
+
+else
+clear
+echo -e "#\n#\n#\t NAO HA ARQUIVOS DO MANAGER DISPONIVEIS PARA EXTRACAO\n#\n#"
+sleep 2
+clear
+fi
+}
+
+ListaArquivos
+
