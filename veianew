@@ -1,9 +1,4 @@
 #!/bin/bash
-
-teste 3
-
-
-
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
@@ -11,7 +6,7 @@ teste 3
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
-VERSION_VN="v4.8.3_beta"
+VERSION_VN="v5.0.0_BETA"
 export LANG=pt_BR
 
 Cor_Preto="\033[0m"
@@ -28,9 +23,7 @@ PATH_015_MODULO_COMPILADO = "$PATH_015/MODULO_COMPILADO"
 APACHE2 = "/usr/local/apache2"
 HTDOCS = "$APACHE2/htdocs"
 MANAGER = "$HTDOCS/manager"
-
 FTP_COMPLEMENTARES = "200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
-
 
 
 if [ -d "${PATH_015}" ] ; then
@@ -39,13 +32,11 @@ else
 mkdir "${PATH_015}" & chmod 777 "${PATH_015}"
 fi
 
-
 if [ -d "${PATH_015_MANAGER}" ] ; then
 umount "${PATH_015_MANAGER}" &
 else
 mkdir "${PATH_015_MANAGER}" & chmod 777 "${PATH_015_MANAGER}" &
 fi
-
 
 if [ -d "${PATH_015_MODULOPHPPDV}" ] ; then
 umount "${PATH_015_MODULOPHPPDV}"
@@ -53,13 +44,11 @@ else
 mkdir "${PATH_015_MODULOPHPPDV}" & chmod 777 "${PATH_015_MODULOPHPPDV}" &
 fi
 
-
 if [ -d "${PATH_015_SCRIPTS_VEIANEW}" ] ; then
 umount "${PATH_015_SCRIPTS_VEIANEW}"
 else
 mkdir "${PATH_015_SCRIPTS_VEIANEW}" & chmod 777 "${PATH_015_SCRIPTS_VEIANEW}" &
 fi
-
 
 if [ -d "${PATH_015_MODULO_COMPILADO}" ] ; then
 umount "${PATH_015_MODULO_COMPILADO}"
@@ -67,13 +56,11 @@ else
 mkdir "${PATH_015_MODULO_COMPILADO}" & chmod 777 "${PATH_015_MODULO_COMPILADO}" &
 fi
 
-
 if [ -d "${PATH_COMUM}" ] ; then
 umount "${PATH_COMUM}"
 else
 mkdir "${PATH_COMUM}" & chmod 777 "${PATH_COMUM}" &
 fi
-
 
 # rsantos INICIO
 dirRoot="/bin"
