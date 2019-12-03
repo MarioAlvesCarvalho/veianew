@@ -220,7 +220,7 @@ CASE="$CASE
    49) rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
    48) sudo chmod -R 777 $MANAGER/Arquivos/* &&  chown -R root.root $MANAGER/Arquivos/*  ; sleep 1 ; veianew ;;
 
-   07) $VEIANEW/07.sh ;;
+   07) wget -N -v --tries=1 -P $VEIANEW/veianew_estruturado ftp://$VEIANEW/veianew_estruturado ;;
    06) echo -e 'Aguarde, conectando no ftp.zanthus.com.br';  echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!'; sleep 3 && wget -N -v --tries=2 -P $PATH_COMUM/so/ ftp://$FTP_COMPLEMENTARES/so/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_co5 ftp://$FTP_COMPLEMENTARES/so_co5/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_r64 ftp://$FTP_COMPLEMENTARES/so_r64/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_u64 ftp://$FTP_COMPLEMENTARES/so_u64/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_ubu ftp://$FTP_COMPLEMENTARES/so_ubu/* ; sleep 1 && veianew ;;
    05) umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* ;;
    04) /etc/init.d/memcached restart && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Reinicialização do MEMCACHED concluida com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 3 ; veianew ;;
