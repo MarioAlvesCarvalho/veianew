@@ -24,7 +24,7 @@ APACHE2 = "/usr/local/apache2"
 HTDOCS = "$APACHE2/htdocs"
 MANAGER = "$HTDOCS/manager"
 FTP_COMPLEMENTARES = "200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
-
+VEIANEW = "$APACHE2/VEIANEW"
 
 if [ -d "${PATH_015}" ] ; then
 umount "${PATH_015}"
@@ -186,7 +186,7 @@ do
     i=$((i+1))
 done
 CASE="$CASE
-   99) $APACHE2/bin/apachectl start ; sleep 1 && veianew ;;
+   99) $VEIANEW/99.sh ;;
    98) $APACHE2/bin/apachectl stop ; sleep 1 && veianew ;;
    97) $APACHE2/bin/apachectl stop & $APACHE2/bin/apachectl start ; sleep 1 && veianew ;;
 
@@ -201,7 +201,6 @@ CASE="$CASE
    69) php $MANAGER/servico/servicolinux.php5 start ; $APACHE2/bin/apachectl start ; sleep 1 && veianew ;;
    68) sudo php $MANAGER/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo $APACHE2/bin/apachectl stop ; sleep 1 && veianew ;;
    67) php $MANAGER/servico/servicolinux.php5 stop ; pkill -9 php && $APACHE2/bin/apachectl stop && php $MANAGER/servico/servicolinux.php5 start && $APACHE2/bin/apachectl start ; sleep 1 && veianew ;;
-
 
    66) $APACHE2/bin/apachectl start ; sleep 1; php $MANAGER/servico/servicolinux.php5 start ; node $HTDOCS/comet_zanthus/src/server-chat.js >> $HTDOCS/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
    65) sudo php $MANAGER/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo $APACHE2/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 1 && veianew ;;
@@ -221,7 +220,7 @@ CASE="$CASE
    49) rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
    48) sudo chmod -R 777 $MANAGER/Arquivos/* &&  chown -R root.root $MANAGER/Arquivos/*  ; sleep 1 ; veianew ;;
 
-   07) echo -e "" ; echo -e "" ;  echo -e 'RESERVADO!!!' ; echo -e "" ; echo -e "" ; sleep 3 ; veianew ;;
+   07) $VEIANEW/07.sh ;;
    06) echo -e 'Aguarde, conectando no ftp.zanthus.com.br';  echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!'; sleep 3 && wget -N -v --tries=2 -P $PATH_COMUM/so/ ftp://$FTP_COMPLEMENTARES/so/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_co5 ftp://$FTP_COMPLEMENTARES/so_co5/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_r64 ftp://$FTP_COMPLEMENTARES/so_r64/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_u64 ftp://$FTP_COMPLEMENTARES/so_u64/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_ubu ftp://$FTP_COMPLEMENTARES/so_ubu/* ; sleep 1 && veianew ;;
    05) umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* ;;
    04) /etc/init.d/memcached restart && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Reinicialização do MEMCACHED concluida com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 3 ; veianew ;;
@@ -254,7 +253,7 @@ echo -e "#\t\b\b\b\b599   LIMPAR PACOTES MANAGER DO 'HTDOCS'"
 echo -e "#\t\b\b\b\b58    ZMWSInfo COM LOG"
 echo -e "#\t\b\b\b\b57    ZMWSInfo SEM LOG"
 echo -e "#\t\b\b\b\b56    ZMWSInfo COM LOG FULL"
-echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                          07    Reservado..."
+echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                          07    VEIANEW GIT (BETA)"
 echo -e "#\t\b\b\b\b54    LIMPAR LOGS ../MANAGER                            06    WGet Bibliotecas FTP > Path_comum"
 echo -e "#\t\b\b\b\b53    LIMPAR LOGS ../HTDOCS                             05    FORCE UMOUNT"
 echo -e "#\t\b\b\b\b52    GERAR MODULOPHPPDV                                04    REINICIAR MEMCACHED"
@@ -262,7 +261,7 @@ echo -e "#\t\b\b\b\b51    ATIVAR 'INSPEC_ELEMENTO' E 'CHECK_JS'             03  
 echo -e "#\t\b\b\b\b50    ATIVAR 'DEBUG_CLAZ'                               02    ATUALIZAR Modulo_Compilado"
 echo -e "#\t\b\b\b\b49    DESATIVAR INSPEC_ELEMENTO CHECK_JS DEBUG_CLAZ     01    ATUALIZAR VEIANEW"
 echo -e "#\t\b\b\b\b48    PERMISSÃO DIRETORIO 'ARQUIVOS'                    00    SAIR"
-echo -e "#\t\b\b\b\b                                                                                 $Cod_Vermelho$VERSION_VN$Cor_Preto"
+echo -e "#\t\b\b\b\b                                                                               $Cod_Vermelho $VERSION_VN $Cor_Preto"
 echo -ne "#$Cor_VerdeClaro   INFORME A OPÇÃO DESEJADA: "
 read -p "" opt
 echo -e "$Cor_Preto"
