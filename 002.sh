@@ -6,8 +6,8 @@ chmod +x $VEIANEW/master.zip &&
 unzip -oq $VEIANEW/master.zip &&
 sudo cp -rf $VEIANEW/veianew-master/* $VEIANEW/ &&
 sleep 5 &&
-sudo rm-rf $VEIANEW/master.zip &&
-sudo rm-rf $VEIANEW/veianew-master &&
+sudo rm -rf $VEIANEW/master.zip &&
+sudo rm -rf $VEIANEW/veianew-master &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
