@@ -7,7 +7,11 @@ unzip -oq $VEIANEW/master.zip &&
 sudo cp -rf $VEIANEW/veianew-master/* $VEIANEW/ &&
 sudo rm-rf $VEIANEW/master.zip &&
 sudo rm-rf $VEIANEW/veianew-master &&
-
-echo -e "*****************"
-echo -e "Termino do 002.sh"
-echo -e "*****************"
+echo -e ""
+echo -e ""
+echo -e ""
+echo -e ""
+echo -e ""
+echo -e "*****************" &&
+echo -e "Termino do 002.sh" &&
+echo -e "*****************" &&
