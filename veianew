@@ -23,22 +23,20 @@ export veianewIni="$dirRoot/veianew.ini"
 
 #Variavel de caminho de diretorios
 export PATH_COMUM="/Zanthus/Zeus/path_comum"
-export PATH_015="$PATH_COMUM/0.15"
-export PATH_015_MANAGER="$PATH_015/MANAGER"
-export PATH_015_MODULOPHPPDV="$PATH_015/MODULOPHPPDV"
-export PATH_015_SCRIPTS_VEIANEW="$PATH_015/SCRIPTS_VEIANEW"
-export PATH_015_MODULO_COMPILADO="$PATH_015/MODULO_COMPILADO"
+export PATH_015="${PATH_COMUM}/0.15"
+export PATH_015_MANAGER="${PATH_015}/MANAGER"
+export PATH_015_MODULOPHPPDV="${PATH_015}/MODULOPHPPDV"
+export PATH_015_SCRIPTS_VEIANEW="${PATH_015}/SCRIPTS_VEIANEW"
+export PATH_015_MODULO_COMPILADO="${PATH_015}/MODULO_COMPILADO"
 export APACHE2="/usr/local/apache2"
-export HTDOCS="$APACHE2/htdocs"
-export MANAGER="$HTDOCS/manager"
+export HTDOCS="${APACHE2}/htdocs"
+export MANAGER="${HTDOCS}/manager"
 export FTP_COMPLEMENTARES="200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
-export VEIANEW="$APACHE2/VEIANEW"
+export VEIANEW="${APACHE2}/VEIANEW"
 
 #Iniciando funcionalidades na tela
-echo -e "$Cor_Preto"
-echo -e "$Cor_FundoCinza $Cor_Vermelho $VERSION_VN $Cor_Preto"
-
-echo -e "$VERSION_VN"
+echo -e "${Cor_Preto}"
+echo -e "${Cor_FundoCinza}${Cor_Vermelho}${VERSION_VN}${Cor_Preto}"
 
 if [ -d "${PATH_015}" ] ; then
 umount "${PATH_015}"
@@ -88,19 +86,17 @@ atualizaSenha(){
 }
 montar15(){
   SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
-  COMANDO1="mount -t cifs -s -o username=$USUARIO_15,password=$SENHA_15,rw //$SERVIDOR1 $PATH_015_MANAGER"
-####  $COMANDO1
+  COMANDO1="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR1} ${PATH_015_MANAGER}"
+####  ${COMANDO1}
 
   SERVIDOR2='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/moduloPHPPDV'
-  COMANDO2="mount -t cifs -s -o username=$USUARIO_15,password=$SENHA_15,rw //$SERVIDOR2 $PATH_015_MODULOPHPPDV"
+  COMANDO2="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR2} ${PATH_015_MODULOPHPPDV}"
 
   SERVIDOR3='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew'
-  COMANDO3="mount -t cifs -s -o username=$USUARIO_15,password=$SENHA_15,rw //$SERVIDOR3 $PATH_015_SCRIPTS_VEIANEW"
+  COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${PATH_015_SCRIPTS_VEIANEW}"
 
   SERVIDOR4='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
-  COMANDO4="mount -t cifs -s -o username=$USUARIO_15,password=$SENHA_15,rw //$SERVIDOR4 $PATH_015_MODULO_COMPILADO"
-
-  COMANDO5="$Z_MOUNT"
+  COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${PATH_015_MODULO_COMPILADO}"
 
   return $?
 }
@@ -116,7 +112,7 @@ then
   OPC=0
   while [ ${OPC} -ne 1 -a ${OPC} -ne 2 ]
   do
-    echo -e  "NÃO FOI POSSIVEL MONTAR O CAMINHO //$SERVIDOR1 UTILIZANDO O COMANDO ABAIXO\n ($COMANDO1)"
+    echo -e  "NÃO FOI POSSIVEL MONTAR O CAMINHO //${SERVIDOR1} UTILIZANDO O COMANDO ABAIXO\n (${COMANDO1})"
     echo     "O QUE VOCE DESEJA FAZER?"
     echo     "1. PROSSEGUIR SEM MONTAR (utilizar versoes copiadas anteriormente)"
     echo     "2. ATUALIZAR USUARIO E SENHA DE ACESSO AO '192.168.0.15'"
@@ -139,46 +135,46 @@ then
 fi
 # rsantos FIM
 
-###$COMANDO3
+${COMANDO3}
 IP=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
-echo -e "$HOSTNAME" "   -   " "$IP" "   -   " "$(date +%d/%m/%y__%H:%M:%S)" "   -   " "$VERSION_VN" >> $PATH_015_SCRIPTS_VEIANEW/LOGVN/$HOSTNAME.VNL;
+echo -e "${HOSTNAME}" "   -   " "${IP}" "   -   " "$(date +%d/%m/%y__%H:%M:%S)" "   -   " "${VERSION_VN}" >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVN/${HOSTNAME}.VNL;
 sleep 3
-umount $PATH_015_SCRIPTS_VEIANEW
+umount ${PATH_015_SCRIPTS_VEIANEW}
 
-rsync -uvt $PATH_015_MANAGER/php*.zip $HTDOCS &&
+rsync -uvt ${PATH_015_MANAGER}/php*.zip ${HTDOCS} &&
 
-if [ -d $PATH_015_MANAGER/"$(date +%Y-%m)" ] ; then
+if [ -d ${PATH_015_MANAGER}/"$(date +%Y-%m)" ] ; then
 echo -e "Diretorio de Backup já existe."
 else
-mkdir $PATH_015_MANAGER/"$(date +%Y-%m)" & chmod 777 $PATH_015_MANAGER/"$(date +%Y-%m)" &
+mkdir ${PATH_015_MANAGER}/"$(date +%Y-%m)" & chmod 777 ${PATH_015_MANAGER}/"$(date +%Y-%m)" &
 fi
 
-cd $HTDOCS/
+cd ${HTDOCS}/
 for arquivo in *.ZIP
 do
-newname=$(basename $arquivo ZIP)zip
-mv $arquivo $newname
+newname=$(basename ${arquivo} ZIP)zip
+mv ${arquivo} ${newname}
 done
 
- $COMANDO2
- cd  $PATH_015_MODULOPHPPDV
+ ${COMANDO2}
+ cd  ${PATH_015_MODULOPHPPDV}
  for arquivo in *.zip.TEMP.zip
  do
- newname=$(basename $arquivo zip.TEMP.zip)zip
- mv $arquivo $newname
+ newname=$(basename ${arquivo} zip.TEMP.zip)zip
+ mv ${arquivo} ${newname}
  done
- sleep 1 && umount $PATH_015_MODULOPHPPDV
+ sleep 1 && umount ${PATH_015_MODULOPHPPDV}
 
-cd $HTDOCS/
+cd ${HTDOCS}/
 
-chown root.root $HTDOCS/*
-chmod 777 $HTDOCS/*.zip
+chown root.root ${HTDOCS}/*
+chmod 777 ${HTDOCS}/*.zip
 
 for file in *anager*.zip
 
 do
-   if [ ! "$file" = `echo "$file"|sed "s/ /_/g"` ]; then
-   mv "$file" `echo "$file"|sed "s/ /_/g"`
+   if [ ! "${file}" = `echo "${file}"|sed "s/ /_/g"` ]; then
+   mv "${file}" `echo "${file}"|sed "s/ /_/g"`
    fi
 done
 
@@ -188,70 +184,70 @@ ListaArquivos(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
 clear; i=1
 
-echo -e "#     $Cor_Amarelo OPÇÕES\t\b\b********************************  PACOTES  MANAGER  ********************************$Cor_Preto"
+echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  PACOTES  MANAGER  ********************************${Cor_Preto}"
 CASE='case $opt in'
 for arq in `ls -1tr *anager*.zip`
 do
     echo -e "#\t\b\b\b\b$i    $arq"
-    CASE="$CASE
-   $i) $APACHE2/bin/apachectl stop ; rm -rf $HTDOCS/*.zip.TEMP ; rsync -uv "$HTDOCS/\"$arq\"" $MANAGER ; cd $MANAGER ; unzip -oq \"$arq\"; touch $HTDOCS/\"$arq.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && $APACHE2/bin/apachectl start && chown -R zanthus.zanthus $MANAGER/Logs/*; sleep 1 ;;"
+    CASE="${CASE}
+   $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv "${HTDOCS}/\"$arq\"" ${MANAGER} ; cd ${MANAGER} ; unzip -oq \"$arq\"; touch ${HTDOCS}/\"$arq.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && chown -R zanthus.zanthus ${MANAGER}/Logs/*; sleep 1 ;;"
     i=$((i+1))
 done
-CASE="$CASE
-   99) $VEIANEW/99.sh ;;
-   98) $APACHE2/bin/apachectl stop ; sleep 1 && veianew ;;
-   97) $APACHE2/bin/apachectl stop & $APACHE2/bin/apachectl start ; sleep 1 && veianew ;;
+CASE="${CASE}
+   99) ${VEIANEW}/99.sh ;;
+   98) ${APACHE2}/bin/apachectl stop ; sleep 1 && veianew ;;
+   97) ${APACHE2}/bin/apachectl stop & ${APACHE2}/bin/apachectl start ; sleep 1 && veianew ;;
 
-   89) php $MANAGER/servico/servicolinux.php5 start ; sleep 1 && veianew ;;
-   88) php $MANAGER/servico/servicolinux.php5 stop ; pkill -9 php ; sleep 1 && veianew ;;
-   87) php $MANAGER/servico/servicolinux.php5 stop ; pkill -9 php && php $MANAGER/servico/servicolinux.php5 start ; sleep 1 && veianew ;;
+   89) php ${MANAGER}/servico/servicolinux.php5 start ; sleep 1 && veianew ;;
+   88) php ${MANAGER}/servico/servicolinux.php5 stop ; pkill -9 php ; sleep 1 && veianew ;;
+   87) php ${MANAGER}/servico/servicolinux.php5 stop ; pkill -9 php && php ${MANAGER}/servico/servicolinux.php5 start ; sleep 1 && veianew ;;
 
-   79) node $HTDOCS/comet_zanthus/src/server-chat.js >> $HTDOCS/comet_zanthus/LOGS_NODE_$(date +%d%m%y).zlg & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
+   79) node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).zlg & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
    78) pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 1 && veianew ;;
-   77) pkill node* & sleep 1 && echo -e NODE ENCERRADO &&  node $HTDOCS/comet_zanthus/src/server-chat.js & sleep 2 && echo -e NODE REINICIADO ; sleep 1 && veianew ;;
+   77) pkill node* & sleep 1 && echo -e NODE ENCERRADO &&  node ${HTDOCS}/comet_zanthus/src/server-chat.js & sleep 2 && echo -e NODE REINICIADO ; sleep 1 && veianew ;;
 
-   69) php $MANAGER/servico/servicolinux.php5 start ; $APACHE2/bin/apachectl start ; sleep 1 && veianew ;;
-   68) sudo php $MANAGER/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo $APACHE2/bin/apachectl stop ; sleep 1 && veianew ;;
-   67) php $MANAGER/servico/servicolinux.php5 stop ; pkill -9 php && $APACHE2/bin/apachectl stop && php $MANAGER/servico/servicolinux.php5 start && $APACHE2/bin/apachectl start ; sleep 1 && veianew ;;
+   69) php ${MANAGER}/servico/servicolinux.php5 start ; ${APACHE2}/bin/apachectl start ; sleep 1 && veianew ;;
+   68) sudo php ${MANAGER}/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo ${APACHE2}/bin/apachectl stop ; sleep 1 && veianew ;;
+   67) php ${MANAGER}/servico/servicolinux.php5 stop ; pkill -9 php && ${APACHE2}/bin/apachectl stop && php ${MANAGER}/servico/servicolinux.php5 start && ${APACHE2}/bin/apachectl start ; sleep 1 && veianew ;;
 
-   66) $APACHE2/bin/apachectl start ; sleep 1; php $MANAGER/servico/servicolinux.php5 start ; node $HTDOCS/comet_zanthus/src/server-chat.js >> $HTDOCS/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
-   65) sudo php $MANAGER/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo $APACHE2/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 1 && veianew ;;
-   64) sudo php $MANAGER/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo $APACHE2/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 2 ; $APACHE2/bin/apachectl start ; sleep 1; php $MANAGER/servico/servicolinux.php5 start ; node $HTDOCS/comet_zanthus/src/server-chat.js >> $HTDOCS/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
+   66) ${APACHE2}/bin/apachectl start ; sleep 1; php ${MANAGER}/servico/servicolinux.php5 start ; node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
+   65) sudo php ${MANAGER}/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo ${APACHE2}/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 1 && veianew ;;
+   64) sudo php ${MANAGER}/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo ${APACHE2}/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 2 ; ${APACHE2}/bin/apachectl start ; sleep 1; php ${MANAGER}/servico/servicolinux.php5 start ; node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
 
-   59) rm -rf $MANAGER/* && rm -rf $HTDOCS/*.zip.TEMP; cp -rf $HTDOCS/certificados $MANAGER/ && cp -rf $HTDOCS/ZMWSInfo_COMLOG.* $MANAGER/ZMWSInfo.ini ; sleep 1 && veianew ;;
-   599) rm -rf $HTDOCS/php_*.zip && sleep 1 && veianew ;;
-   58) cp -rf $HTDOCS/ZMWSInfo_COMLOG.* $MANAGER/ZMWSInfo.ini ; sleep 1 ; veianew ;;
-   57) cp -rf $HTDOCS/ZMWSInfo_SEMLOG.* $MANAGER/ZMWSInfo.ini ; sleep 1 ; veianew ;;
-   56) cp -rf $HTDOCS/ZMWSInfo_COMLOGFULL.* $MANAGER/ZMWSInfo.ini ; sleep 1 && veianew ;;
-   55) cp -rf $MANAGER/certificados/* $HTDOCS/certificados/ ; sleep 1 && veianew ;;
-   54) sudo find $MANAGER/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find $MANAGER/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
-   53) sudo find $HTDOCS/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find $HTDOCS/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
-   52) sudo umount $PATH_015_MODULOPHPPDV/; sleep 5 ; $COMANDO2 ; cd $HTDOCS/modulo_compilado; sleep 5; sudo php equalizar_pastas.php ; sudo zip -r $HTDOCS/Modulo_$(cd $HTDOCS/; ls *.zip.TEMP).zip * ; cp Modulo_$(cd $HTDOCS/; ls *.zip.TEMP).zip $PATH_015_MODULOPHPPDV/ ; umount $moduloPHPPDV/; sleep 1 && veianew ;;
+   59) rm -rf ${MANAGER}/* && rm -rf ${HTDOCS}/*.zip.TEMP; cp -rf ${HTDOCS}/certificados ${MANAGER}/ && cp -rf ${HTDOCS}/ZMWSInfo_COMLOG.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 && veianew ;;
+   599) rm -rf ${HTDOCS}/php_*.zip && sleep 1 && veianew ;;
+   58) cp -rf ${HTDOCS}/ZMWSInfo_COMLOG.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 ; veianew ;;
+   57) cp -rf ${HTDOCS}/ZMWSInfo_SEMLOG.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 ; veianew ;;
+   56) cp -rf ${HTDOCS}/ZMWSInfo_COMLOGFULL.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 && veianew ;;
+   55) cp -rf ${MANAGER}/certificados/* ${HTDOCS}/certificados/ ; sleep 1 && veianew ;;
+   54) sudo find ${MANAGER}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${MANAGER}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
+   53) sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
+   52) sudo umount ${PATH_015_MODULOPHPPDV}/; sleep 5 ; ${COMANDO2} ; cd ${HTDOCS}/modulo_compilado; sleep 5; sudo php equalizar_pastas.php ; sudo zip -r ${HTDOCS}/Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip * ; cp Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip ${PATH_015_MODULOPHPPDV}/ ; umount $moduloPHPPDV/; sleep 1 && veianew ;;
    51) sudo touch /tmp/__check_js_errors.zan /tmp/__consultoria__.zan && chmod 755 /tmp/__check_js_errors.zan /tmp/__consultoria__.zan ; sleep 1 ; veianew ;;
    50) sudo touch /tmp/__debug_claz.zan && chmod 755 /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
    49) rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
-   48) sudo chmod -R 777 $MANAGER/Arquivos/* &&  chown -R root.root $MANAGER/Arquivos/*  ; sleep 1 ; veianew ;;
+   48) sudo chmod -R 777 ${MANAGER}/Arquivos/* &&  chown -R root.root ${MANAGER}/Arquivos/*  ; sleep 1 ; veianew ;;
 
-   07) wget -N -v --tries=1 -P $VEIANEW/veianew_estruturado ftp://$VEIANEW/veianew_estruturado ;;
-   06) echo -e 'Aguarde, conectando no ftp.zanthus.com.br';  echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!'; sleep 3 && wget -N -v --tries=2 -P $PATH_COMUM/so/ ftp://$FTP_COMPLEMENTARES/so/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_co5 ftp://$FTP_COMPLEMENTARES/so_co5/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_r64 ftp://$FTP_COMPLEMENTARES/so_r64/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_u64 ftp://$FTP_COMPLEMENTARES/so_u64/* ; wget -N -v --tries=2 -P $PATH_COMUM/so_ubu ftp://$FTP_COMPLEMENTARES/so_ubu/* ; sleep 1 && veianew ;;
-   05) umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* && umount $PATH_015/* ;;
+   07) wget -N -v --tries=1 -P ${VEIANEW}/veianew_estruturado ftp://${VEIANEW}/veianew_estruturado ;;
+   06) echo -e 'Aguarde, conectando no ftp.zanthus.com.br';  echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!'; sleep 3 && wget -N -v --tries=2 -P ${PATH_COMUM}/so/ ftp://${FTP_COMPLEMENTARES}/so/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_co5 ftp://${FTP_COMPLEMENTARES}/so_co5/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_r64 ftp://${FTP_COMPLEMENTARES}/so_r64/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_u64 ftp://${FTP_COMPLEMENTARES}/so_u64/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_ubu ftp://${FTP_COMPLEMENTARES}/so_ubu/* ; sleep 1 && veianew ;;
+   05) umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* && umount ${PATH_015}/* ;;
    04) /etc/init.d/memcached restart && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Reinicialização do MEMCACHED concluida com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 3 ; veianew ;;
    03) rsync -uv /Zanthus/Zeus/PATH_COMUM/so_r64/* /usr/src/libs_zanthus ; ldconfig ; sleep 1 ; veianew ;;
-   02) $COMANDO4 && sleep 4 ; mv -f  $HTDOCS/modulo_compilado $HTDOCS/modulo_compilado_OLD ; sleep 3 ; mkdir $HTDOCS/modulo_compilado ; chmod -R 777 $HTDOCS/modulo_compilado ; rsync -ravzpt $PATH_015_MODULO_COMPILADO/* $HTDOCS/modulo_compilado/ && umount $PATH_015_MODULO_COMPILADO/ && rm -rf $HTDOCS/modulo_compilado_OLD && sleep 1 && echo -e "" ; echo -e "" ; echo -e 'Atualização do Modulo_Compilado concluída com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 2 ; veianew ;;
-   01) rm -rf /bin/veianew_OLD ; cp /bin/veianew /bin/veianew_OLD ; $COMANDO3 ; sleep 3 ; rsync -uv $PATH_015_SCRIPTS_VEIANEW/veianew_ATUALIZADO /bin/veianew_ATUALIZADO ; umount $PATH_015_SCRIPTS_VEIANEW/ ; mv /bin/veianew_ATUALIZADO /bin/veianew && sleep 1 ;  echo -e "$HOSTNAME" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; date >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; echo -e "$VERSION_VN" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; echo -e "-----------------------------" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; echo -e "" ; echo -e "" ;  echo -e 'Atualização do veianew concluida com sucesso!!!' ; echo -e "" ; echo -e "" ;;
-   00) umount $PATH_015/* && exit ;;
+   02) ${COMANDO4} && sleep 4 ; mv -f  ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD ; sleep 3 ; mkdir ${HTDOCS}/modulo_compilado ; chmod -R 777 ${HTDOCS}/modulo_compilado ; rsync -ravzpt ${PATH_015_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ && umount ${PATH_015_MODULO_COMPILADO}/ && rm -rf ${HTDOCS}/modulo_compilado_OLD && sleep 1 && echo -e "" ; echo -e "" ; echo -e 'Atualização do Modulo_Compilado concluída com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 2 ; veianew ;;
+   01) rm -rf /bin/veianew_OLD ; cp /bin/veianew /bin/veianew_OLD ; ${COMANDO3} ; sleep 3 ; rsync -uv ${PATH_015_SCRIPTS_VEIANEW}/veianew_ATUALIZADO /bin/veianew_ATUALIZADO ; umount ${PATH_015_SCRIPTS_VEIANEW}/ ; mv /bin/veianew_ATUALIZADO /bin/veianew && sleep 1 ;  echo -e "${HOSTNAME}" >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; date >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "${VERSION_VN}" >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "-----------------------------" >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "" ; echo -e "" ;  echo -e 'Atualização do veianew concluida com sucesso!!!' ; echo -e "" ; echo -e "" ;;
+   00) umount ${PATH_015}/* && exit ;;
 
-   002) $VEIANEW/002.sh ;;
-   009) wget -N -v --tries=1 -P $VEIANEW https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip && unzip -oq $VEIANEW/master.zip && sudo cp -rf $VEIANEW/veianew-master/* $VEIANEW/ ;;
-   001) rm -rf /bin/veianew_OLD ; cp /bin/veianew /bin/veianew_OLD ; $COMANDO3 ; sleep 3 ; rsync -uv $PATH_015_SCRIPTS_VEIANEW/veianew_ATUALIZADO_BETA /bin/veianew_ATUALIZADO_BETA ; echo -e "$HOSTNAME" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; date >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; echo -e "$VERSION_VN" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; echo -e "-----------------------------" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; umount $PATH_015_SCRIPTS_VEIANEW/ ; mv /bin/veianew_ATUALIZADO_BETA /bin/veianew && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Atualização do veianew BETA concluida com sucesso!!!' ; echo -e "" ; echo -e "" ;;
-   BKP) $COMANDO1 ; $COMANDO3; sleep 3 &&  rsync -uv $PATH_015_SCRIPTS_VEIANEW/BKP_manager.sh $manager/BKP_manager.sh ; chmod -x $manager/BKP_manager.sh && $manager/BKP_manager.sh ; sleep 5 ; rm $manager/BKP_manager.sh ; umount $manager/ ; sleep 2 ; veianew ;;
-   BKPMODULO) $COMANDO1 ; $COMANDO3; sleep 3 &&  rsync -uv $PATH_015_SCRIPTS_VEIANEW/BKP_moduloPHPPDV.sh $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh ; chmod -x $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh && $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh ; sleep 5 ; rm $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh ; umount $PATH_015_MODULOPHPPDV/ ; sleep 2 ; veianew ;;
+   002) ${VEIANEW}/002.sh ;;
+   009) wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip && unzip -oq ${VEIANEW}/master.zip && sudo cp -rf ${VEIANEW}/veianew-master/* ${VEIANEW}/ ;;
+   001) rm -rf /bin/veianew_OLD ; cp /bin/veianew /bin/veianew_OLD ; ${COMANDO3} ; sleep 3 ; rsync -uv ${PATH_015_SCRIPTS_VEIANEW}/veianew_ATUALIZADO_BETA /bin/veianew_ATUALIZADO_BETA ; echo -e "${HOSTNAME}" >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; date >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "${VERSION_VN}" >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "-----------------------------" >> ${PATH_015_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; umount ${PATH_015_SCRIPTS_VEIANEW}/ ; mv /bin/veianew_ATUALIZADO_BETA /bin/veianew && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Atualização do veianew BETA concluida com sucesso!!!' ; echo -e "" ; echo -e "" ;;
+   BKP) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${PATH_015_SCRIPTS_VEIANEW}/BKP_manager.sh ${MANAGER}/BKP_manager.sh ; chmod -x ${MANAGER}/BKP_manager.sh && ${MANAGER}/BKP_manager.sh ; sleep 5 ; rm ${MANAGER}/BKP_manager.sh ; umount ${MANAGER}/ ; sleep 2 ; veianew ;;
+   BKPMODULO) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${PATH_015_SCRIPTS_VEIANEW}/BKP_moduloPHPPDV.sh ${PATH_015_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; chmod -x ${PATH_015_MODULOPHPPDV}/BKP_moduloPHPPDV.sh && ${PATH_015_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; sleep 5 ; rm ${PATH_015_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; umount ${PATH_015_MODULOPHPPDV}/ ; sleep 2 ; veianew ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos;;
 esac"
 
 echo -e ""
-echo -e "#\t$Cor_Amarelo\b\b\b\bMANAGER EM USO:" *.zip.TEMP
-echo -e "$Cor_Preto"
+echo -e "#\t${Cor_Amarelo}\b\b\b\bMANAGER EM USO:" *.zip.TEMP
+echo -e "${Cor_Preto}"
 #echo -e "\t\t***** APACHE *****                         ***** MIRAGE *****                ***** NODE *****"
 echo -e "#\t\b\b\b\b99    START     APACHE             89    START     MIRAGE            79    START     NODE"
 echo -e "#\t\b\b\b\b98    STOP      APACHE             88    STOP      MIRAGE            78    STOP      NODE"
@@ -275,11 +271,11 @@ echo -e "#\t\b\b\b\b51    ATIVAR 'INSPEC_ELEMENTO' E 'CHECK_JS'             03  
 echo -e "#\t\b\b\b\b50    ATIVAR 'DEBUG_CLAZ'                               02    ATUALIZAR Modulo_Compilado"
 echo -e "#\t\b\b\b\b49    DESATIVAR INSPEC_ELEMENTO CHECK_JS DEBUG_CLAZ     01    ATUALIZAR VEIANEW"
 echo -e "#\t\b\b\b\b48    PERMISSÃO DIRETORIO 'ARQUIVOS'                    00    SAIR"
-echo -e "#\t\b\b\b\b                                                                   $Cor_FundoCinza $Cor_Vermelho $VERSION_VN $Cor_Preto"
-echo -ne "#$Cor_VerdeClaro   INFORME A OPÇÃO DESEJADA: "
+echo -e "#\t\b\b\b\b                                                                   ${Cor_FundoCinza} ${Cor_Vermelho} ${VERSION_VN} ${Cor_Preto}"
+echo -ne "#${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "
 read -p "" opt
-echo -e "$Cor_Preto"
-eval "$CASE"
+echo -e "${Cor_Preto}"
+eval "${CASE}"
 
 else
 clear
