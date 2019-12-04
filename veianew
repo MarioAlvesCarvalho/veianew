@@ -7,12 +7,12 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variavel de Versao e linguagem
-export VERSION_VN="v5.0.12_BETA"
+export VERSION_VN="v5.0.13_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
 export Cor_Preto="\033[0m"
-export Cor_Vermelho="\033[0;31m"
+export Cor_Vermelho="\033[1;31m"
 export Cor_VerdeClaro="\033[1;32m"
 export Cor_Amarelo="\033[1;33m"
 export Cor_Fundo_Cinza="\033[47;1;37m"
