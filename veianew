@@ -6,7 +6,7 @@
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
-VERSION_VN="v5.0.3_BETA"
+VERSION_VN="v5.0.4_BETA"
 export LANG=pt_BR
 
 Cor_Preto="\033[0m"
