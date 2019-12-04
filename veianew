@@ -79,7 +79,7 @@ atualizaSenha(){
 montar15(){
   SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
   COMANDO1="mount -t cifs -s -o username=$USUARIO_15,password=$SENHA_15,rw //$SERVIDOR1 $PATH_015_MANAGER"
-  $COMANDO1
+####  $COMANDO1
 
   SERVIDOR2='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/moduloPHPPDV'
   COMANDO2="mount -t cifs -s -o username=$USUARIO_15,password=$SENHA_15,rw //$SERVIDOR2 $PATH_015_MODULOPHPPDV"
@@ -129,7 +129,7 @@ then
 fi
 # rsantos FIM
 
-$COMANDO3
+###$COMANDO3
 IP=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
 echo -e "$HOSTNAME" "   -   " "$IP" "   -   " "$(date +%d/%m/%y__%H:%M:%S)" "   -   " "$VERSION_VN" >> $PATH_015_SCRIPTS_VEIANEW/LOGVN/$HOSTNAME.VNL;
 sleep 3
