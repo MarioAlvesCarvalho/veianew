@@ -231,7 +231,7 @@ CASE="$CASE
    00) umount $PATH_015/* && exit ;;
 
    002) wget -N -v --tries=1 -P $VEIANEW https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip && unzip  $VEIANEW/master.zip &&
- cp $VEIANEW/veianew-master/* $VEIANEW ;;
+ cp -rf $VEIANEW/veianew-master/* $VEIANEW ;;
    001) rm -rf /bin/veianew_OLD ; cp /bin/veianew /bin/veianew_OLD ; $COMANDO3 ; sleep 3 ; rsync -uv $PATH_015_SCRIPTS_VEIANEW/veianew_ATUALIZADO_BETA /bin/veianew_ATUALIZADO_BETA ; echo -e "$HOSTNAME" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; date >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; echo -e "$VERSION_VN" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; echo -e "-----------------------------" >> $PATH_015_SCRIPTS_VEIANEW/LOGVERSION_veianew.VNL; umount $PATH_015_SCRIPTS_VEIANEW/ ; mv /bin/veianew_ATUALIZADO_BETA /bin/veianew && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Atualização do veianew BETA concluida com sucesso!!!' ; echo -e "" ; echo -e "" ;;
    BKP) $COMANDO1 ; $COMANDO3; sleep 3 &&  rsync -uv $PATH_015_SCRIPTS_VEIANEW/BKP_manager.sh $manager/BKP_manager.sh ; chmod -x $manager/BKP_manager.sh && $manager/BKP_manager.sh ; sleep 5 ; rm $manager/BKP_manager.sh ; umount $manager/ ; sleep 2 ; veianew ;;
    BKPMODULO) $COMANDO1 ; $COMANDO3; sleep 3 &&  rsync -uv $PATH_015_SCRIPTS_VEIANEW/BKP_moduloPHPPDV.sh $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh ; chmod -x $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh && $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh ; sleep 5 ; rm $PATH_015_MODULOPHPPDV/BKP_moduloPHPPDV.sh ; umount $PATH_015_MODULOPHPPDV/ ; sleep 2 ; veianew ;;
