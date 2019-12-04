@@ -9,7 +9,7 @@
 VERSION_VN="v5.0.1_BETA"
 export LANG=pt_BR
 
-Cor_Preto="\033[0m"
+export Cor_Preto="\033[0m"
 Cor_Vermelho="\033[0;31m"
 Cor_VerdeClaro="\033[1;32m"
 Cor_Amarelo="\033[1;33m"
@@ -21,11 +21,11 @@ PATH_015_MANAGER="$PATH_015/MANAGER"
 PATH_015_MODULOPHPPDV="$PATH_015/MODULOPHPPDV"
 PATH_015_SCRIPTS_VEIANEW="$PATH_015/SCRIPTS_VEIANEW"
 PATH_015_MODULO_COMPILADO="$PATH_015/MODULO_COMPILADO"
-APACHE2="/usr/local/apache2"
+export APACHE2="/usr/local/apache2"
 HTDOCS="$APACHE2/htdocs"
 MANAGER="$HTDOCS/manager"
 FTP_COMPLEMENTARES="200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
-VEIANEW="$APACHE2/VEIANEW"
+export VEIANEW="$APACHE2/VEIANEW"
 
 if [ -d "${PATH_015}" ] ; then
 umount "${PATH_015}"
