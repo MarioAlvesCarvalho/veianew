@@ -6,31 +6,37 @@
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
-VERSION_VN="v5.0.9_BETA"
+#Variavel de Versao e linguagem
+export VERSION_VN="v5.0.10_BETA"
 export LANG=pt_BR
 
-Cor_Preto="\033[0m"
-Cor_Vermelho="\033[0;31m"
-Cor_VerdeClaro="\033[1;32m"
-Cor_Amarelo="\033[1;33m"
-Cor_Fundo_Cinza="\033[47;1;37m"
+#Variavel de Cores
+export Cor_Preto="\033[0m"
+export Cor_Vermelho="\033[0;31m"
+export Cor_VerdeClaro="\033[1;32m"
+export Cor_Amarelo="\033[1;33m"
+export Cor_Fundo_Cinza="\033[47;1;37m"
 
-dirRoot="/bin"
-veianewIni="$dirRoot/veianew.ini"
+#Variavel de diretorio root e veianew.ini
+export dirRoot="/bin"
+export veianewIni="$dirRoot/veianew.ini"
 
-PATH_COMUM="/Zanthus/Zeus/path_comum"
-PATH_015="$PATH_COMUM/0.15"
-PATH_015_MANAGER="$PATH_015/MANAGER"
-PATH_015_MODULOPHPPDV="$PATH_015/MODULOPHPPDV"
-PATH_015_SCRIPTS_VEIANEW="$PATH_015/SCRIPTS_VEIANEW"
-PATH_015_MODULO_COMPILADO="$PATH_015/MODULO_COMPILADO"
+#Variavel de caminho de diretorios
+export PATH_COMUM="/Zanthus/Zeus/path_comum"
+export PATH_015="$PATH_COMUM/0.15"
+export PATH_015_MANAGER="$PATH_015/MANAGER"
+export PATH_015_MODULOPHPPDV="$PATH_015/MODULOPHPPDV"
+export PATH_015_SCRIPTS_VEIANEW="$PATH_015/SCRIPTS_VEIANEW"
+export PATH_015_MODULO_COMPILADO="$PATH_015/MODULO_COMPILADO"
 export APACHE2="/usr/local/apache2"
-#export $APACHE2
-HTDOCS="$APACHE2/htdocs"
-MANAGER="$HTDOCS/manager"
-FTP_COMPLEMENTARES="200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
+export HTDOCS="$APACHE2/htdocs"
+export MANAGER="$HTDOCS/manager"
+export FTP_COMPLEMENTARES="200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
 export VEIANEW="$APACHE2/VEIANEW"
 
+#Iniciando funcionalidades na tela
+echo -e "$Cor_Preto"
+echo -e "$Cor_FundoCinza $Cor_Vermelho $VERSION_VN $Cor_Preto"
 
 echo -e "$VERSION_VN"
 
@@ -269,7 +275,7 @@ echo -e "#\t\b\b\b\b51    ATIVAR 'INSPEC_ELEMENTO' E 'CHECK_JS'             03  
 echo -e "#\t\b\b\b\b50    ATIVAR 'DEBUG_CLAZ'                               02    ATUALIZAR Modulo_Compilado"
 echo -e "#\t\b\b\b\b49    DESATIVAR INSPEC_ELEMENTO CHECK_JS DEBUG_CLAZ     01    ATUALIZAR VEIANEW"
 echo -e "#\t\b\b\b\b48    PERMISSÃO DIRETORIO 'ARQUIVOS'                    00    SAIR"
-echo -e "#\t\b\b\b\b                                                                               $Cod_Vermelho $VERSION_VN $Cor_Preto"
+echo -e "#\t\b\b\b\b                                                                   $Cor_FundoCinza $Cor_Vermelho $VERSION_VN $Cor_Preto"
 echo -ne "#$Cor_VerdeClaro   INFORME A OPÇÃO DESEJADA: "
 read -p "" opt
 echo -e "$Cor_Preto"
