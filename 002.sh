@@ -4,7 +4,8 @@ wget -N -v --tries=1 -P $VEIANEW https://github.com/MarioAlvesCarvalho/veianew/a
 chmod -R 777  $VEIANEW/master.zip &&
 chmod +x $VEIANEW/master.zip &&
 unzip -oq $VEIANEW/master.zip &&
-sudo cp -rf $VEIANEW/veianew-master/* $VEIANEW/ ; wait &&
+sudo cp -rf $VEIANEW/veianew-master/* $VEIANEW/ &&
+sleep 2 &&
 sudo rm -rf $VEIANEW/master.zip &&
 sudo rm -rf $VEIANEW/veianew-master &&
 echo -e "" &&
