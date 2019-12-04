@@ -7,7 +7,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variavel de Versao e linguagem
-export VERSION_VN="v5.0.10_BETA"
+export VERSION_VN="v5.0.11_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
@@ -38,42 +38,41 @@ export VEIANEW="$APACHE2/VEIANEW"
 echo -e "$Cor_Preto"
 echo -e "$Cor_FundoCinza $Cor_Vermelho $VERSION_VN $Cor_Preto"
 
-echo -e "$VERSION_VN"
-
-if [ -d "${PATH_015}" ] ; then
-umount "${PATH_015}"
+#Iniciando validaçoes de existencia de diretorios
+if [ -d "$PATH_015" ] ; then
+umount "$PATH_015"
 else
-mkdir "${PATH_015}" & chmod 777 "${PATH_015}"
+mkdir "$PATH_015" & chmod 777 "$PATH_015"
 fi
 
-if [ -d "${PATH_015_MANAGER}" ] ; then
-umount "${PATH_015_MANAGER}" &
+if [ -d "$PATH_015_MANAGER" ] ; then
+umount "$PATH_015_MANAGER" &
 else
-mkdir "${PATH_015_MANAGER}" & chmod 777 "${PATH_015_MANAGER}" &
+mkdir "$PATH_015_MANAGER" & chmod 777 "$PATH_015_MANAGER" &
 fi
 
-if [ -d "${PATH_015_MODULOPHPPDV}" ] ; then
-umount "${PATH_015_MODULOPHPPDV}"
+if [ -d "$PATH_015_MODULOPHPPDV" ] ; then
+umount "$PATH_015_MODULOPHPPDV"
 else
-mkdir "${PATH_015_MODULOPHPPDV}" & chmod 777 "${PATH_015_MODULOPHPPDV}" &
+mkdir "$PATH_015_MODULOPHPPDV" & chmod 777 "$PATH_015_MODULOPHPPDV" &
 fi
 
-if [ -d "${PATH_015_SCRIPTS_VEIANEW}" ] ; then
-umount "${PATH_015_SCRIPTS_VEIANEW}"
+if [ -d $PATH_015_SCRIPTS_VEIANEW" ] ; then
+umount $PATH_015_SCRIPTS_VEIANEW"
 else
-mkdir "${PATH_015_SCRIPTS_VEIANEW}" & chmod 777 "${PATH_015_SCRIPTS_VEIANEW}" &
+mkdir $PATH_015_SCRIPTS_VEIANEW" & chmod 777 $PATH_015_SCRIPTS_VEIANEW" &
 fi
 
-if [ -d "${PATH_015_MODULO_COMPILADO}" ] ; then
-umount "${PATH_015_MODULO_COMPILADO}"
+if [ -d $PATH_015_MODULO_COMPILADO" ] ; then
+umount $PATH_015_MODULO_COMPILADO"
 else
-mkdir "${PATH_015_MODULO_COMPILADO}" & chmod 777 "${PATH_015_MODULO_COMPILADO}" &
+mkdir $PATH_015_MODULO_COMPILADO" & chmod 777 $PATH_015_MODULO_COMPILADO" &
 fi
 
-if [ -d "${PATH_COMUM}" ] ; then
-umount "${PATH_COMUM}"
+if [ -d $PATH_COMUM" ] ; then
+umount $PATH_COMUM"
 else
-mkdir "${PATH_COMUM}" & chmod 777 "${PATH_COMUM}" &
+mkdir $PATH_COMUM" & chmod 777 $PATH_COMUM" &
 fi
 
 # rsantos INICIO
@@ -83,8 +82,8 @@ atualizaSenha(){
   read USUARIO_15
   echo -ne "SENHA: "
   read SENHA_15
-  echo "USUARIO_15=${USUARIO_15}" >  ${veianewIni}
-  echo "SENHA_15=${SENHA_15}"     >> ${veianewIni}
+  echo "USUARIO_15=$USUARIO_15" >  $veianewIni
+  echo "SENHA_15=$SENHA_15"     >> $veianewIni
 }
 montar15(){
   SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
@@ -104,17 +103,17 @@ montar15(){
 
   return $?
 }
-if [ -e "${veianewIni}" ]
+if [ -e $veianewIni" ]
 then
- . ${veianewIni}
+ . $veianewIni
 else
   atualizaSenha
 fi
 montar15
-if [ ${?} -ne "0" ]
+if [ $? -ne "0" ]
 then
   OPC=0
-  while [ ${OPC} -ne 1 -a ${OPC} -ne 2 ]
+  while [ $OPC -ne 1 -a $OPC -ne 2 ]
   do
     echo -e  "NÃO FOI POSSIVEL MONTAR O CAMINHO //$SERVIDOR1 UTILIZANDO O COMANDO ABAIXO\n ($COMANDO1)"
     echo     "O QUE VOCE DESEJA FAZER?"
@@ -122,7 +121,7 @@ then
     echo     "2. ATUALIZAR USUARIO E SENHA DE ACESSO AO '192.168.0.15'"
     echo -ne "OPCAO: "
     read     OPC
-    case ${OPC} in
+    case $OPC in
       1)
         echo "PROSSEGUINDO ..."
       ;;
