@@ -19,7 +19,7 @@ export Cor_Fundo_Cinza="\033[47;1;37m"
 
 #Variavel de diretorio root e veianew.ini
 export dirRoot="/bin"
-export veianewIni="$dirRoot/veianew.ini"
+export veianewIni="${dirRoot}/veianew.ini"
 
 #Variavel de caminho de diretorios
 export PATH_COMUM="/Zanthus/Zeus/path_comum"
