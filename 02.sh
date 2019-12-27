@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 19361
 
-${COMANDO4} &&
+${COMANDO4} &
 sleep 4 &&
 mv -f ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD &&
 sleep 3 &&
