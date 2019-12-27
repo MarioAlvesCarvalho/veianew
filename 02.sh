@@ -22,7 +22,8 @@ echo -e "linha 6"
 sleep 3 &&
 
 echo -e "linha 7"
-rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ &&
+rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/
+wait &&
 
 echo -e "linha 8"
 ##umount ${SERVER_VN_MODULO_COMPILADO}/ &&
