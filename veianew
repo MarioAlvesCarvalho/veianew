@@ -194,9 +194,10 @@ for arq in `ls -1tr *anager*.zip`
 do
     echo -e "#\t\b\b\b\b$i    ${arq}"
     CASE="${CASE}
-   $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} ; sleep 1 && echo -e 'Vai iniciar o unzip' && cd ${MANAGER} && unzip \"${arq}\" && touch ${HTDOCS}/\"${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chown -R zanthus.zanthus ${MANAGER}/Logs/*; sleep 1 ;;"
+   $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} ; sleep 1 && pwd && echo -e 'Vai iniciar o unzip' && cd ${MANAGER} && pwd && unzip -oq \"${arq}\" && echo -e 'terminou o unzip' &&touch ${HTDOCS}/\"${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chown -R zanthus.zanthus ${MANAGER}/Logs/*; sleep 1 ;;"
     i=$((i+1))
 done
+ ### unzip -oq \"$arq\";
 CASE="${CASE}
    99) ${VEIANEW}/99.sh ;;
    98) ${APACHE2}/bin/apachectl stop ; sleep 1 && veianew ;;
