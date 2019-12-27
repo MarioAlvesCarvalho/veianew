@@ -7,7 +7,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.0.17_BETA"
+export VERSION_VN="v5.0.18_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
@@ -194,7 +194,7 @@ for arq in `ls -1tr *anager*.zip`
 do
     echo -e "#\t\b\b\b\b$i    ${arq}"
     CASE="${CASE}
-   $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} ; sleep 1 ; unzip -oq ${MANAGER}/\"${arq}\" ; touch ${HTDOCS}/\"${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chown -R zanthus.zanthus ${MANAGER}/Logs/*; sleep 1 ;;"
+   $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} ; sleep 1 && echo -e 'Vai iniciar o unzip' && unzip ${MANAGER}/\"${arq}\" && touch ${HTDOCS}/\"${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chown -R zanthus.zanthus ${MANAGER}/Logs/*; sleep 1 ;;"
     i=$((i+1))
 done
 CASE="${CASE}
