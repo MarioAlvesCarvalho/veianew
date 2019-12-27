@@ -12,5 +12,12 @@ if umount MANAGER
    umount $manager/ ;
 
 
-   sleep 2
- ; veianew ;;
+   sleep 2 &&
+ ; veianew &&
+ echo -e "" &&
+ echo -e "" &&
+ echo -e "" &&
+ echo -e "****************" &&
+ echo -e "Termino do BKP.sh" &&
+ echo -e "****************" &&
+ veianew ;

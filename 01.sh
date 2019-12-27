@@ -12,8 +12,6 @@ sudo chmod 775 $VEIANEW/*.sh &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
-echo -e "" &&
-echo -e "" &&
 echo -e "****************" &&
 echo -e "Termino do 01.sh" &&
 echo -e "****************" ;
