@@ -99,7 +99,7 @@ montar15(){
   COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${SERVER_VN_SCRIPTS_VEIANEW}"
 
   ##SERVIDOR4='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
-  SERVIDOR4='192.168.0.66/publico/qualidade/VERSOES/Modulo_Compilado'
+  SERVIDOR4='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
   COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${SERVER_VN_MODULO_COMPILADO}"
 
   return $?
