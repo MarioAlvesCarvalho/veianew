@@ -6,8 +6,8 @@
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
-#Variavel de Versao e linguagem
-export VERSION_VN="v5.0.15_BETA"
+#Variaveis de Versao e idioma
+export VERSION_VN="v5.0.16_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
@@ -17,11 +17,11 @@ export Cor_VerdeClaro="\033[1;32m"
 export Cor_Amarelo="\033[1;33m"
 export Cor_Fundo_Cinza="\033[47;1;37m"
 
-#Variavel de diretorio root e veianew.ini
+#Variaveis de diretorio root e veianew.ini
 export dirRoot="/bin"
 export veianewIni="${dirRoot}/veianew.ini"
 
-#Variavel de caminho de diretorios
+#Variaveis de caminho de diretorios
 export PATH_COMUM="/Zanthus/Zeus/path_comum"
 export SERVER_VN="${PATH_COMUM}/0.66"
 export SERVER_VN_MANAGER="${SERVER_VN}/MANAGER"
