@@ -25,7 +25,7 @@ echo -e "linha 7"
 rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ &&
 
 echo -e "linha 8"
-umount ${SERVER_VN_MODULO_COMPILADO}/ &&
+##umount ${SERVER_VN_MODULO_COMPILADO}/ &&
 
 echo -e "linha 9"
 rm -rf ${HTDOCS}/modulo_compilado_OLD &&
