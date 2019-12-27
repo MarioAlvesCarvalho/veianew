@@ -1,7 +1,5 @@
-GNU nano 2.3.1                                         Arquivo: 002.sh                                                                              Modificado
-
 #!/bin/bash
-#Data alteração 19338
+#Data alteração 19361
 
 wget -N -v --tries=1 -P $VEIANEW https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip &&
 chmod -R 777  $VEIANEW/master.zip &&
