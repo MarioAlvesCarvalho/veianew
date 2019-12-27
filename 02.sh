@@ -9,14 +9,17 @@ sleep 4 &&
 echo -e "linha 3"
 mv -f ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD &&
 
-echo -e "linha 4"
+echo -e "linha 3"
 sleep 3 &&
 
-echo -e "linha 5"
+echo -e "linha 4"
 mkdir ${HTDOCS}/modulo_compilado &&
 
-echo -e "linha 6"
+echo -e "linha 5"
 chmod -R 777 ${HTDOCS}/modulo_compilado &&
+
+echo -e "linha 6"
+sleep 3 &&
 
 echo -e "linha 7"
 rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ &&
