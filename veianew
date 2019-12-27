@@ -2,12 +2,12 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 04/12/2019          ###
+###          DATE 27/12/2019          ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variavel de Versao e linguagem
-export VERSION_VN="v5.0.14_BETA"
+export VERSION_VN="v5.0.15_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
