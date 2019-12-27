@@ -14,6 +14,7 @@ sleep 3 &&
 
 echo -e "linha 4"
 mkdir ${HTDOCS}/modulo_compilado &&
+wait &&
 
 echo -e "linha 5"
 chmod -R 777 ${HTDOCS}/modulo_compilado &&
