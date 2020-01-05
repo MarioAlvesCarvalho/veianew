@@ -3,7 +3,6 @@
 
 $APACHE2/bin/apachectl start ;
 sleep 1 &&
-/bin/veianew &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
