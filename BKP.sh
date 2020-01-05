@@ -15,7 +15,6 @@ if umount MANAGER
 
 
   sleep 2 &&
-veianew &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
