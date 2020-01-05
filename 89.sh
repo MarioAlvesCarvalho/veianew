@@ -1,9 +1,8 @@
 #!/bin/bash
-#Data alteração 19361
+#Data alteração 20005
 
 php $MANAGER/servico/servicolinux.php5 start &&
 sleep 1 &&
-veianew &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
