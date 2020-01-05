@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 19361
+#Data alteração 20005
 
 sudo umount ${SERVER_VN_MODULOPHPPDV}/ &&
 sleep 2 &&
