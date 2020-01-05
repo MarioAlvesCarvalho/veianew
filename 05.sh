@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 19361
+#Data alteração 20005
 
 umount ${SERVER_VN}/* &&
 umount ${SERVER_VN}/* &&
