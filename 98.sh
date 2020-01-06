@@ -1,7 +1,8 @@
 #!/bin/bash
-#Data alteração 19361
+#Data alteração 20005
 
-$APACHE2/bin/apachectl stop ; sleep 1 && veianew &&
+$APACHE2/bin/apachectl stop &&
+sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&

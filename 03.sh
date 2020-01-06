@@ -1,7 +1,9 @@
 #!/bin/bash
-#Data alteração 19361
+#Data alteração 20005
 
-rsync -uv /Zanthus/Zeus/PATH_COMUM/so_r64/* /usr/src/libs_zanthus ; ldconfig ; sleep 1 ; veianew &
+rsync -uv /Zanthus/Zeus/PATH_COMUM/so_r64/* /usr/src/libs_zanthus &&
+ldconfig &&
+sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
