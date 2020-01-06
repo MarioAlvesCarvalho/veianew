@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 19361
+#Data alteração 20005
 
 wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip &&
 unzip -oq ${VEIANEW}/master.zip &&

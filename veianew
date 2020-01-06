@@ -7,7 +7,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.0.28_BETA"
+export VERSION_VN="v5.0.29_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
