@@ -228,7 +228,7 @@ CASE="${CASE}
    54) sudo find ${MANAGER}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${MANAGER}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
    53) sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
    52) ${VEIANEW}/52.sh ;;
-   00052) sudo umount ${SERVER_VN_MODULOPHPPDV}/; sleep 5 ; ${COMANDO2} ; cd ${HTDOCS}/modulo_compilado; sleep 5; sudo php equalizar_pastas.php ; sudo zip -r ${HTDOCS}/Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip * ; cp Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip ${SERVER_VN_MODULOPHPPDV}/ ; umount $moduloPHPPDV/; sleep 1 && veianew ;;
+
    51) sudo touch /tmp/__check_js_errors.zan /tmp/__consultoria__.zan && chmod 755 /tmp/__check_js_errors.zan /tmp/__consultoria__.zan ; sleep 1 ; veianew ;;
    50) sudo touch /tmp/__debug_claz.zan && chmod 755 /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
    49) rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
