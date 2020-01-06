@@ -228,36 +228,36 @@ CASE="${CASE}
    54) sudo find ${MANAGER}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${MANAGER}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
    53) sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
    52) ${VEIANEW}/52.sh ;;
-   xxx52) sudo umount ${SERVER_VN_MODULOPHPPDV}/; sleep 5 ; ${COMANDO2} ; cd ${HTDOCS}/modulo_compilado; sleep 5; sudo php equalizar_pastas.php ; sudo zip -r ${HTDOCS}/Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip * ; cp Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip ${SERVER_VN_MODULOPHPPDV}/ ; umount $moduloPHPPDV/; sleep 1 && veianew ;;
+   00052) sudo umount ${SERVER_VN_MODULOPHPPDV}/; sleep 5 ; ${COMANDO2} ; cd ${HTDOCS}/modulo_compilado; sleep 5; sudo php equalizar_pastas.php ; sudo zip -r ${HTDOCS}/Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip * ; cp Modulo_$(cd ${HTDOCS}/; ls *.zip.TEMP).zip ${SERVER_VN_MODULOPHPPDV}/ ; umount $moduloPHPPDV/; sleep 1 && veianew ;;
    51) sudo touch /tmp/__check_js_errors.zan /tmp/__consultoria__.zan && chmod 755 /tmp/__check_js_errors.zan /tmp/__consultoria__.zan ; sleep 1 ; veianew ;;
    50) sudo touch /tmp/__debug_claz.zan && chmod 755 /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
    49) rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
    48) sudo chmod -R 777 ${MANAGER}/Arquivos/* &&  chown -R root.root ${MANAGER}/Arquivos/*  ; sleep 1 ; veianew ;;
 
    07) ${VEIANEW}/07.sh ;;
-   xxx07) wget -N -v --tries=1 -P ${VEIANEW}/veianew_estruturado ftp://${VEIANEW}/veianew_estruturado ;;
+   00007) wget -N -v --tries=1 -P ${VEIANEW}/veianew_estruturado ftp://${VEIANEW}/veianew_estruturado ;;
    06) ${VEIANEW}/06.sh ;;
-   xxx06) echo -e 'Aguarde, conectando no ftp.zanthus.com.br';  echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!'; sleep 3 && wget -N -v --tries=2 -P ${PATH_COMUM}/so/ ftp://${FTP_COMPLEMENTARES}/so/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_co5 ftp://${FTP_COMPLEMENTARES}/so_co5/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_r64 ftp://${FTP_COMPLEMENTARES}/so_r64/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_u64 ftp://${FTP_COMPLEMENTARES}/so_u64/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_ubu ftp://${FTP_COMPLEMENTARES}/so_ubu/* ; sleep 1 && veianew ;;
+   00006) echo -e 'Aguarde, conectando no ftp.zanthus.com.br';  echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!'; sleep 3 && wget -N -v --tries=2 -P ${PATH_COMUM}/so/ ftp://${FTP_COMPLEMENTARES}/so/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_co5 ftp://${FTP_COMPLEMENTARES}/so_co5/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_r64 ftp://${FTP_COMPLEMENTARES}/so_r64/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_u64 ftp://${FTP_COMPLEMENTARES}/so_u64/* ; wget -N -v --tries=2 -P ${PATH_COMUM}/so_ubu ftp://${FTP_COMPLEMENTARES}/so_ubu/* ; sleep 1 && veianew ;;
    05) ${VEIANEW}/05.sh ;;
-   xxx05) umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* ;;
+   00005) umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* ;;
    04) ${VEIANEW}/04.sh ;;
-   xxx04) /etc/init.d/memcached restart && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Reinicialização do MEMCACHED concluida com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 3 ; veianew ;;
+   00004) /etc/init.d/memcached restart && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Reinicialização do MEMCACHED concluida com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 3 ; veianew ;;
    05) ${VEIANEW}/03.sh ;;
-   xx03) rsync -uv /Zanthus/Zeus/PATH_COMUM/so_r64/* /usr/src/libs_zanthus ; ldconfig ; sleep 1 ; veianew ;;
+   00003) rsync -uv /Zanthus/Zeus/PATH_COMUM/so_r64/* /usr/src/libs_zanthus ; ldconfig ; sleep 1 ; veianew ;;
    02) ${VEIANEW}/02.sh ;;
-   xxx02) ${COMANDO4} && sleep 4 ; mv -f  ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD ; sleep 3 ; mkdir ${HTDOCS}/modulo_compilado ; chmod -R 777 ${HTDOCS}/modulo_compilado ; rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ && umount ${SERVER_VN_MODULO_COMPILADO}/ && rm -rf ${HTDOCS}/modulo_compilado_OLD && sleep 1 && echo -e "" ; echo -e "" ; echo -e 'Atualização do Modulo_Compilado concluída com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 2 ; veianew ;;
+   00002) ${COMANDO4} && sleep 4 ; mv -f  ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD ; sleep 3 ; mkdir ${HTDOCS}/modulo_compilado ; chmod -R 777 ${HTDOCS}/modulo_compilado ; rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ && umount ${SERVER_VN_MODULO_COMPILADO}/ && rm -rf ${HTDOCS}/modulo_compilado_OLD && sleep 1 && echo -e "" ; echo -e "" ; echo -e 'Atualização do Modulo_Compilado concluída com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 2 ; veianew ;;
    01) ${VEIANEW}/01.sh ;;
    00) ${VEIANEW}/00.sh ;;
-   xxx00) umount ${SERVER_VN}/* && exit ;;
+   00000) umount ${SERVER_VN}/* && exit ;;
 
    009) ${VEIANEW}/009.sh ;;
-   xxx009) wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip && unzip -oq ${VEIANEW}/master.zip && sudo cp -rf ${VEIANEW}/veianew-master/* ${VEIANEW}/ ;;
+   000009) wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip && unzip -oq ${VEIANEW}/master.zip && sudo cp -rf ${VEIANEW}/veianew-master/* ${VEIANEW}/ ;;
    001) ${VEIANEW}/001.sh ;;
-   xxx001) rm -rf /bin/veianew_OLD ; cp /bin/veianew /bin/veianew_OLD ; ${COMANDO3} ; sleep 3 ; rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/veianew_ATUALIZADO_BETA /bin/veianew_ATUALIZADO_BETA ; echo -e "${HOSTNAME}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; date >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "${VERSION_VN}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "-----------------------------" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; umount ${SERVER_VN_SCRIPTS_VEIANEW}/ ; mv /bin/veianew_ATUALIZADO_BETA /bin/veianew && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Atualização do veianew BETA concluida com sucesso!!!' ; echo -e "" ; echo -e "" ;;
+   000001) rm -rf /bin/veianew_OLD ; cp /bin/veianew /bin/veianew_OLD ; ${COMANDO3} ; sleep 3 ; rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/veianew_ATUALIZADO_BETA /bin/veianew_ATUALIZADO_BETA ; echo -e "${HOSTNAME}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; date >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "${VERSION_VN}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; echo -e "-----------------------------" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVERSION_veianew.VNL; umount ${SERVER_VN_SCRIPTS_VEIANEW}/ ; mv /bin/veianew_ATUALIZADO_BETA /bin/veianew && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Atualização do veianew BETA concluida com sucesso!!!' ; echo -e "" ; echo -e "" ;;
    BKP) ${VEIANEW}/BKP.sh ;;
-   xxxBKP) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_manager.sh ${MANAGER}/BKP_manager.sh ; chmod -x ${MANAGER}/BKP_manager.sh && ${MANAGER}/BKP_manager.sh ; sleep 5 ; rm ${MANAGER}/BKP_manager.sh ; umount ${MANAGER}/ ; sleep 2 ; veianew ;;
+   000BKP) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_manager.sh ${MANAGER}/BKP_manager.sh ; chmod -x ${MANAGER}/BKP_manager.sh && ${MANAGER}/BKP_manager.sh ; sleep 5 ; rm ${MANAGER}/BKP_manager.sh ; umount ${MANAGER}/ ; sleep 2 ; veianew ;;
    BKPMODULO) ${VEIANEW}/BKPMODULO.sh ;;
-   xxxBKPMODULO) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_moduloPHPPDV.sh ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; chmod -x ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh && ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; sleep 5 ; rm ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; umount ${SERVER_VN_MODULOPHPPDV}/ ; sleep 2 ; veianew ;;
+   000BKPMODULO) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_moduloPHPPDV.sh ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; chmod -x ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh && ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; sleep 5 ; rm ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; umount ${SERVER_VN_MODULOPHPPDV}/ ; sleep 2 ; veianew ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos;;
 esac"
 
