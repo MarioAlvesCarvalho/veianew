@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 20005
 
-rsync -uv /Zanthus/Zeus/PATH_COMUM/so_r64/* /usr/src/libs_zanthus &&
+rsync -uv ${PATH_COMUM}/so_r64/* /usr/src/libs_zanthus &&
 ldconfig &&
 sleep 1 &&
 echo -e "" &&
