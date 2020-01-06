@@ -11,7 +11,7 @@ echo -e '2'
 sudo php ${HTDOCS}/modulo_compilado/equalizar_pastas.php &&
 
 echo -e '3'
-sudo zip -r ${HTDOCS}/Modulo_$(ls ${HTDOCS}/*.zip.TEMP).zip * -d ${HTDOCS}/ &&
+sudo zip -r ${HTDOCS}/modulo_compilado ${HTDOCS}/Modulo_$(ls ${HTDOCS}/*.zip.TEMP).zip * &&
 
 echo -e '4'
 ${COMANDO2} &&
