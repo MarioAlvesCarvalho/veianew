@@ -242,7 +242,7 @@ CASE="${CASE}
    00005) umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* && umount ${SERVER_VN}/* ;;
    04) ${VEIANEW}/04.sh ;;
    00004) /etc/init.d/memcached restart && sleep 1 ; echo -e "" ; echo -e "" ;  echo -e 'Reinicialização do MEMCACHED concluida com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 3 ; veianew ;;
-   05) ${VEIANEW}/03.sh ;;
+   03) ${VEIANEW}/03.sh ;;
    00003) rsync -uv /Zanthus/Zeus/PATH_COMUM/so_r64/* /usr/src/libs_zanthus ; ldconfig ; sleep 1 ; veianew ;;
    02) ${VEIANEW}/02.sh ;;
    00002) ${COMANDO4} && sleep 4 ; mv -f  ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD ; sleep 3 ; mkdir ${HTDOCS}/modulo_compilado ; chmod -R 777 ${HTDOCS}/modulo_compilado ; rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ && umount ${SERVER_VN_MODULO_COMPILADO}/ && rm -rf ${HTDOCS}/modulo_compilado_OLD && sleep 1 && echo -e "" ; echo -e "" ; echo -e 'Atualização do Modulo_Compilado concluída com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 2 ; veianew ;;
