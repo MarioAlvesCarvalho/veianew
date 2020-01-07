@@ -10,11 +10,9 @@ $manager/BKP_manager.sh &&
 sleep 5 &&
 rm $manager/BKP_manager.sh &&
 
-if umount MANAGER
-   umount $manager/  &&
-
-
-  sleep 2 &&
+#if umount MANAGER
+#   umount $manager/  &&
+sleep 2 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
