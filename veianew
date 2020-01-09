@@ -7,7 +7,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.0.32_BETA"
+export VERSION_VN="v5.0.33_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
@@ -33,6 +33,9 @@ export HTDOCS="${APACHE2}/htdocs"
 export MANAGER="${HTDOCS}/manager"
 export FTP_COMPLEMENTARES="200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
 export VEIANEW="${APACHE2}/VEIANEW"
+
+export MANAGER_USO=ls /usr/local/apache22/htdocs/*.zip.TEMP
+
 
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"
