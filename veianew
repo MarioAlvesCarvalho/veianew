@@ -8,7 +8,7 @@
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
 #export VERSION_VN="v5.1.0"
-export VERSION_VN="v5.0.38__BETA"
+export VERSION_VN="v5.0.39__BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
