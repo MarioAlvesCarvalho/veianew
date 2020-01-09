@@ -19,7 +19,9 @@ echo -e '5'
 sleep 2 &&
 
 echo -e '6'
-##cp ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${SERVER_VN_MODULOPHPPDV}/ &&
+cp ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${SERVER_VN_MODULOPHPPDV}/ &&
+
+echo -e '7'
 ##umount $SERVER_VN_MODULOPHPPDV/ &&
 
 ##comando real
