@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 20009
 
-sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
+##sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
 sleep 2 &&
 sudo php ${HTDOCS}/modulo_compilado/equalizar_pastas.php &&
 sudo zip -r ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${HTDOCS}/modulo_compilado/ &&
