@@ -7,12 +7,8 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-<<<<<<< HEAD
-#export VERSION_VN="v5.0.37"
+#export VERSION_VN="v5.1.0"
 export VERSION_VN="v5.0.38_BETA"
-=======
-export VERSION_VN="v5.0.36_BETA"
->>>>>>> master
 export LANG=pt_BR
 
 #Variavel de Cores
