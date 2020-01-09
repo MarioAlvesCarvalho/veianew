@@ -255,9 +255,7 @@ CASE="${CASE}
 
    01B) ${VEIANEW}/01B.sh ;;
    BKP) ${VEIANEW}/BKP.sh ;;
-   000BKP) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_manager.sh ${MANAGER}/BKP_manager.sh ; chmod -x ${MANAGER}/BKP_manager.sh && ${MANAGER}/BKP_manager.sh ; sleep 5 ; rm ${MANAGER}/BKP_manager.sh ; umount ${MANAGER}/ ; sleep 2 ; veianew ;;
    BKPMODULO) ${VEIANEW}/BKPMODULO.sh ;;
-   000BKPMODULO) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_moduloPHPPDV.sh ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; chmod -x ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh && ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; sleep 5 ; rm ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; umount ${SERVER_VN_MODULOPHPPDV}/ ; sleep 2 ; veianew ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos;;
 esac"
 
