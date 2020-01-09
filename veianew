@@ -7,7 +7,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.0.33_BETA"
+export VERSION_VN="v5.0.34_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
@@ -34,8 +34,15 @@ export MANAGER="${HTDOCS}/manager"
 export FTP_COMPLEMENTARES="200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
 export VEIANEW="${APACHE2}/VEIANEW"
 
-export MANAGER_USO=ls /usr/local/apache22/htdocs/*.zip.TEMP
+export DIR_BKP="${SERVER_VN_MANAGER}"
+export DESTINO_BKP="${SERVER_VN_MANAGER}"
+export DIR_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
+export DESTINO_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 
+export ANOMES=$(date +'%Y-%m')
+export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
+export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
+export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
 
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"
@@ -251,7 +258,7 @@ CASE="${CASE}
    00002) ${COMANDO4} && sleep 4 ; mv -f  ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD ; sleep 3 ; mkdir ${HTDOCS}/modulo_compilado ; chmod -R 777 ${HTDOCS}/modulo_compilado ; rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ && umount ${SERVER_VN_MODULO_COMPILADO}/ && rm -rf ${HTDOCS}/modulo_compilado_OLD && sleep 1 && echo -e "" ; echo -e "" ; echo -e 'Atualização do Modulo_Compilado concluída com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 2 ; veianew ;;
    01) ${VEIANEW}/01.sh ;;
    00) ${VEIANEW}/00.sh ;;
-   00000) umount ${SERVER_VN}/* && exit ;;
+
 
    009) ${VEIANEW}/009.sh ;;
    000009) wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip && unzip -oq ${VEIANEW}/master.zip && sudo cp -rf ${VEIANEW}/veianew-master/* ${VEIANEW}/ ;;
