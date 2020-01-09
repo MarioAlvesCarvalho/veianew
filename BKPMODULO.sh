@@ -9,7 +9,7 @@ export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
 $COMANDO2 &
 
 for ARQ_BKPMODULO in `find ${DIR_BKPMODULO}/*.zip -ctime +4 -exec ls -lt {} \; | awk '{print $9}' `; do
-ANOMES_ARQ_BKPMODULO=$(ls --full-time arq | awk '{print $6}' | cut -c1-7)
+ANOMES_ARQ_BKPMODULO=$(ls --full-time ARQ_BKPMODULO | awk '{print $6}' | cut -c1-7)
 
 if [ "${ANOMES}" = "${ANOMES_ARQ_BKPMODULO}" ]; then
 mkdir -p ${DESTINO_BKPMODULO}/${ANOMES}
