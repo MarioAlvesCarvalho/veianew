@@ -7,8 +7,8 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-#export VERSION_VN="v5.1.0"
-export VERSION_VN="v5.0.39__BETA"
+#export VERSION_VN="v5.2.0"
+export VERSION_VN="v5.0.40_BETA"
 export LANG=pt_BR
 
 #Variavel de Cores
@@ -40,10 +40,7 @@ export DESTINO_BKP="${SERVER_VN_MANAGER}"
 export DIR_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 export DESTINO_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 
-export ANOMES=$(date +'%Y-%m')
-export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
-export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
-export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
+
 
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"
@@ -98,20 +95,20 @@ atualizaSenha(){
 montar15(){
   ##SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
   SERVIDOR1='192.168.0.66/publico/qualidade/VERSOES/Manager'
-  COMANDO1="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR1} ${SERVER_VN_MANAGER}"
+  export COMANDO1="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR1} ${SERVER_VN_MANAGER}"
   ${COMANDO1}
 
   ##SERVIDOR2='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/moduloPHPPDV'
   SERVIDOR2='192.168.0.66/publico/qualidade/VERSOES/moduloPHPPDV'
-  COMANDO2="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR2} ${SERVER_VN_MODULOPHPPDV}"
+  export COMANDO2="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR2} ${SERVER_VN_MODULOPHPPDV}"
 
   ##SERVIDOR3='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew'
   SERVIDOR3='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew'
-  COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${SERVER_VN_SCRIPTS_VEIANEW}"
+  export COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${SERVER_VN_SCRIPTS_VEIANEW}"
 
   ##SERVIDOR4='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
   SERVIDOR4='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
-  COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${SERVER_VN_MODULO_COMPILADO}"
+  export COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${SERVER_VN_MODULO_COMPILADO}"
 
   return $?
 }
@@ -257,10 +254,9 @@ CASE="${CASE}
    00) ${VEIANEW}/00.sh ;;
 
    01B) ${VEIANEW}/01B.sh ;;
+   9999) ${VEIANEW}/9999.sh ;;
    BKP) ${VEIANEW}/BKP.sh ;;
-   000BKP) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_manager.sh ${MANAGER}/BKP_manager.sh ; chmod -x ${MANAGER}/BKP_manager.sh && ${MANAGER}/BKP_manager.sh ; sleep 5 ; rm ${MANAGER}/BKP_manager.sh ; umount ${MANAGER}/ ; sleep 2 ; veianew ;;
    BKPMODULO) ${VEIANEW}/BKPMODULO.sh ;;
-   000BKPMODULO) ${COMANDO1} ; ${COMANDO3}; sleep 3 &&  rsync -uv ${SERVER_VN_SCRIPTS_VEIANEW}/BKP_moduloPHPPDV.sh ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; chmod -x ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh && ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; sleep 5 ; rm ${SERVER_VN_MODULOPHPPDV}/BKP_moduloPHPPDV.sh ; umount ${SERVER_VN_MODULOPHPPDV}/ ; sleep 2 ; veianew ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos;;
 esac"
 
