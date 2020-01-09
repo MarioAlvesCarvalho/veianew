@@ -40,10 +40,7 @@ export DESTINO_BKP="${SERVER_VN_MANAGER}"
 export DIR_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 export DESTINO_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 
-export ANOMES=$(date +'%Y-%m')
-export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
-export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
-export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
+
 
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"

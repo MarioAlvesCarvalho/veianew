@@ -1,8 +1,13 @@
 #!/bin/bash
 #Data alteração 20009
 
+export ANOMES=$(date +'%Y-%m')
+export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
+export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
+export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
+
 $COMANDO1 &
-$COMANDO3 &
+$COMANDO2 &
 
 for ARQ_BKP in `find ${DIR_BKP}/*.zip -ctime +4 -exec ls -lt {} \; | awk '{print $9}' `; do
 ANOMES_ARQ_BKP=$(ls --full-time arq | awk '{print $6}' | cut -c1-7)
