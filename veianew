@@ -254,6 +254,7 @@ CASE="${CASE}
    00) ${VEIANEW}/00.sh ;;
 
    01B) ${VEIANEW}/01B.sh ;;
+   9999) ${VEIANEW}/9999.sh ;;
    BKP) ${VEIANEW}/BKP.sh ;;
    BKPMODULO) ${VEIANEW}/BKPMODULO.sh ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos;;

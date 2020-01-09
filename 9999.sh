@@ -9,7 +9,6 @@ echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  MA
 CASE='case $opt in'
 CASE="${CASE}
    01B) ${VEIANEW}/01B.sh ;;
-   9999) ${VEIANEW}/9999.sh ;;
    BKP) ${VEIANEW}/BKP.sh ;;
    BKPMODULO) ${VEIANEW}/BKPMODULO.sh ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos_manut;;
