@@ -7,7 +7,6 @@ export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
 export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
 
 $COMANDO1 &
-$COMANDO2 &
 
 for ARQ_BKP in `find ${DIR_BKP}/*.zip -ctime +4 -exec ls -lt {} \; | awk '{print $9}' `; do
 ANOMES_ARQ_BKP=$(ls --full-time arq | awk '{print $6}' | cut -c1-7)
@@ -18,7 +17,7 @@ mv -f -v ${ARQ_BKP} ${DESTINO_BKP}/${ANOMES}
 
 else
 if [ "${ANOMES_1}" = "${ANOMES_ARQ_BKP}" ]; then
-mkdir -p ${DESTINO_BKP}/${ANOMES_1}
+mkdir -p ${DESTINO_BKP}/${ANOMES_1}BKPMOD
 mv -f -v ${ARQ_BKP} ${DESTINO_BKP}/$ANOMES_1
 
 else

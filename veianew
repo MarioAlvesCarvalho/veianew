@@ -95,20 +95,20 @@ atualizaSenha(){
 montar15(){
   ##SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
   SERVIDOR1='192.168.0.66/publico/qualidade/VERSOES/Manager'
-  COMANDO1="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR1} ${SERVER_VN_MANAGER}"
+  export COMANDO1="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR1} ${SERVER_VN_MANAGER}"
   ${COMANDO1}
 
   ##SERVIDOR2='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/moduloPHPPDV'
   SERVIDOR2='192.168.0.66/publico/qualidade/VERSOES/moduloPHPPDV'
-  COMANDO2="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR2} ${SERVER_VN_MODULOPHPPDV}"
+  export COMANDO2="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR2} ${SERVER_VN_MODULOPHPPDV}"
 
   ##SERVIDOR3='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew'
   SERVIDOR3='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew'
-  COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${SERVER_VN_SCRIPTS_VEIANEW}"
+  export COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${SERVER_VN_SCRIPTS_VEIANEW}"
 
   ##SERVIDOR4='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
   SERVIDOR4='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
-  COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${SERVER_VN_MODULO_COMPILADO}"
+  export COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${SERVER_VN_MODULO_COMPILADO}"
 
   return $?
 }
