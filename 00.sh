@@ -20,8 +20,7 @@ echo 'inicio 1'
 i='0'
 while [ $i = '0' ]; do
   echo 'antes mountpoint'
-  mountpoint  ${SERVER_VN_MODULOPHPPDV}
-  if [$? == 0 ]
+  if [$(mountpoint  ${SERVER_VN_MODULOPHPPDV}) $? == 0 ]
   then
     echo 'esta montado, vamos desmontar. '
     umount ${SERVER_VN_MODULOPHPPDV}
