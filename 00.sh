@@ -5,7 +5,7 @@
 
 
 
-if [mountpoint  ${SERVER_VN_MODULOPHPPDV} | $? == 0 ]
+if ["mountpoint  ${SERVER_VN_MODULOPHPPDV}" | $? == 0 ]
   then
     echo 'esta montado, vamos desmontar. '
     umount ${SERVER_VN_MODULOPHPPDV}
