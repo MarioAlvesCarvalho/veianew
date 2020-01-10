@@ -4,6 +4,7 @@
 
 
 if [ 'mount | grep 192.168.0.66' -gt 0 ]
+then
     ##umount ${SERVER_VN}/*
     umount /Zanthus/Zeus/path_comum/0.66/*
 else
