@@ -1,10 +1,10 @@
 
 #!/bin/bash
 #Data alteração 20010
-#REV. 2
+#REV. 3
 
 mountpoint -q ${SERVER_VN_MODULOPHPPDV}
-if [$? == 1]
+if [$? == 0]
 then
     echo 'esta montado, vamos desmontar'
     umount ${SERVER_VN_MODULOPHPPDV}
