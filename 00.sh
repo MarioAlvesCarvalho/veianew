@@ -1,7 +1,7 @@
 
 #!/bin/bash
 #Data alteração 20010
-#REV. 1
+#REV. 2
 
 MOUNTPOINT_SERVER_VN_MODULOPHPPDV(){
 mountpoint -q ${SERVER_VN_MODULOPHPPDV}
@@ -12,7 +12,7 @@ if [ $? == 0 ]
   }
   MOUNTPOINT_SERVER_VN_MODULOPHPPDV
 else
-  echo'.'
+  echo 'caiu no else.'
 fi
 
 
