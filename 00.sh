@@ -4,14 +4,36 @@
 #REV. 2
 
 
+#i="10"
+#for i in +1
+#mountpoint  ${SERVER_VN_MODULOPHPPDV}
+#if [$? == 0 ]
+#  then
+#    echo 'esta montado, vamos desmontar. '
+#    umount ${SERVER_VN_MODULOPHPPDV}
+#else
+#  echo 'caiu no else.'
+#fi
 
-if [''mountpoint  ${SERVER_VN_MODULOPHPPDV}'' | $? == 0 ]
-  then
-    echo 'esta montado, vamos desmontar. '
-    umount ${SERVER_VN_MODULOPHPPDV}
-else
-  echo 'caiu no else.'
-fi
+
+
+i="0"
+until [ $i = "1" ]; do
+  mountpoint  ${SERVER_VN_MODULOPHPPDV}
+  if [$? == 0 ]
+    then
+      echo 'esta montado, vamos desmontar. '
+      umount ${SERVER_VN_MODULOPHPPDV}
+  else
+      expr $i +1
+  done
+
+
+
+
+
+
+
 
 
 #${SERVER_VN_MODULOPHPPDV}
