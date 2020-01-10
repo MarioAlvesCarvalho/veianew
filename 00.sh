@@ -3,14 +3,12 @@
 #REV. 1
 
 
-if [ 'mount | grep 192.168.0.66' -ne "0" ]
-then
-umount ${SERVER_VN}/* &&
+if [ 'mount | grep 192.168.0.66' -gt 0 ]
+    umount ${SERVER_VN}/* &&
+else
+  exit 
 fi
 
-
-
-#exit &
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
