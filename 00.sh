@@ -1,15 +1,22 @@
+
 #!/bin/bash
 #Data alteração 20010
 #REV. 1
 
-
-if [ -n 'mount | grep 192.168.0.66']
-then
-    ##umount ${SERVER_VN}/*
-    umount /Zanthus/Zeus/path_comum/0.66/*
-else
-  exit
+mountpoint -q ${SERVER_VN_MODULOPHPPDV}
+if [ $? == 0 ]
+  then
+    echo 'esta montado, vamos desmontar. '
+    umount ${SERVER_VN_MODULOPHPPDV}
+  else
 fi
+
+
+
+#${SERVER_VN_MODULOPHPPDV}
+#${SERVER_VN_SCRIPTS_VEIANEW}
+#${SERVER_VN_MODULO_COMPILADO}
+
 
 echo -e "" &&
 echo -e "" &&
