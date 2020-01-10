@@ -6,11 +6,11 @@
 mountpoint -q ${SERVER_VN_MODULOPHPPDV}
 if [$? == 0 ]
 then
-    echo 'esta montado, vamos desmontar. '
+    echo 'esta montado, vamos desmontar'
     umount ${SERVER_VN_MODULOPHPPDV}
 else
-    echo 'NAO montado, vamos sair. '
-  done
+    echo 'NAO montado, vamos sair'
+fi
 
 #${SERVER_VN_MODULOPHPPDV}
 #${SERVER_VN_SCRIPTS_VEIANEW}
