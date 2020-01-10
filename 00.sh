@@ -25,8 +25,8 @@ until [ $i = "1" ]; do
       echo 'esta montado, vamos desmontar. '
       umount ${SERVER_VN_MODULOPHPPDV}
   else
-      expr $i +1
-  done
+    i='expr $i + 1'
+done
 
 
 
