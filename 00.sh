@@ -17,8 +17,8 @@
 
 echo 'inicio 1'
 
-i='1'
-until [ $i = '1' ]; do
+i='0'
+while [ $i = '0' ]; do
   echo 'antes mountpoint'
   mountpoint  ${SERVER_VN_MODULOPHPPDV}
   if [$? == 0 ]
@@ -26,7 +26,7 @@ until [ $i = '1' ]; do
     echo 'esta montado, vamos desmontar. '
     umount ${SERVER_VN_MODULOPHPPDV}
   else
-    i='0'
+    i='1'
   fi
 done
 
