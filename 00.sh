@@ -1,7 +1,9 @@
 #!/bin/bash
-#Data alteração 20005
+#Data alteração 20010
 
 umount ${SERVER_VN}/* &&
+
+
 exit &
 echo -e "" &&
 echo -e "" &&
