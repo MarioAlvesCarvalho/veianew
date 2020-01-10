@@ -15,7 +15,7 @@
 #  echo 'caiu no else.'
 #fi
 
-
+echo 'inicio 1'
 
 i="0"
 until [ $i = "1" ]; do
