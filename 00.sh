@@ -17,7 +17,7 @@
 
 echo 'inicio 1'
 
-i='0'
+i='1'
 until [ $i = '1' ]; do
   echo 'antes mountpoint'
   mountpoint  ${SERVER_VN_MODULOPHPPDV}
@@ -26,7 +26,7 @@ until [ $i = '1' ]; do
     echo 'esta montado, vamos desmontar. '
     umount ${SERVER_VN_MODULOPHPPDV}
   else
-    i='expr $i + 1'
+    i='0'
   fi
 done
 
