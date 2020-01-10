@@ -17,15 +17,17 @@
 
 echo 'inicio 1'
 
-i="0"
-until [ $i = "1" ]; do
+i='0'
+until [ $i = '1' ]; do
+  echo 'antes mountpoint'
   mountpoint  ${SERVER_VN_MODULOPHPPDV}
   if [$? == 0 ]
-    then
-      echo 'esta montado, vamos desmontar. '
-      umount ${SERVER_VN_MODULOPHPPDV}
+  then
+    echo 'esta montado, vamos desmontar. '
+    umount ${SERVER_VN_MODULOPHPPDV}
   else
     i='expr $i + 1'
+  fi
 done
 
 
