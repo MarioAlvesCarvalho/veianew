@@ -5,6 +5,7 @@
 wget -N -v --tries=1 -P $VEIANEW https://github.com/MarioAlvesCarvalho/veianew/archive/BETA.zip
 chmod -R 777  $VEIANEW/BETA.zip
 chmod +x $VEIANEW/BETA.zip
+rm -rf $VEIANEW/*.sh
 unzip -oq $VEIANEW/BETA.zip -d $VEIANEW
 sudo cp -rf $VEIANEW/veianew-BETA/* $VEIANEW/
 sudo rm -rf $VEIANEW/BETA.zip
