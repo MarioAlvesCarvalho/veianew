@@ -3,9 +3,9 @@
 #Data alteração 20010
 #REV. 2
 
-MOUNTPOINT_SERVER_VN_MODULOPHPPDV()
+MOUNTPOINT_SERVER_VN_MODULOPHPPDV() {
 mountpoint  ${SERVER_VN_MODULOPHPPDV}
-if [ $? == 0 ]
+if [ $? == 0 ] }
   then
     echo 'esta montado, vamos desmontar. '
     umount ${SERVER_VN_MODULOPHPPDV}
