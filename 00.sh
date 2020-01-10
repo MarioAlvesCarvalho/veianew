@@ -18,16 +18,11 @@
 echo 'inicio 1'
 
 i='0'
-while [ $i = '0' ]; do
-  echo 'antes mountpoint'
-  if [$(mountpoint -q ${SERVER_VN_MODULOPHPPDV}) | $? == 0 ]
-  then
+while [$(mountpoint -q ${SERVER_VN_MODULOPHPPDV}) | $? == 0 ]
+  do
     echo 'esta montado, vamos desmontar. '
     umount ${SERVER_VN_MODULOPHPPDV}
-  else
-    i='1'
-  fi
-done
+  done
 
 
 
