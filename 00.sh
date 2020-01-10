@@ -3,7 +3,7 @@
 #Data alteração 20010
 #REV. 2
 
-mountpoint -q ${SERVER_VN_MODULOPHPPDV}
+mountpoint  ${SERVER_VN_MODULOPHPPDV}
 if [$? == 0 ]
 then
     echo 'esta montado, vamos desmontar'
