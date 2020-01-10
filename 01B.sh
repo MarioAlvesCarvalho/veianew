@@ -15,5 +15,5 @@ echo -e "" &&
 echo -e 'Atualização do veianew BETA concluida com sucesso!!!' &&
 echo -e "" &&
 echo -e "*****************" &&
-echo -e "Termino do 001.sh" &&
+echo -e "Termino do 01B.sh" &&
 echo -e "*****************" ;
