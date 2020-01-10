@@ -4,9 +4,9 @@
 
 
 if [ 'mount | grep 192.168.0.66' -gt 0 ]
-    umount ${SERVER_VN}/* &&
+    umount ${SERVER_VN}/* 
 else
-  exit 
+  exit
 fi
 
 echo -e "" &&
