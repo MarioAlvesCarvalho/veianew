@@ -3,8 +3,8 @@
 #Data alteração 20010
 #REV. 2
 
-mountpoint -q ${SERVER_VN_MODULOPHPPDV}
-if [$? == 0:42]
+
+if [$(mountpoint -q ${SERVER_VN_MODULOPHPPDV}) | $? == 0]
 then
     echo 'esta montado, vamos desmontar'
     umount ${SERVER_VN_MODULOPHPPDV}
