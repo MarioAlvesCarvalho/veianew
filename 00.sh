@@ -6,7 +6,7 @@
 if [ 'mount | grep 192.168.0.66' -ne "0" ]
 then
 umount ${SERVER_VN}/* &&
-  do
+fi
 
 
 
