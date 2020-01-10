@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20009
+#Data alteração 20010
 #REV. 1
 
 wget -N -v --tries=1 -P $VEIANEW https://github.com/MarioAlvesCarvalho/veianew/archive/BETA.zip
