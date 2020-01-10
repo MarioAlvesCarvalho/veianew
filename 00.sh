@@ -4,7 +4,7 @@
 #REV. 3
 
 mountpoint -q ${SERVER_VN_MODULOPHPPDV}
-if [$? == 0]
+if [ $? == 0 ]
 then
     echo 'esta montado, vamos desmontar'
     umount ${SERVER_VN_MODULOPHPPDV}
