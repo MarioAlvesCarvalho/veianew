@@ -168,15 +168,6 @@ newname=$(basename ${arquivo} ZIP)zip
 mv ${arquivo} ${newname}
 done
 
- ${COMANDO2}
- cd  ${SERVER_VN_MODULOPHPPDV}
- for arquivo in *.zip.TEMP.zip
- do
- newname=$(basename ${arquivo} zip.TEMP.zip)zip
- mv ${arquivo} ${newname}
- done
- sleep 1 && umount ${SERVER_VN_MODULOPHPPDV}
-
 cd ${HTDOCS}/
 
 chown root.root ${HTDOCS}/*
