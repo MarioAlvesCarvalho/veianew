@@ -9,7 +9,7 @@ echo '..'
 sudo php ${HTDOCS}/modulo_compilado/equalizar_pastas.php &&
 
 echo '...'
-sudo zip -r ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${HTDOCS}/modulo_compilado/ &&
+sudo zip -r ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${HTDOCS}/modulo_compilado/* &&
 
 echo '... .'
 umount $SERVER_VN_MODULOPHPPDV/
