@@ -2,16 +2,13 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 09/01/2020          ###
+###          DATE 05/01/2020          ###
 #########################################
+#############MCARVALHO###################
+#############RAZARIAS####################
 #Variaveis de Versao e idioma
-<<<<<<< HEAD
-#export VERSION_VN="v5.2.0"
-export VERSION_VN="v5.2.41_BETA"
-=======
 export VERSION_VN="v5.2.0"
 #export VERSION_VN="v5.2.40_BETA"
->>>>>>> master
 export LANG=pt_BR
 
 #Variavel de Cores
@@ -170,15 +167,6 @@ do
 newname=$(basename ${arquivo} ZIP)zip
 mv ${arquivo} ${newname}
 done
-
- ${COMANDO2}
- cd  ${SERVER_VN_MODULOPHPPDV}
- for arquivo in *.zip.TEMP.zip
- do
- newname=$(basename ${arquivo} zip.TEMP.zip)zip
- mv ${arquivo} ${newname}
- done
- sleep 1 && umount ${SERVER_VN_MODULOPHPPDV}
 
 cd ${HTDOCS}/
 
