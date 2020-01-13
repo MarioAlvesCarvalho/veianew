@@ -24,7 +24,7 @@ sleep 2 &&
 echo '... ...'
 cp ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${SERVER_VN_MODULOPHPPDV}/ &&
 
-# renomeando de .zip.TEMP.zip para .zip
+# renomeando no SERVER_VN_MODULOPHPPDV de .zip.TEMP.zip para .zip
 echo '... ... .'
 cd  ${SERVER_VN_MODULOPHPPDV}
 for arquivo in *.zip.TEMP.zip
@@ -33,7 +33,7 @@ newname=$(basename ${arquivo} zip.TEMP.zip)zip
 mv ${arquivo} ${newname}
 done
 
-# renomeando de .zip.TEMP.zip para .zip
+# renomeando no PATH_COMUM de .zip.TEMP.zip para .zip
 echo '... ... ..'
 cd  ${PATH_COMUM}/moduloPHPPDV/
 for arquivo in *.zip.TEMP.zip
