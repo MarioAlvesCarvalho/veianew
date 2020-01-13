@@ -12,6 +12,10 @@ echo '...'
 sudo zip -r ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${HTDOCS}/modulo_compilado/ &&
 
 echo '... .'
+umount $SERVER_VN_MODULOPHPPDV/
+umount $SERVER_VN_MODULOPHPPDV/
+umount $SERVER_VN_MODULOPHPPDV/
+umount $SERVER_VN_MODULOPHPPDV/
 ${COMANDO2} &&
 
 echo '... ..'
