@@ -29,10 +29,19 @@ newname=$(basename ${arquivo} zip.TEMP.zip)zip
 mv ${arquivo} ${newname}
 done
 
+# renomeando de .zip.TEMP.zip para .zip
 echo '... ... ..'
-sleep 1 &&
+cd  ${PATH_COMUM}/moduloPHPPDV/
+for arquivo in *.zip.TEMP.zip
+do
+newname=$(basename ${arquivo} zip.TEMP.zip)zip
+mv ${arquivo} ${newname}
+done
 
 echo '... ... ...'
+sleep 1 &&
+
+echo '... ... ... .'
 umount $SERVER_VN_MODULOPHPPDV/ &&
 
 echo '.   .'
