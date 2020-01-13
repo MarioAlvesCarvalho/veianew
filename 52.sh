@@ -1,5 +1,6 @@
 #!/bin/bash
-#Data alteração 20009
+#Data alteração 20013
+#REV. 1
 
 ##sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
 echo '.'
