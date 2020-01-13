@@ -2,12 +2,24 @@
 #Data alteração 20009
 
 ##sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
+echo '1'
 sleep 2 &&
+
+echo '2'
 sudo php ${HTDOCS}/modulo_compilado/equalizar_pastas.php &&
+
+echo '3'
 sudo zip -r ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${HTDOCS}/modulo_compilado/ &&
+
+echo '4'
 ${COMANDO2} &&
+echo '5'
 sleep 2 &&
+
+echo '6'
 cp ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${SERVER_VN_MODULOPHPPDV}/ &&
+
+echo '7'
 umount $SERVER_VN_MODULOPHPPDV/ &&
 
 ##comando real
