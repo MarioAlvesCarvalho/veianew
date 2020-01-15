@@ -1,13 +1,14 @@
 #!/bin/bash
-#Data alteração 20013
-#REV. 1
+#Data alteração 20015
+#REV. 2
 
 ##sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
 echo '.'
 sleep 2 &&
 
 echo '..'
-sudo php ${HTDOCS}/modulo_compilado/equalizar_pastas.php &&
+cd ${HTDOCS}/modulo_compilado/
+sudo php equalizar_pastas.php &&
 
 echo '...'
 cd ${HTDOCS}/modulo_compilado/
