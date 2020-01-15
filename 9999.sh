@@ -43,5 +43,4 @@ echo -e "" &&
 echo -e "" &&
 echo -e "****************" &&
 echo -e "Termino do 99.sh" &&
-echo -e "****************" &&
-veianew ;
+echo -e "****************" ;
