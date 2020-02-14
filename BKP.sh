@@ -1,5 +1,7 @@
 #!/bin/bash
-#Data alteração 20009
+#Data alteração 20045
+
+chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 export ANOMES=$(date +'%Y-%m')
 export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
