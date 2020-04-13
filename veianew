@@ -2,12 +2,12 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 03/04/2020          ###
+###          DATE 13/04/2020          ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.5.2"
+export VERSION_VN="v5.5.3"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -225,7 +225,7 @@ CASE="${CASE}
    56) cp -rf ${HTDOCS}/ZMWSInfo_COMLOGFULL.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 && veianew ;;
    55) cp -rf ${MANAGER}/certificados/* ${HTDOCS}/certificados/ ; sleep 1 && veianew ;;
    54) sudo find ${MANAGER}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${MANAGER}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
-   53) sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
+   53) sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; rm -rf /tmp/php_errors.log ; sleep 1 && veianew ;;
    52) ${VEIANEW}/52.sh ;;
 
    51) sudo touch /tmp/__check_js_errors.zan /tmp/__consultoria__.zan && chmod 755 /tmp/__check_js_errors.zan /tmp/__consultoria__.zan ; sleep 1 ; veianew ;;
