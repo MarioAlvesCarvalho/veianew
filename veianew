@@ -85,13 +85,13 @@ fi
 if [ -e "${VEIANEW}/history.vnw" ] ; then
 sleep 0 &
 else
-echo '' > "${VEIANEW}/history.vnw" & chmod 777 "${VEIANEW}/history.vnw" &
+echo ' ' > "${VEIANEW}/history.vnw" & chmod 777 "${VEIANEW}/history.vnw" &
 fi
 
 if [ -e "${VEIANEW}/history_all.vnw" ] ; then
 sleep 0 &
 else
-echo '' > "${VEIANEW}/history_all.vnw" & chmod 777 "${VEIANEW}/history_all.vnw" &
+echo ' ' > "${VEIANEW}/history_all.vnw" & chmod 777 "${VEIANEW}/history_all.vnw" &
 fi
 
 
