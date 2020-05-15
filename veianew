@@ -2,12 +2,12 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 13/04/2020          ###
+###          DATE 15/05/2020          ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.5.3"
+export VERSION_VN="v5.5.4"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -81,6 +81,20 @@ umount "${PATH_COMUM}"
 else
 mkdir "${PATH_COMUM}" & chmod 777 "${PATH_COMUM}" &
 fi
+
+if [ -e "${VEIANEW}/history.vnw" ] ; then
+sleep 0 &
+else
+> "${VEIANEW}/history.vnw" & chmod 777 "${VEIANEW}/history.vnw" &
+fi
+
+if [ -e "${VEIANEW}/history_all.vnw" ] ; then
+sleep 0 &
+else
+> "${VEIANEW}/history_all.vnw" & chmod 777 "${VEIANEW}/history_all.vnw" &
+fi
+
+
 
 # rsantos INICIO
 atualizaSenha(){
@@ -198,6 +212,7 @@ do
 done
 
 CASE="${CASE}
+
    99) ${VEIANEW}/99.sh ;;
    98) ${APACHE2}/bin/apachectl stop ; sleep 1 && veianew ;;
    97) ${APACHE2}/bin/apachectl stop & ${APACHE2}/bin/apachectl start ; sleep 1 && veianew ;;
@@ -278,8 +293,16 @@ echo -e "#\t\b\b\b\b50    ATIVAR 'DEBUG_CLAZ'                                   
 echo -e "#\t\b\b\b\b49    DESATIVAR INSPEC_ELEMENTO CHECK_JS DEBUG_CLAZ         01    ATUALIZAR VEIANEW"
 echo -e "#\t\b\b\b\b48    PERMISSÃO DIRETORIO 'ARQUIVOS'                        00    SAIR"
 echo -e "#\t\b\b\b\b                                                                              ${Cor_FundoCinza} ${Cor_Vermelho} ${VERSION_VN} ${Cor_Preto}"
-echo -ne "#${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "
+echo -ne "#${Cor_Amarelo}"
+sed ':a;$!N;s/\n//;ta;' ${VEIANEW}/history.vnw
+
+echo -ne "${Cor_VerdeClaro}#   INFORME A OPÇÃO DESEJADA: "
 read -p "" opt
+
+sed -i '1 i'${opt}'  ' ${VEIANEW}/history_all.vnw
+sed -n '1,7p' ${VEIANEW}/history_all.vnw > ${VEIANEW}/history.vnw
+sed -i '1s/^/           HISTORICO DE USO: /' ${VEIANEW}/history.vnw
+
 echo -e "${Cor_Preto}"
 eval "${CASE}"
 
