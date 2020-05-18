@@ -298,7 +298,7 @@ echo -e "#\t\b\b\b\b                                                            
 echo -ne "#${Cor_Amarelo}"
 sed ':a;$!N;s/\n//;ta;' ${VEIANEW}/history.vnw
 
-echo -ne "#${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "
+echo -ne "${Cor_Preto}#${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "
 read -p "" opt
 
 sed -i '1 i'${opt}'  ' ${VEIANEW}/history_all.vnw
