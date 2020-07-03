@@ -7,7 +7,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.5.6"
+export VERSION_VN="v5.5.7"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -286,7 +286,7 @@ echo -e "#\t\b\b\b\b599   LIMPAR PACOTES MANAGER DO 'HTDOCS'"
 echo -e "#\t\b\b\b\b58    ZMWSInfo COM LOG"
 echo -e "#\t\b\b\b\b57    ZMWSInfo SEM LOG"
 echo -e "#\t\b\b\b\b56    ZMWSInfo COM LOG FULL                                 08    RESERVADO!!!"
-echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                              07    RESERVADO!!!"
+echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                              07    ZERA CONTEUDO ZEUSMANAGER.ZLG DO DIA"
 echo -e "#\t\b\b\b\b54    LIMPAR LOGS ../MANAGER                                06    WGET BIBLIOTECAS FTP > PATH_COMUM"
 echo -e "#\t\b\b\b\b53    LIMPAR LOGS ../HTDOCS                                 05    FORCE UMOUNT"
 echo -e "#\t\b\b\b\b52    GERAR MODULOPHPPDV                                    04    REINICIAR MEMCACHED"

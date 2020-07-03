@@ -1,7 +1,7 @@
 #!/bin/bash
-#Data alteração 20009
+#Data alteração 20185
 
-echo -e "RESERVADO!!!" &&
+echo " " > /web/manager/Logs/`date +%Y%m%d`/zeusmanager.zlg &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
