@@ -2,12 +2,12 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 15/05/2020          ###
+###          DATE 28/08/2020          ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.5.7"
+export VERSION_VN="v5.5.8"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
