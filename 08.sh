@@ -7,7 +7,6 @@ sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
-echo -e "" &&
 echo -e "****************" &&
 echo -e "Termino do 08.sh" &&
 echo -e "****************"
