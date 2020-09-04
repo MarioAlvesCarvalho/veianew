@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #Data alteração 20185
 

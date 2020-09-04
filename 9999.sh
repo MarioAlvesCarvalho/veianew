@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20009
+#Data alteração 20248
 
 ListaArquivos_manut(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
@@ -19,9 +19,7 @@ echo -e ""
 #echo -e "\t\t***** MANUTENCAO *****"
 echo -e ""
 echo -e "#\t\b\b\b\b01B          ATUALIZAR VEIANEW BETA"
-echo -e "#\t\b\b\b\b599          LIMPAR PACOTES MANAGER DO 'HTDOCS'"
 echo -e "#\t\b\b\b\bBKP          BKP MANAGER +7 DIAS NO SERVIDOR"
-echo -e "#\t\b\b\b\bBKPMODULO    BKP MODULOPHPPDV +7 DIAS NO SERVIDOR"
 echo -e "#\t\b\b\b\b00           SAIR"
 echo -e "#\t\b\b\b\b                                                                              ${Cor_FundoCinza} ${Cor_Vermelho} ${VERSION_VN} ${Cor_Preto}"
 echo -ne "#${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "

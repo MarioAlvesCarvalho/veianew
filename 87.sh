@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20005
+#Data alteração 20248
 
 php $MANAGER/servico/servicolinux.php5 stop &&
 pkill -9 php &&

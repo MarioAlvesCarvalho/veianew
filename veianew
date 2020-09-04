@@ -216,12 +216,12 @@ done
 CASE="${CASE}
 
    99) ${VEIANEW}/99.sh ;;
-   98) ${APACHE2}/bin/apachectl stop ; sleep 1 && veianew ;;
-   97) ${APACHE2}/bin/apachectl stop & ${APACHE2}/bin/apachectl start ; sleep 1 && veianew ;;
+   98) ${VEIANEW}/98.sh ;;
+   97) ${VEIANEW}/97.sh ;;
 
-   89) php ${MANAGER}/servico/servicolinux.php5 start ; sleep 1 && veianew ;;
-   88) php ${MANAGER}/servico/servicolinux.php5 stop ; pkill -9 php ; sleep 1 && veianew ;;
-   87) php ${MANAGER}/servico/servicolinux.php5 stop ; pkill -9 php && php ${MANAGER}/servico/servicolinux.php5 start ; sleep 1 && veianew ;;
+   89) ${VEIANEW}/89.sh ;;
+   88) ${VEIANEW}/88.sh ;;
+   87) ${VEIANEW}/87.sh ;;
 
    79) node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).zlg & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
    78) pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 1 && veianew ;;
@@ -257,14 +257,12 @@ CASE="${CASE}
    04) ${VEIANEW}/04.sh ;;
    03) ${VEIANEW}/03.sh ;;
    02) ${VEIANEW}/02.sh ;;
-   00002) ${COMANDO4} && sleep 4 ; mv -f  ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD ; sleep 3 ; mkdir ${HTDOCS}/modulo_compilado ; chmod -R 777 ${HTDOCS}/modulo_compilado ; rsync -ravzpt ${SERVER_VN_MODULO_COMPILADO}/* ${HTDOCS}/modulo_compilado/ && umount ${SERVER_VN_MODULO_COMPILADO}/ && rm -rf ${HTDOCS}/modulo_compilado_OLD && sleep 1 && echo -e "" ; echo -e "" ; echo -e 'Atualização do Modulo_Compilado concluída com sucesso!!!' ; echo -e "" ; echo -e "" ; sleep 2 ; veianew ;;
    01) ${VEIANEW}/01.sh ;;
    00) ${VEIANEW}/00.sh ;;
 
    01B) ${VEIANEW}/01B.sh ;;
    9999) ${VEIANEW}/9999.sh ;;
    BKP) ${VEIANEW}/BKP.sh ;;
-   BKPMODULO) ${VEIANEW}/BKPMODULO.sh ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos;;
 esac"
 
