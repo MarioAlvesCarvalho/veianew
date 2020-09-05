@@ -1,14 +1,14 @@
 #!/bin/bash
 #Data alteração 20249
 
-$APACHE2/bin/apachectl start &&
-mkdir ${MANAGER}/Logs &&
-chown -R zanthus.zanthus ${MANAGER}/Logs/ &&
+pkill node* &
+sleep 1 &
+echo -e NODE ENCERRADO ;
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
 echo -e "****************" &&
-echo -e "Termino do 99.sh" &&
+echo -e "Termino do 78.sh" &&
 echo -e "****************" &&
 veianew ;

@@ -1,14 +1,12 @@
 #!/bin/bash
 #Data alteração 20249
 
-$APACHE2/bin/apachectl start &&
-mkdir ${MANAGER}/Logs &&
-chown -R zanthus.zanthus ${MANAGER}/Logs/ &&
+rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan &
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
 echo -e "****************" &&
-echo -e "Termino do 99.sh" &&
+echo -e "Termino do 49.sh" &&
 echo -e "****************" &&
 veianew ;

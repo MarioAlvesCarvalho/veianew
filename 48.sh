@@ -1,14 +1,13 @@
 #!/bin/bash
 #Data alteração 20249
 
-$APACHE2/bin/apachectl start &&
-mkdir ${MANAGER}/Logs &&
-chown -R zanthus.zanthus ${MANAGER}/Logs/ &&
+sudo chmod -R 777 ${MANAGER}/Arquivos/* &&
+chown -R root.root ${MANAGER}/Arquivos/* &
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
 echo -e "****************" &&
-echo -e "Termino do 99.sh" &&
+echo -e "Termino do 48.sh" &&
 echo -e "****************" &&
 veianew ;

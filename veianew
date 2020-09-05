@@ -210,6 +210,8 @@ do
     echo -e "#\t\b\b\b\b$i    ${arq}"
     CASE="${CASE}
    $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} && unzip -oq ${MANAGER}/\"${arq}\" -d ${MANAGER} && touch ${HTDOCS}/\"${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chown -R zanthus.zanthus ${MANAGER}/Logs/ ; sleep 1 ;;"
+  ## $i) ${VEIANEW}/exrair.sh ;;
+
     i=$((i+1))
 done
 
@@ -223,32 +225,31 @@ CASE="${CASE}
    88) ${VEIANEW}/88.sh ;;
    87) ${VEIANEW}/87.sh ;;
 
-   79) node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).zlg & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
-   78) pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 1 && veianew ;;
-   77) pkill node* & sleep 1 && echo -e NODE ENCERRADO &&  node ${HTDOCS}/comet_zanthus/src/server-chat.js & sleep 2 && echo -e NODE REINICIADO ; sleep 1 && veianew ;;
+   79) ${VEIANEW}/79.sh ;;
+   78) ${VEIANEW}/78.sh ;;
+   77) ${VEIANEW}/77.sh ;;
 
-   69) php ${MANAGER}/servico/servicolinux.php5 start ; ${APACHE2}/bin/apachectl start ; sleep 1 && veianew ;;
-   68) sudo php ${MANAGER}/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo ${APACHE2}/bin/apachectl stop ; sleep 1 && veianew ;;
-   67) php ${MANAGER}/servico/servicolinux.php5 stop ; pkill -9 php && ${APACHE2}/bin/apachectl stop && php ${MANAGER}/servico/servicolinux.php5 start && ${APACHE2}/bin/apachectl start ; sleep 1 && veianew ;;
+   69) ${VEIANEW}/69.sh ;;
+   68) ${VEIANEW}/68.sh ;;
+   67) ${VEIANEW}/67.sh ;;
 
-   66) ${APACHE2}/bin/apachectl start ; sleep 1; php ${MANAGER}/servico/servicolinux.php5 start ; node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
-   65) sudo php ${MANAGER}/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo ${APACHE2}/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 1 && veianew ;;
-   64) sudo php ${MANAGER}/servico/servicolinux.php5 stop ; sudo pkill -9 php ; sudo ${APACHE2}/bin/apachectl stop ; pkill node* & sleep 1 && echo -e NODE ENCERRADO ; sleep 2 ; ${APACHE2}/bin/apachectl start ; sleep 1; php ${MANAGER}/servico/servicolinux.php5 start ; node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 & sleep 2 && echo -e NODE INICIADO ; sleep 1 && veianew ;;
+   66) ${VEIANEW}/66.sh ;;
+   65) ${VEIANEW}/65.sh ;;
+   64) ${VEIANEW}/64.sh ;;
 
-   59) rm -rf ${MANAGER}/* && rm -rf ${HTDOCS}/*.zip.TEMP; cp -rf ${HTDOCS}/certificados ${MANAGER}/ && cp -rf ${HTDOCS}/ZMWSInfo_COMLOG.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 && veianew ;;
-   599) rm -rf ${HTDOCS}/php_*.zip && sleep 1 && veianew ;;
-   58) cp -rf ${HTDOCS}/ZMWSInfo_COMLOG.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 ; veianew ;;
-   57) cp -rf ${HTDOCS}/ZMWSInfo_SEMLOG.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 ; veianew ;;
-   56) cp -rf ${HTDOCS}/ZMWSInfo_COMLOGFULL.* ${MANAGER}/ZMWSInfo.ini ; sleep 1 && veianew ;;
-   55) cp -rf ${MANAGER}/certificados/* ${HTDOCS}/certificados/ ; sleep 1 && veianew ;;
-   54) sudo find ${MANAGER}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${MANAGER}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; sleep 1 && veianew ;;
-   53) sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; ; sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; ; rm -rf /tmp/php_errors.log ; sleep 1 && veianew ;;
+   59) ${VEIANEW}/59.sh ;;
+   599) ${VEIANEW}/599.sh ;;
+   58) ${VEIANEW}/58.sh ;;
+   57) ${VEIANEW}/57.sh ;;
+   56) ${VEIANEW}/56.sh ;;
+   55) ${VEIANEW}/55.sh ;;
+   54) ${VEIANEW}/54.sh ;;
+   53) ${VEIANEW}/53.sh ;;
    52) ${VEIANEW}/52.sh ;;
-
-   51) sudo touch /tmp/__check_js_errors.zan /tmp/__consultoria__.zan && chmod 755 /tmp/__check_js_errors.zan /tmp/__consultoria__.zan ; sleep 1 ; veianew ;;
-   50) sudo touch /tmp/__debug_claz.zan && chmod 755 /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
-   49) rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan ; sleep 1 ; veianew ;;
-   48) sudo chmod -R 777 ${MANAGER}/Arquivos/* &&  chown -R root.root ${MANAGER}/Arquivos/*  ; sleep 1 ; veianew ;;
+   51) ${VEIANEW}/51.sh ;;
+   50) ${VEIANEW}/50.sh ;;
+   49) ${VEIANEW}/49.sh ;;
+   48) ${VEIANEW}/48.sh ;;
 
    08) ${VEIANEW}/08.sh ;;
    07) ${VEIANEW}/07.sh ;;

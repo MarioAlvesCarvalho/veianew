@@ -1,14 +1,13 @@
 #!/bin/bash
 #Data alteração 20249
 
-$APACHE2/bin/apachectl start &&
-mkdir ${MANAGER}/Logs &&
-chown -R zanthus.zanthus ${MANAGER}/Logs/ &&
+php ${MANAGER}/servico/servicolinux.php5 start &
+${APACHE2}/bin/apachectl start &
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
 echo -e "****************" &&
-echo -e "Termino do 99.sh" &&
+echo -e "Termino do 69.sh" &&
 echo -e "****************" &&
 veianew ;
