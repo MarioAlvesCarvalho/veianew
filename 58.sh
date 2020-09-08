@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 20249
 
-cp -rf ${HTDOCS}/ZMWSInfo_COMLOG.* ${MANAGER}/ZMWSInfo.ini &
+cp -rf ${HTDOCS}/ZMWSInfo_COMLOG.* ${MANAGER}/ZMWSInfo.ini &&
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
