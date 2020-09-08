@@ -2,6 +2,7 @@
 #Data alteração 20005
 
 php ${MANAGER}/servico/servicolinux.php5 start &&
+chown -R zanthus.zanthus ${MANAGER}/Logs/ &&
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&

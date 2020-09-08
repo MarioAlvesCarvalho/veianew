@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 sudo php ${MANAGER}/servico/servicolinux.php5 stop &
 sudo pkill -9 php &
@@ -12,6 +12,7 @@ ${APACHE2}/bin/apachectl start &
 sleep 1 &
 php ${MANAGER}/servico/servicolinux.php5 start &
 node ${HTDOCS}/comet_zanthus/src/server-chat.js >> ${HTDOCS}/comet_zanthus/LOGS_NODE_$(date +%d%m%y).ZL1 &
+chown -R zanthus.zanthus ${MANAGER}/Logs/ &&
 sleep 2 &&
 echo -e NODE INICIADO &
 sleep 1 &&
