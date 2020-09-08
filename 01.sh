@@ -4,9 +4,7 @@
 wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip &&
 chmod -R 777  ${VEIANEW}/master.zip &&
 chmod +x ${VEIANEW}/master.zip &&
-echo -e "vai fazer o unzip" &&
 unzip -oq ${VEIANEW}/master.zip -d ${VEIANEW} &&
-echo -e "FEZ o unzip" &&
 sudo cp -rf ${VEIANEW}/veianew-master/* ${VEIANEW}/ &&
 sudo rm -rf ${VEIANEW}/master.zip &&
 sudo rm -rf ${VEIANEW}/veianew-master &&
