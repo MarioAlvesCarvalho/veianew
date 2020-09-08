@@ -9,6 +9,7 @@ sudo cp -rf $VEIANEW/veianew-master/* $VEIANEW/ &&
 sudo rm -rf $VEIANEW/master.zip &&
 sudo rm -rf $VEIANEW/veianew-master &&
 sudo chmod 775 $VEIANEW/*.sh &&
+sudo chown root.root $VEIANEW/*.sh &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
