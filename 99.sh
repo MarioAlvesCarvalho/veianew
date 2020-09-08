@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 sleep 3 &&
 echo -e "INICIO DO 99.sh" &&
 ${APACHE2}/bin/apachectl start &&

@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; &
 sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; &

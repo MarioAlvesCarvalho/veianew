@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 sudo touch /tmp/__debug_claz.zan &&
 chmod 755 /tmp/__debug_claz.zan &

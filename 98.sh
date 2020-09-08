@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 20005
 
-$APACHE2/bin/apachectl stop &&
+${APACHE2}/bin/apachectl stop &&
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&

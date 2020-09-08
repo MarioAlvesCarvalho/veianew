@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20248
+#Data alteração 20252
 
 chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 

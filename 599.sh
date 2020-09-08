@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 rm -rf ${HTDOCS}/php_*.zip &&
 sleep 1 &&

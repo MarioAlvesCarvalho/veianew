@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 sudo find ${MANAGER}/ -iname '*.zlg' -exec rm -rf {} \; &
 sudo find ${MANAGER}/ -iname 'mirage_*.log' -exec rm -rf {} \; &

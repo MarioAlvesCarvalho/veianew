@@ -1,8 +1,8 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 sudo chmod -R 777 ${MANAGER}/Arquivos/* &&
-chown -R root.root ${MANAGER}/Arquivos/* &
+chown -R root.root ${MANAGER}/Arquivos/* &&
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&

@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20248
+#Data alteração 20252
 
 ListaArquivos_manut(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
@@ -10,7 +10,6 @@ CASE='case $opt in'
 CASE="${CASE}
    01B) ${VEIANEW}/01B.sh ;;
    BKP) ${VEIANEW}/BKP.sh ;;
-   BKPMODULO) ${VEIANEW}/BKPMODULO.sh ;;
    00)  ${VEIANEW}/00.sh ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos_manut;;
 esac"

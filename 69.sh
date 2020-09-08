@@ -1,9 +1,8 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
-php ${MANAGER}/servico/servicolinux.php5 start &
-${APACHE2}/bin/apachectl start &
-sleep 1 &&
+php ${MANAGER}/servico/servicolinux.php5 start &&
+${APACHE2}/bin/apachectl start && sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&

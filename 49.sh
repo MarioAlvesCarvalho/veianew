@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 rm -rf /tmp/__check_js_errors.zan  /tmp/__consultoria__.zan /tmp/__debug_claz.zan &
 sleep 1 &&

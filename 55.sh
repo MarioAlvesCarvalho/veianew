@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 cp -rf ${MANAGER}/certificados/* ${HTDOCS}/certificados/ &
 sleep 1 &&

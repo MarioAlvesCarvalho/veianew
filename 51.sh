@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20252
 
 sudo touch /tmp/__check_js_errors.zan /tmp/__consultoria__.zan &&
 chmod 755 /tmp/__check_js_errors.zan /tmp/__consultoria__.zan &
