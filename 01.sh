@@ -5,10 +5,11 @@ wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew
 chmod -R 777 ${VEIANEW}/master.zip &&
 chmod +x ${VEIANEW}/master.zip &&
 unzip -oq ${VEIANEW}/master.zip -d ${VEIANEW} &&
+sudo rm -rf ${VEIANEW}/*.sh &&
 sudo cp -rf ${VEIANEW}/veianew-master/* ${VEIANEW}/ &&
+sudo chmod 775 ${VEIANEW}/*.sh ${VEIANEW}/*.vnw &&
+sudo chown root.root ${VEIANEW}/*.sh ${VEIANEW}/*vnw &&
 sudo rm -rf ${VEIANEW}/master.zip ${VEIANEW}/veianew-master &&
-sudo chmod 775 ${VEIANEW}/*.sh &&
-sudo chown root.root ${VEIANEW}/*.sh &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
