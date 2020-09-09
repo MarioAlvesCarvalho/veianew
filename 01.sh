@@ -2,14 +2,23 @@
 #Data alteração 20253
 
 wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip &&
+sleep 1 &&
 chmod -R 777 ${VEIANEW}/master.zip &&
+sleep 1 &&
 chmod +x ${VEIANEW}/master.zip &&
+sleep 1 &&
 unzip -oq ${VEIANEW}/master.zip -d ${VEIANEW} &&
+sleep 1 &&
 sudo rm -rf ${VEIANEW}/*.sh &&
+sleep 1 &&
 sudo cp -rf ${VEIANEW}/veianew-master/* ${VEIANEW}/ &&
+sleep 1 &&
 sudo chmod 775 ${VEIANEW}/*.sh ${VEIANEW}/*.vnw &&
+sleep 1 &&
 sudo chown root.root ${VEIANEW}/*.sh ${VEIANEW}/*vnw &&
+sleep 1 &&
 sudo rm -rf ${VEIANEW}/master.zip ${VEIANEW}/veianew-master &&
+sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
