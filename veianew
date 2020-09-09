@@ -2,13 +2,13 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 08/09/2020          ###
+###          DATE 09/09/2020          ###
 ###              20253                ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.6.3"
+export VERSION_VN="v5.6.4"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -168,16 +168,9 @@ ${COMANDO3}
 IP=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
 echo -e "${HOSTNAME}" "   -   " "${IP}" "   -   " "$(date +%d/%m/%y__%H:%M:%S)" "   -   " "${VERSION_VN}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVN/${HOSTNAME}.VNL;
 
-echo -e "."
-sleep 1
-echo -e ".."
-sleep 1
-echo -e "..."
-sleep 1
-echo -e "...."
-sleep 1
-echo -e "....."
-sleep 1
+sleep 0
+echo -e "Carregando..."
+sleep 2
 
 umount ${SERVER_VN_SCRIPTS_VEIANEW}
 
