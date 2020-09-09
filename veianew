@@ -168,7 +168,16 @@ ${COMANDO3}
 IP=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
 echo -e "${HOSTNAME}" "   -   " "${IP}" "   -   " "$(date +%d/%m/%y__%H:%M:%S)" "   -   " "${VERSION_VN}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVN/${HOSTNAME}.VNL;
 
-sleep 1
+echo -e "."
+sleep 0
+echo -e ".."
+sleep 0
+echo -e "..."
+sleep 0
+echo -e "...."
+sleep 0
+echo -e "....."
+##sleep 1
 
 umount ${SERVER_VN_SCRIPTS_VEIANEW}
 
