@@ -177,7 +177,7 @@ sleep 0
 echo -e "...."
 sleep 0
 echo -e "....."
-##sleep 1
+sleep 1
 
 umount ${SERVER_VN_SCRIPTS_VEIANEW}
 
