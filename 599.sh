@@ -1,12 +1,12 @@
 #!/bin/bash
-#Data alteração 20253
+#Data alteração 20252
 
-${APACHE2}/bin/apachectl stop &
+rm -rf ${HTDOCS}/php_*.zip &&
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
 echo -e "****************" &&
-echo -e "Termino do 98.sh" &&
+echo -e "Termino do 599.sh" &&
 echo -e "****************" &&
 veianew ;

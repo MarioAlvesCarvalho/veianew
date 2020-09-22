@@ -1,15 +1,18 @@
 #!/bin/bash
-#Data alteração 20009
+#Data alteração 20015
+#REV. 2
 
 ##sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
 echo '.'
 sleep 2 &&
 
 echo '..'
-sudo php ${HTDOCS}/modulo_compilado/equalizar_pastas.php &&
+cd ${HTDOCS}/modulo_compilado/
+sudo php equalizar_pastas.php &&
 
 echo '...'
-sudo zip -r ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip ${HTDOCS}/modulo_compilado/ &&
+cd ${HTDOCS}/modulo_compilado/
+sudo zip -r ${PATH_COMUM}/moduloPHPPDV/Modulo_$(ls ${HTDOCS}/*.zip.TEMP | sed 's/^.*htdocs\///').zip * &&
 
 echo '... .'
 umount $SERVER_VN_MODULOPHPPDV/

@@ -1,7 +1,8 @@
 #!/bin/bash
-#Data alteração 20005
+#Data alteração 20253
 
-php $MANAGER/servico/servicolinux.php5 start &&
+php ${MANAGER}/servico/servicolinux.php5 start &
+chown -R zanthus.zanthus ${MANAGER}/Logs/ &
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
