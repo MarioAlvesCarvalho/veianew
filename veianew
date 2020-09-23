@@ -11,6 +11,8 @@
 <<<<<<< HEAD
 #export VERSION_VN="v5.3.0"
 export VERSION_VN="v5.3.42_BETA"
+export VERSION_VN="v5.3.42_TESTE"
+
 =======
 export VERSION_VN="v5.6.4"
 #export VERSION_VN="v5.3.42_BETA"
