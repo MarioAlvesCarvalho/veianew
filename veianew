@@ -2,13 +2,13 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 09/09/2020          ###
-###              20253                ###
+###          DATE 28/09/2020          ###
+###              20272                ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.6.4"
+export VERSION_VN="v5.7.0"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -30,7 +30,7 @@ export SERVER_VN_MANAGER="${SERVER_VN}/MANAGER"
 export SERVER_VN_MODULOPHPPDV="${SERVER_VN}/MODULOPHPPDV"
 export SERVER_VN_SCRIPTS_VEIANEW="${SERVER_VN}/SCRIPTS_VEIANEW"
 export SERVER_VN_MODULO_COMPILADO="${SERVER_VN_SCRIPTS_VEIANEW}/MODULO_COMPILADO"
-export APACHE2="/usr/local/apache2"
+export APACHE2="/usr/local/apache22"
 export HTDOCS="${APACHE2}/htdocs"
 export MANAGER="${HTDOCS}/manager"
 export FTP_COMPLEMENTARES="200.201.215.247:2142/pub/Zeus_Frente_de_Loja/_Complementares"
