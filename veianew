@@ -2,13 +2,13 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 28/09/2020          ###
-###              20272                ###
+###          DATE 01/10/2020          ###
+###              20275                ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.7.0"
+export VERSION_VN="v5.7.1"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -144,7 +144,7 @@ then
     echo -e  "NÃO FOI POSSIVEL MONTAR O CAMINHO //${SERVIDOR1} UTILIZANDO O COMANDO ABAIXO\n (${COMANDO1})"
     echo     "O QUE VOCE DESEJA FAZER?"
     echo     "1. PROSSEGUIR SEM MONTAR (utilizar versoes copiadas anteriormente)"
-    echo     "2. ATUALIZAR USUARIO E SENHA DE ACESSO AO '192.168.0.15'"
+    echo     "2. ATUALIZAR USUARIO E SENHA DE ACESSO AO '192.168.0.97'"
     echo -ne "OPCAO: "
     read     OPC
     case ${OPC} in
@@ -181,6 +181,15 @@ echo -e "Diretorio de Backup já existe."
 else
 mkdir ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" & chmod 777 ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" &
 fi
+
+#if [ -e "${VEIANEW}/history_all.vnw" ] ; then
+# se existir mais de 45 pacotes manager no htdocs
+#rodar a opção BKP, quardando os mais antigos
+#sleep 0 &
+#else
+#segue o script
+#fi
+
 
 cd ${HTDOCS}/
 for arquivo in *.ZIP
@@ -254,6 +263,7 @@ CASE="${CASE}
    49) ${VEIANEW}/49.sh ;;
    48) ${VEIANEW}/48.sh ;;
 
+   09) ${VEIANEW}/09.sh ;;
    08) ${VEIANEW}/08.sh ;;
    07) ${VEIANEW}/07.sh ;;
    06) ${VEIANEW}/06.sh ;;
@@ -286,6 +296,7 @@ echo -e ""
 echo -e "#\t\b\b\b\b59    LIMPAR DIRETÓRIO MANAGER + COPIAR CERTIFICADO + ZMWSInfo"
 echo -e "#\t\b\b\b\b599   LIMPAR PACOTES MANAGER DO 'HTDOCS'"
 echo -e "#\t\b\b\b\b58    ZMWSInfo COM LOG"
+#echo -e "#\t\b\b\b\b57    ZMWSInfo SEM LOG                                      09    CP MANAGER OFICIAL"
 echo -e "#\t\b\b\b\b57    ZMWSInfo SEM LOG"
 echo -e "#\t\b\b\b\b56    ZMWSInfo COM LOG FULL                                 08    CP ZEUSMANAGER.ZLG HOJE P/ PATH_COMUM"
 echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                              07    ZERA CONTEUDO ZEUSMANAGER.ZLG HOJE"

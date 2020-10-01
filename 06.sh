@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20005
+#Data alteração 20275
 
 echo -e 'Aguarde, conectando no ftp.zanthus.com.br' &&
 echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!' &&
