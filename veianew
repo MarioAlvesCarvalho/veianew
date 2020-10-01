@@ -101,13 +101,13 @@ fi
 
 # rsantos INICIO
 atualizaSenha(){
-  echo "INFORME SEU USUARIO E SENHA DE ACESSO AO '192.168.0.15'"
+  echo "INFORME SEU USUARIO E SENHA DE ACESSO AO '192.168.0.97'"
   echo -ne "USUARIO: "
-  read USUARIO_15
+  read USUARIO
   echo -ne "SENHA: "
-  read SENHA_15
-  echo "USUARIO_15=${USUARIO_15}" >  ${veianewIni}
-  echo "SENHA_15=${SENHA_15}"     >> ${veianewIni}
+  read SENHA
+  echo "USUARIO=${USUARIO}" >  ${veianewIni}
+  echo "SENHA=${SENHA}"     >> ${veianewIni}
 }
 montar15(){
   ##SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
