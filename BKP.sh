@@ -1,5 +1,7 @@
 #!/bin/bash
-#Data alteração 20252
+#Data alteração 20282
+
+umount ${SERVER_VN}/*
 
 chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
@@ -9,6 +11,9 @@ export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
 export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
 
 $COMANDO1 &
+$COMANDO1 &
+$COMANDO1 &
+sleep 2
 
 for ARQ_BKP in `find ${DIR_BKP}/*.zip -ctime +4 -exec ls -lt {} \; | awk '{print $9}' `; do
 ANOMES_ARQ_BKP=$(ls --full-time ${ARQ_BKP} | awk '{print $6}' | cut -c1-7)
@@ -39,6 +44,9 @@ fi
 done
 
 $COMANDO2 &
+$COMANDO2 &
+$COMANDO2 &
+sleep 2
 
 for ARQ_BKPMODULO in `find ${DIR_BKPMODULO}/*.zip -ctime +4 -exec ls -lt {} \; | awk '{print $9}' `; do
 ANOMES_ARQ_BKPMODULO=$(ls --full-time ${ARQ_BKPMODULO} | awk '{print $6}' | cut -c1-7)
@@ -67,6 +75,7 @@ fi
 fi
 fi
 done
+
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
