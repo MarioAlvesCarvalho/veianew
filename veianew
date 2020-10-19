@@ -349,7 +349,7 @@ else
 clear
 echo -e "#\n#\n#\t NÃO HA PACOTES DO MANAGER DISPONIVEIS PARA EXTRAÇÃO\n#\n#"
 echo -e "#\n#\n#\t COPIE UM PACOTE DO MANAGER PARA O HTDOCS\n#\n#"
-touch ${HTDOCS}/COPIE_UM_PACOTE_manager_PARA_O_HTDOCS.zip
+touch ${HTDOCS}/copie_um_pacote_manager_para_o_htdocs.zip
 sleep 5
 clear
 fi
