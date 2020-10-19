@@ -8,7 +8,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.7.5"
+export VERSION_VN="v5.7.6"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -330,7 +330,9 @@ eval "${CASE}"
 else
 clear
 echo -e "#\n#\n#\t NÃO HA PACOTES DO MANAGER DISPONIVEIS PARA EXTRAÇÃO\n#\n#"
-sleep 2
+echo -e "#\n#\n#\t COPIE UM PACOTE DO MANAGER PARA O HTDOCS\n#\n#"
+touch {$HTDOCS}/COPIE_UM_PACOTE_MANAGER_PARA_O_HTDOCS.zip
+sleep 5
 clear
 fi
 }
