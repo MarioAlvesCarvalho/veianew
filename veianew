@@ -2,13 +2,13 @@
 #########################################
 #########################################
 ###          SCRIPT VEIANEW           ###
-###          DATE 08/10/2020          ###
-###              20282                ###
+###          DATE 19/10/2020          ###
+###              20293                ###
 #########################################
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.7.2"
+export VERSION_VN="v5.7.3"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -100,87 +100,87 @@ fi
 
 
 # rsantos INICIO
-atualizaSenha(){
-  echo "INFORME SEU USUARIO E SENHA DE ACESSO AO '192.168.0.97'"
-  echo -ne "USUARIO: "
-  read USUARIO
-  echo -ne "SENHA: "
-  read SENHA
-  echo "USUARIO=${USUARIO}" >  ${veianewIni}
-  echo "SENHA=${SENHA}"     >> ${veianewIni}
-}
-montar15(){
-  ##SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
-  SERVIDOR1='192.168.0.66/publico/qualidade/VERSOES/Manager'
-  export COMANDO1="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR1} ${SERVER_VN_MANAGER}"
-  ${COMANDO1}
-
-  ##SERVIDOR2='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/moduloPHPPDV'
-  SERVIDOR2='192.168.0.66/publico/qualidade/VERSOES/moduloPHPPDV'
-  export COMANDO2="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR2} ${SERVER_VN_MODULOPHPPDV}"
-
-  ##SERVIDOR3='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew'
-  SERVIDOR3='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew'
-  export COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${SERVER_VN_SCRIPTS_VEIANEW}"
-
-  ##SERVIDOR4='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
-  SERVIDOR4='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
-  export COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${SERVER_VN_MODULO_COMPILADO}"
-
-  return $?
-}
-if [ -e "${veianewIni}" ]
-then
- . ${veianewIni}
-else
-  atualizaSenha
-fi
-montar15
-if [ ${?} -ne "0" ]
-then
-  OPC=0
-  while [ ${OPC} -ne 1 -a ${OPC} -ne 2 ]
-  do
-    echo -e  "NÃO FOI POSSIVEL MONTAR O CAMINHO //${SERVIDOR1} UTILIZANDO O COMANDO ABAIXO\n (${COMANDO1})"
-    echo     "O QUE VOCE DESEJA FAZER?"
-    echo     "1. PROSSEGUIR SEM MONTAR (utilizar versoes copiadas anteriormente)"
-    echo     "2. ATUALIZAR USUARIO E SENHA DE ACESSO AO '192.168.0.97'"
-    echo -ne "OPCAO: "
-    read     OPC
-    case ${OPC} in
-      1)
-        echo "PROSSEGUINDO ..."
-      ;;
-      2)
-        atualizaSenha
-        montar15
-        [ $? -ne 0 ] && OPC=0
-      ;;
-      *)
-        echo "DIGITE UMA OPCAO VALIDA!"
-      ;;
-    esac
-  done
-fi
-# rsantos FIM
-
-${COMANDO3}
-IP=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
-echo -e "${HOSTNAME}" "   -   " "${IP}" "   -   " "$(date +%d/%m/%y__%H:%M:%S)" "   -   " "${VERSION_VN}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVN/${HOSTNAME}.VNL;
+##atualizaSenha(){
+##  echo "INFORME SEU USUARIO E SENHA DE ACESSO AO '192.168.0.97'"
+#  echo -ne "USUARIO: "
+#  read USUARIO
+#  echo -ne "SENHA: "
+#  read SENHA
+#  echo "USUARIO=${USUARIO}" >  ${veianewIni}
+#  echo "SENHA=${SENHA}"     >> ${veianewIni}
+#}
+#montar15(){
+#  ##SERVIDOR1='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Manager'
+#  SERVIDOR1='192.168.0.66/publico/qualidade/VERSOES/Manager'
+#  export COMANDO1="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR1} ${SERVER_VN_MANAGER}"
+#  ${COMANDO1}
+#
+#  ##SERVIDOR2='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/moduloPHPPDV'
+#  SERVIDOR2='192.168.0.66/publico/qualidade/VERSOES/moduloPHPPDV'
+#  export COMANDO2="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR2} ${SERVER_VN_MODULOPHPPDV}"
+#
+#  ##SERVIDOR3='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew'
+#  SERVIDOR3='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew'
+#  export COMANDO3="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR3} ${SERVER_VN_SCRIPTS_VEIANEW}"
+#
+#  ##SERVIDOR4='192.168.0.15/zanthusinterno/Public/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
+#  SERVIDOR4='192.168.0.66/publico/qualidade/VERSOES/Scripts_veianew/Modulo_Compilado'
+#  export COMANDO4="mount -t cifs -s -o username=${USUARIO_15},password=${SENHA_15},rw //${SERVIDOR4} ${SERVER_VN_MODULO_COMPILADO}"
+#
+#  return $?
+#}
+#if [ -e "${veianewIni}" ]
+#then
+# . ${veianewIni}
+#else
+#  atualizaSenha
+#fi
+#montar15
+#if [ ${?} -ne "0" ]
+#then
+#  OPC=0
+#  while [ ${OPC} -ne 1 -a ${OPC} -ne 2 ]
+#  do
+#    echo -e  "NÃO FOI POSSIVEL MONTAR O CAMINHO //${SERVIDOR1} UTILIZANDO O COMANDO ABAIXO\n (${COMANDO1})"
+#    echo     "O QUE VOCE DESEJA FAZER?"
+#    echo     "1. PROSSEGUIR SEM MONTAR (utilizar versoes copiadas anteriormente)"
+#    echo     "2. ATUALIZAR USUARIO E SENHA DE ACESSO AO '192.168.0.97'"
+#    echo -ne "OPCAO: "
+#    read     OPC
+#    case ${OPC} in
+#      1)
+#        echo "PROSSEGUINDO ..."
+#      ;;
+#      2)
+#        atualizaSenha
+#        montar15
+#        [ $? -ne 0 ] && OPC=0
+#      ;;
+#      *)
+#        echo "DIGITE UMA OPCAO VALIDA!"
+#      ;;
+#    esac
+#  done
+#fi
+## rsantos FIM
+#
+#${COMANDO3}
+#IP=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
+#echo -e "${HOSTNAME}" "   -   " "${IP}" "   -   " "$(date +%d/%m/%y__%H:%M:%S)" "   -   " "${VERSION_VN}" >> ${SERVER_VN_SCRIPTS_VEIANEW}/LOGVN/${HOSTNAME}.VNL;
 
 sleep 0
 echo -e "Carregando..."
-sleep 2
+sleep 1
 
-umount ${SERVER_VN_SCRIPTS_VEIANEW}
+#umount ${SERVER_VN_SCRIPTS_VEIANEW}
 
-rsync -uvt ${SERVER_VN_MANAGER}/php*.zip ${HTDOCS} &&
+#rsync -uvt ${SERVER_VN_MANAGER}/php*.zip ${HTDOCS} &&
 
-if [ -d ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" ] ; then
-echo -e "Diretorio de Backup já existe."
-else
-mkdir ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" & chmod 777 ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" &
-fi
+#if [ -d ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" ] ; then
+#echo -e "Diretorio de Backup já existe."
+#else
+#mkdir ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" & chmod 777 ${SERVER_VN_MANAGER}/"$(date +%Y-%m)" &
+#fi
 
 #if [ -e "${VEIANEW}/history_all.vnw" ] ; then
 # se existir mais de 45 pacotes manager no htdocs
