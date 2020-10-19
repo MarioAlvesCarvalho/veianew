@@ -8,7 +8,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.7.4"
+export VERSION_VN="v5.7.5"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -46,7 +46,14 @@ export DESTINO_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"
 echo -e "${Cor_FundoCinza}${Cor_Vermelho}${VERSION_VN}${Cor_Preto}"
-#
+${HTDOCS}/manager
+
+if [ -d "${HTDOCS}/manager" ] ; then
+echo -e "${HTDOCS}/manager Já existe"
+else
+mkdir "${SERVER_VN}" & chmod 777 "${SERVER_VN}"
+fi
+
 #if [ -d "${SERVER_VN}" ] ; then
 #umount "${SERVER_VN}"
 #else
