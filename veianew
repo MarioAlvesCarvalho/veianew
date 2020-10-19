@@ -8,7 +8,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.7.8"
+export VERSION_VN="v5.7.9"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -218,6 +218,7 @@ do
 done
 
 find . -name "*anager*.zip"
+rm -rf ${HTDOCS}/copie_um_pacote_manager_para_o_htdocs.zip
 
 ListaArquivos(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
