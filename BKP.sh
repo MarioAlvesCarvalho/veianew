@@ -2,7 +2,7 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE _ BKP7"
+echo -e "TESTE _ BKP9"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 ANOMES=$(date +'%Y-%m')
