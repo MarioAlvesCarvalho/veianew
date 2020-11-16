@@ -22,7 +22,7 @@ if [ "${ANOMES}" = "${ANOMES_ARQ_BKP}" ]; then
 ###mkdir -p ${DESTINO_BKP}/${ANOMES}
 ## TESTE _rm -rf ${ARQ_BKP}
 echo -e "estou dentro do if"
-cp -rf  ${ARQ_BKP}  ./EXCLUIDO/${ARQ_BKP}
+cp -rf  ${ARQ_BKP}  ${HTDOCS}/EXCLUIDO/${ARQ_BKP}
 echo -e "Pacotes do Manager com mais de 15 dias foram excluidos com sucesso."
 else
 echo -e "Não há pacotes do Manager com mais de 15 dias"
