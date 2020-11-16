@@ -2,7 +2,7 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE _ BKP6"
+echo -e "TESTE _ BKP7"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 ANOMES=$(date +'%Y-%m')
@@ -23,7 +23,7 @@ if [ "${ANOMES}" = "${ANOMES_ARQ_BKP}" ]; then
 ###mkdir -p ${DESTINO_BKP}/${ANOMES}
 ## TESTE _rm -rf ${ARQ_BKP}
 echo -e "estou dentro do if"
-cp -rf  ${ARQ_BKP}  ${HTDOCS}/EXCLUIDO/${ARQ_BKP}
+cp -rf  ${ARQ_BKP}  ${HTDOCS}/EXCLUIDO/
 echo -e "Pacotes do Manager com mais de 15 dias foram excluidos com sucesso."
 else
 echo -e "Não há pacotes do Manager com mais de 15 dias"
