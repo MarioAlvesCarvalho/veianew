@@ -5,17 +5,17 @@
 echo -e "TESTE _ BKP6"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
-export ANOMES=$(date +'%Y-%m')
-export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
-export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
-export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
+ANOMES=$(date +'%Y-%m')
+#export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
+#export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
+#export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
 
 #$COMANDO1 &
 #$COMANDO1 &
 #$COMANDO1 &
 sleep 2
 echo -e "antes do for"
-for ARQ_BKP in `find ${HTDOCS}/*.zip -ctime +4 -exec ls -lt {} \; | awk '{print $9}' `; do
+for ARQ_BKP in `find ${HTDOCS}/ -name '*anager*.zip' -atime +15 -exec ls -lt {} \; | awk '{print $9}' `; do
 ANOMES_ARQ_BKP=$(ls --full-time ${ARQ_BKP} | awk '{print $6}' | cut -c1-15)
 
 echo -e "antes do if"
