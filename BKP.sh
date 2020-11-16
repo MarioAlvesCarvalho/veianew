@@ -2,7 +2,7 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE _ BKP"
+echo -e "TESTE _ BKP6"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 export ANOMES=$(date +'%Y-%m')
@@ -14,10 +14,11 @@ export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
 #$COMANDO1 &
 #$COMANDO1 &
 sleep 2
-
+echo -e "antes do for"
 for ARQ_BKP in `find ${HTDOCS}/*.zip -ctime +4 -exec ls -lt {} \; | awk '{print $9}' `; do
 ANOMES_ARQ_BKP=$(ls --full-time ${ARQ_BKP} | awk '{print $6}' | cut -c1-15)
 
+echo -e "antes do if"
 if [ "${ANOMES}" = "${ANOMES_ARQ_BKP}" ]; then
 ###mkdir -p ${DESTINO_BKP}/${ANOMES}
 ## TESTE _rm -rf ${ARQ_BKP}
