@@ -2,7 +2,7 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE_BKP21"
+echo -e "TESTE_BKP22"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 ###ANOMES=$(date +'%Y-%m')
@@ -18,7 +18,7 @@ unset ARQ_BKP
 echo -e "antes do for"
 ####for ARQ_BKP in `find /web/ -name '*anager*.zip' -ctime +5 -exec ls -lt {} \; | awk '{print $9}' ` ; do
 
-for ARQ_BKP in `find  /web/ -maxdepth 1  -name *anager*.zip -mtime +20 -exec ls -lt {} \; | awk '{print $9}' `
+for ARQ_BKP in `find ${HTDOCS} -maxdepth 1  -name *anager*.zip -mtime +20 -exec ls -lt {} \; | awk '{print $9}' `
 do
 
 #####ANOMES_ARQ_BKP=$(ls --full-time ${ARQ_BKP} | awk '{print $6}' | cut -c1-15)
@@ -27,7 +27,7 @@ do
 echo -e "antes do if"
 if [ -f ${ARQ_BKP}  ] ; then
 echo -e "estou dentro do if"
-mv -f  ${ARQ_BKP}  /web/EXCLUIDO/
+mv -f  ${ARQ_BKP}  ${HTDOCS}/EXCLUIDO/
 echo -e "Pacote "${ARQ_BKP}" foi gerado a mais de 20 e sera excluido !!!"
 else
 echo -e "estou dentro do else"
