@@ -2,7 +2,7 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE_BKP16"
+echo -e "TESTE_BKP17"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 ###ANOMES=$(date +'%Y-%m')
@@ -73,4 +73,4 @@ echo -e "" &&
 echo -e "***********************" &&
 echo -e "Termino do BKP.sh" &&
 echo -e "***********************" &&
-veianew ;
+veianew
