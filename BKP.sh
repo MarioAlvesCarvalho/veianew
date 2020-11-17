@@ -2,7 +2,7 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE _ BKP13"
+echo -e "TESTE _ BKP14"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 ###ANOMES=$(date +'%Y-%m')
@@ -14,8 +14,9 @@ echo -e "TESTE _ BKP13"
 #$COMANDO1 &
 #$COMANDO1 &
 sleep 1
+unset ARQ_BKP
 echo -e "antes do for"
-for ARQ_BKP in `find ${HTDOCS}/ -name '*anager*.zip' -atime +10 -exec ls -lt {} \; | awk '{print $9}' `; do
+for ARQ_BKP in `find ${HTDOCS}/ -name '*anager*.zip' -atime +20 -exec ls -lt {} \; | awk '{print $9}' `; do
 #####ANOMES_ARQ_BKP=$(ls --full-time ${ARQ_BKP} | awk '{print $6}' | cut -c1-15)
 
 echo -e "antes do if"
@@ -26,9 +27,9 @@ if [ -f "${ARQ_BKP}" ]; then
 
 echo -e "estou dentro do if"
 cp -rf  ${ARQ_BKP}  ${HTDOCS}/EXCLUIDO/
-echo -e "Pacote "${ARQ_BKP}" foi gerado a mais de 15 e sera excluido !!!"
+echo -e "Pacote "${ARQ_BKP}" foi gerado a mais de 20 e sera excluido !!!"
 else
-echo -e "Não há pacotes do Manager com mais de 15 dias !!!"
+echo -e "Não há pacotes do Manager com mais de 20 dias !!!"
 fi
 done
 
