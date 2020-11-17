@@ -1,8 +1,8 @@
-!/bin/bash
+#!/bin/bash
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE_BKP22"
+echo -e "TESTE_BKP23"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 ###ANOMES=$(date +'%Y-%m')
