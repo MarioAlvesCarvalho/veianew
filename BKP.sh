@@ -2,7 +2,7 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE _ BKP14"
+echo -e "TESTE_BKP15"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
 ###ANOMES=$(date +'%Y-%m')
@@ -16,11 +16,12 @@ echo -e "TESTE _ BKP14"
 sleep 1
 unset ARQ_BKP
 echo -e "antes do for"
-for ARQ_BKP in `find ${HTDOCS}/ -name '*anager*.zip' -atime +20 -exec ls -lt {} \; | awk '{print $9}' `; do
+#for ARQ_BKP in `find ${HTDOCS}/ -name '*anager*.zip' -atime +20 -exec ls -lt {} \; | awk '{print $9}' `; do
 #####ANOMES_ARQ_BKP=$(ls --full-time ${ARQ_BKP} | awk '{print $6}' | cut -c1-15)
 
 echo -e "antes do if"
-if [ -f "${ARQ_BKP}" ]; then
+if [ `find ${HTDOCS}/ -name '*anager*.zip' -atime +20 -exec ls -lt {} \; | awk '{print $9}' ` | wc -l` -gt 0 ]; then
+###if [ -f "${ARQ_BKP}" ]; then
 
 ###mkdir -p ${DESTINO_BKP}/${ANOMES}
 ## TESTE _rm -rf ${ARQ_BKP}
