@@ -2,10 +2,10 @@
 #Data alteração 20282
 
 ####umount ${SERVER_VN}/*
-echo -e "TESTE _ BKP11"
+echo -e "TESTE _ BKP12"
 ###chmod 750 * ${SERVER_VN_MODULOPHPPDV}
 
-ANOMES=$(date +'%Y-%m')
+###ANOMES=$(date +'%Y-%m')
 #export ANOMES_1=$(date +'%Y-%m' -d '-1 month')
 #export ANOMES_2=$(date +'%Y-%m' -d '-2 month')
 #export ANOMES_3=$(date +'%Y-%m' -d '-3 month')
