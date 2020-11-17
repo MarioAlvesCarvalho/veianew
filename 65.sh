@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20252
+#Data alteração 20322
 
 sudo php ${MANAGER}/servico/servicolinux.php5 stop
 sudo pkill -9 php

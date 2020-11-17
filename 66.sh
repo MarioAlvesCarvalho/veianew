@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 20252
+#Data alteração 20322
 
 ${APACHE2}/bin/apachectl start
 sleep 1
