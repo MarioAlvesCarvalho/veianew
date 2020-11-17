@@ -1,6 +1,6 @@
 #!/bin/bash
-#Data alteração 20005
-
+#Data alteração 20322
+#### DESATIVADO ####
 ${COMANDO4} &
 sleep 4 &&
 mv -f ${HTDOCS}/modulo_compilado ${HTDOCS}/modulo_compilado_OLD &&

@@ -1,5 +1,6 @@
 #!/bin/bash
-#Data alteração 20009
+#Data alteração 20322
+#### DESATIVADO ####
 
 umount ${SERVER_VN}/*
 umount ${SERVER_VN}/*

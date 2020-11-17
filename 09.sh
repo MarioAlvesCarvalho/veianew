@@ -1,5 +1,10 @@
 #!/bin/bash
-#Data alteração 20005
+#Data alteração 20322
+
+echo -e 'Essa opção não está ativa!!!' &&
+sleep 3 &&
+veianew
+
 
 echo -e 'Aguarde, conectando no ftp.zanthus.com.br' &&
 echo -e 'Copiando manager mais recente para sua pasta HTDOCS!!!' &&

@@ -17,7 +17,7 @@ sudo chmod 775 ${VEIANEW}/*.sh ${VEIANEW}/*.vnw
 sleep 1 &&
 sudo chown root.root ${VEIANEW}/*.sh ${VEIANEW}/*vnw
 sleep 1 &&
-sudo rm -rf ${VEIANEW}/master.zip ${VEIANEW}/veianew-master 
+sudo rm -rf ${VEIANEW}/master.zip ${VEIANEW}/veianew-master
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
