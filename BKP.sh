@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20322
 
+#### DESATIVADO ####
+
 unset ARQ_BKP
 
 for ARQ_BKP in `find ${HTDOCS} -maxdepth 1  -name '*anager*.zip' -mtime +20 -exec ls -lt {} \; | awk '{print $9}' `

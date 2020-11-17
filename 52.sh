@@ -2,6 +2,8 @@
 #Data alteração 20015
 #REV. 2
 
+#### DESATIVADO ####
+
 ##sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
 echo '.'
 sleep 2 &&
