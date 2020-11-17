@@ -26,7 +26,7 @@ if [ -f "${ARQ_BKP}" ]; then
 
 echo -e "estou dentro do if"
 cp -rf  ${ARQ_BKP}  ${HTDOCS}/EXCLUIDO/
-echo -e "Pacote ${ARQ_BKP} foi gerado a mais de 15 e sera excluido !!!"
+echo -e "Pacote "${ARQ_BKP}" foi gerado a mais de 15 e sera excluido !!!"
 else
 echo -e "Não há pacotes do Manager com mais de 15 dias !!!"
 fi
