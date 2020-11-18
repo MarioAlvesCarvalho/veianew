@@ -147,6 +147,8 @@ done
 chown root.root ${HTDOCS}/*
 chmod 775 ${HTDOCS}/*.zip
 
+cd ${HTDOCS}
+
 for file in ${HTDOCS}/*anager*.zip
 do
    if [ ! "${file}" = `echo "${file}"|sed "s/ /_/g"` ]; then
