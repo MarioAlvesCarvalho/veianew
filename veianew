@@ -8,7 +8,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.8.2"
+export VERSION_VN="v5.8.3"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -41,7 +41,8 @@ export DESTINO_BKP="${SERVER_VN_MANAGER}"
 export DIR_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 export DESTINO_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 
-export MANAGER_USO=`ls -a ${HTDOCS}/.*anager*.zip.TEMP | sed "s#$HTDOCS/.##" | sed 's/.TEMP//'´
+unset MANAGER_USO
+export MANAGER_USO=`ls -a ${HTDOCS}/.*anager*.zip.TEMP | sed "s#${HTDOCS}/.##" | sed 's/.TEMP//'´
 
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"
