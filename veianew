@@ -41,7 +41,8 @@ export DESTINO_BKP="${SERVER_VN_MANAGER}"
 export DIR_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 export DESTINO_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 
-export MANAGER_USO=`ls -a ${HTDOCS}/.*anager*.zip.TEMP` && echo -e "${MANAGER_USO}" | sed 's/.TEMP//'
+unset  MANAGER_USO
+export MANAGER_USO=`ls -a ${HTDOCS}/.*anager*.zip.TEMP | sed 's/"/usr/local/apache22/htdocs/.php"/php/' | sed 's/.TEMP//'´
 
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"
