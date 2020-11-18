@@ -7,7 +7,7 @@ for ARQ_BKP in `find ${HTDOCS} -maxdepth 1  -name '*anager*.zip' -mtime +20 -exe
 do
 echo -e "Excluindo pacotes do Manager com mais de 20 dias!!!"
 if [ -f ${ARQ_BKP}  ] ; then
-mv -f  ${ARQ_BKP}  ${HTDOCS}/EXCLUIDO/
+rm -rf  ${ARQ_BKP}
 else
 echo -e "Não há pacotes do Manager com mais de 20 dias !!!"
 fi
