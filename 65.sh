@@ -1,11 +1,11 @@
 #!/bin/bash
-#Data alteração 20322
+#Data alteração 20323
 
-echo -e "#REV. 1"
+echo -e "#REV. 2"
 
-sudo php ${MANAGER}/servico/servicolinux.php5 stop
-sudo pkill -9 php
-sudo ${APACHE2}/bin/apachectl stop
+php ${MANAGER}/servico/servicolinux.php5 stop
+pkill -9 php
+${APACHE2}/bin/apachectl stop
 pkill node*
 sleep 1 &&
 echo -e NODE ENCERRADO &&

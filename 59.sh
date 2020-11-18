@@ -1,7 +1,7 @@
 #!/bin/bash
-#Data alteração 20249
+#Data alteração 20323
 
-echo -e "#REV. 1"
+echo -e "#REV. 2"
 
 rm -rf ${MANAGER}/* &&
 rm -rf ${HTDOCS}/*.zip.TEMP &&
