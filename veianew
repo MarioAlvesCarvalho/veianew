@@ -8,7 +8,7 @@
 #############MCARVALHO###################
 #############RAZARIAS####################
 #Variaveis de Versao e idioma
-export VERSION_VN="v5.8.1"
+export VERSION_VN="v5.8.2"
 #export VERSION_VN="v5.3.42_BETA"
 export LANG=pt_BR
 
@@ -25,11 +25,11 @@ export veianewIni="${dirRoot}/veianew.ini"
 
 #Variaveis de caminho de diretorios
 export PATH_COMUM="/Zanthus/Zeus/path_comum"
-export SERVER_VN="${PATH_COMUM}/0.66"
-export SERVER_VN_MANAGER="${SERVER_VN}/MANAGER"
-export SERVER_VN_MODULOPHPPDV="${SERVER_VN}/MODULOPHPPDV"
-export SERVER_VN_SCRIPTS_VEIANEW="${SERVER_VN}/SCRIPTS_VEIANEW"
-export SERVER_VN_MODULO_COMPILADO="${SERVER_VN_SCRIPTS_VEIANEW}/MODULO_COMPILADO"
+###export SERVER_VN="${PATH_COMUM}/0.66"
+###export SERVER_VN_MANAGER="${SERVER_VN}/MANAGER"
+###export SERVER_VN_MODULOPHPPDV="${SERVER_VN}/MODULOPHPPDV"
+###export SERVER_VN_SCRIPTS_VEIANEW="${SERVER_VN}/SCRIPTS_VEIANEW"
+###export SERVER_VN_MODULO_COMPILADO="${SERVER_VN_SCRIPTS_VEIANEW}/MODULO_COMPILADO"
 export APACHE2="/usr/local/apache22"
 export HTDOCS="${APACHE2}/htdocs"
 export MANAGER="${HTDOCS}/manager"
@@ -41,7 +41,7 @@ export DESTINO_BKP="${SERVER_VN_MANAGER}"
 export DIR_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 export DESTINO_BKPMODULO="${SERVER_VN_MODULOPHPPDV}"
 
-
+export MANAGER_USO=`ls -a .*anager*.zip.TEMP` && echo -e "${MANAGER_USO}" | sed 's/.TEMP//'
 
 #Iniciando funcionalidades na tela
 echo -e "${Cor_Preto}"
@@ -230,7 +230,7 @@ for arq in `ls -1tr *anager*.zip`
 do
     echo -e "#\t\b\b\b\b$i    ${arq}"
     CASE="${CASE}
-  $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} && unzip -oq ${MANAGER}/\"${arq}\" -d ${MANAGER} && touch ${HTDOCS}/\"${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chown -R zanthus.zanthus ${MANAGER}/Logs/ ; sleep 1 ;;"
+  $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} && unzip -oq ${MANAGER}/\"${arq}\" -d ${MANAGER} && touch ${HTDOCS}/\".${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chown -R zanthus.zanthus ${MANAGER}/Logs/ ; sleep 1 ;;"
   i=$((i+1))
 done
 
@@ -288,7 +288,7 @@ CASE="${CASE}
 esac"
 
 echo -e ""
-echo -e "#\t${Cor_Amarelo}\b\b\b\bMANAGER EM USO:" *.zip.TEMP
+echo -e "#\t${Cor_Amarelo}\b\b\b\bMANAGER EM USO: ${Cor_Vermelho} ${MANAGER_USO}"
 echo -e "${Cor_Preto}"
 #echo -e "\t\t***** APACHE *****                           ***** MIRAGE *****                  ***** NODE *****"
 echo -e "#\t\b\b\b\b99    START     APACHE               89    START     MIRAGE              79    START     NODE"
