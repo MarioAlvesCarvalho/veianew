@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20322
 
+echo -e "#REV. 1"
+
 echo -e 'Essa opção não está ativa!!!' &&
 sleep 3 &&
 veianew

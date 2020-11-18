@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20252
 
+echo -e "#REV. 1"
+
 php ${MANAGER}/servico/servicolinux.php5 stop &&
 pkill -9 php &&
 ${APACHE2}/bin/apachectl stop &&

@@ -1,7 +1,7 @@
 
 #!/bin/bash
 #Data alteração 20010
-#REV. 5
+echo -e "#REV. 5"
 
 mountpoint -q ${SERVER_VN_MODULOPHPPDV}
 if [ $? == 0 ]

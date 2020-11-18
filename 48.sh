@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20252
 
+echo -e "#REV. 1"
+
 sudo chmod -R 777 ${MANAGER}/Arquivos/* &&
 chown -R root.root ${MANAGER}/Arquivos/* &&
 sleep 1 &&

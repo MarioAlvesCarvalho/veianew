@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20005
 
+echo -e "#REV. 1"
+
 /etc/init.d/memcached restart &&
 sleep 1 &&
 echo -e "" &&

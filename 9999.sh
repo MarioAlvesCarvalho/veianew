@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20322
 
+echo -e "#REV. 1"
+
 ListaArquivos_manut(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
 clear; i=1

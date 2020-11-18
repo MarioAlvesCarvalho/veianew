@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20253
 
+echo -e "#REV. 1"
+
 wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip &&
 sleep 1 &&
 chmod -R 777 ${VEIANEW}/master.zip &&

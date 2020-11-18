@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20252
 
+echo -e "#REV. 1"
+
 sudo find ${HTDOCS}/ -iname '*.zlg' -exec rm -rf {} \; &
 sudo find ${HTDOCS}/ -iname 'mirage_*.log' -exec rm -rf {} \; &
 rm -rf /tmp/php_errors.log &

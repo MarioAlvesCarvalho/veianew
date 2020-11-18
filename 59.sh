@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20249
 
+echo -e "#REV. 1"
+
 rm -rf ${MANAGER}/* &&
 rm -rf ${HTDOCS}/*.zip.TEMP &&
 cp -rf ${HTDOCS}/certificados ${MANAGER}/ &&

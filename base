@@ -1,8 +1,7 @@
 #!/bin/bash
 #Data alteração 20252
 
-
-
+echo -e "#REV. 1"
 
 sleep 1 &&
 echo -e "" &&

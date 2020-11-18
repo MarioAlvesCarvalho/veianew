@@ -4,6 +4,8 @@
 
 #### DESATIVADO ####
 
+echo -e "#REV. 1"
+
 ##sudo umount ${SERVER_VN_MODULOPHPPDV}/ &
 echo '.'
 sleep 2 &&

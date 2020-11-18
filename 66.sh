@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20322
 
+echo -e "#REV. 1"
+
 ${APACHE2}/bin/apachectl start
 sleep 1
 php ${MANAGER}/servico/servicolinux.php5 start

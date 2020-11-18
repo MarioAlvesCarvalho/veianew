@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20253
 
+echo -e "#REV. 1"
+
 ${APACHE2}/bin/apachectl start &
 mkdir ${MANAGER}/Logs &
 chown -R zanthus.zanthus ${MANAGER}/Logs/ &

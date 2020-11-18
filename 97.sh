@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20248
 
+echo -e "#REV. 1"
+
 ${APACHE2}/bin/apachectl stop &
 ${APACHE2}/bin/apachectl start &&
 mkdir ${MANAGER}/Logs &&

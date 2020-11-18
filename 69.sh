@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20252
 
+echo -e "#REV. 1"
+
 php ${MANAGER}/servico/servicolinux.php5 start &&
 ${APACHE2}/bin/apachectl start &&
 chown -R zanthus.zanthus ${MANAGER}/Logs/

@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20249
 
+echo -e "#REV. 1"
+
 ${APACHE2}/bin/apachectl stop &
 rm -rf ${HTDOCS}/*.zip.TEMP &
 rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} &&

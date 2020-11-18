@@ -1,6 +1,8 @@
 #!/bin/bash
 #Data alteração 20275
 
+echo -e "#REV. 1"
+
 echo -e 'Aguarde, conectando no ftp.zanthus.com.br' &&
 echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!' &&
 sleep 3 &&
