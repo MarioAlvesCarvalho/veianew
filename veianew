@@ -2,7 +2,7 @@
 ############################################
 ############################################
 #              SCRIPT VEIANEW              #
-#            18/11/2020 - 20324            #
+#            19/11/2020 - 20324            #
 #  github.com/MarioAlvesCarvalho/veianew   #
 ############################################
 
@@ -22,7 +22,7 @@ export Cor_Fundo_Cinza="\033[47;1;37m"
 export PATH_COMUM="/Zanthus/Zeus/path_comum"
 export APACHE2="/usr/local/apache22"
 export moduloPHPPDV="/Zanthus/Zeus/pdvJava/GERAL/SINCRO/WEB/moduloPHPPDV"
-export VEIANEW="${APACHE2}/VEIANEW"
+export VEIANEW="${APACHE2}/VEIANEW" ##Tambem existe no 01.sh
 ##alterar para /usr/local/VEIANEW --export VEIANEW=/usr/local/VEIANEW"
 export HTDOCS="${APACHE2}/htdocs"
 export MANAGER="${HTDOCS}/manager"
@@ -43,18 +43,18 @@ mkdir "${PATH_COMUM}"
 chmod 775 "${PATH_COMUM}"
 fi
 
-if [ -d "${MANAGER}" ] ; then
-echo -e "Validando ${MANAGER} ..."
-else
-mkdir "${MANAGER}"
-chmod 775 "${MANAGER}"
-fi
-
 if [ -d "${PATH_COMUM}/moduloPHPPDV" ] ; then
 echo -e "Validando ${PATH_COMUM}/moduloPHPPDV ..."
 else
 mkdir "${PATH_COMUM}/moduloPHPPDV"
 chmod 775 "${PATH_COMUM}/moduloPHPPDV"
+fi
+
+if [ -d "${VEIANEW}" ] ; then
+echo -e "Validando ${VEIANEW} ..."
+else
+mkdir "${VEIANEW}"
+chmod 775 "${VEIANEW}"
 fi
 
 if [ -e "${VEIANEW}/history.vnw" ] ; then
@@ -71,6 +71,12 @@ echo ' ' > "${VEIANEW}/history_all.vnw"
 chmod 775 "${VEIANEW}/history_all.vnw"
 fi
 
+if [ -d "${MANAGER}" ] ; then
+echo -e "Validando ${MANAGER} ..."
+else
+mkdir "${MANAGER}"
+chmod 775 "${MANAGER}"
+fi
 
 
 #atualizaSenha(){
