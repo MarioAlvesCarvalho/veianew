@@ -1,10 +1,10 @@
 #!/bin/bash
-#Data alteração 20254
+#Data alteração 20329
 
-echo -e "#REV. 5"
+echo -e "#REV. 6"
 
 unset VEIANEW
-VEIANEW="/usr/local/VEIANEW"  ##Tambem existe no veianew
+VEIANEW="/usr/local/apache22/VEIANEW"  ##Tambem existe no veianew
 wget -N -v --tries=1 -P ${VEIANEW} https://github.com/MarioAlvesCarvalho/veianew/archive/master.zip &&
 chmod -R 777 ${VEIANEW}/master.zip &&
 chmod +x ${VEIANEW}/master.zip &&
@@ -17,20 +17,20 @@ sudo rm -rf ${VEIANEW}/master.zip ${VEIANEW}/veianew-master
 
 
 #### EXCLUINDO VEIANEW DE LOCAIS ANTIGOS
-VEIANEW_ANT1="/usr/local/apache22/VEIANEW/"
-VEIANEW_ANT2="/usr/src/VEIANEW/"
-
-if [ -d "${VEIANEW_ANT1}" ] ; then
-echo -e "Excluindo ${VEIANEW_ANT1} ..."
-rm -rf "${VEIANEW_ANT1}"
-else
-fi
-
-if [ -d "${VEIANEW_ANT2}" ] ; then
-echo -e "Excluindo ${VEIANEW_ANT2} ..."
-rm -rf "${VEIANEW_ANT2}"
-else
-fi
+#VEIANEW_ANT1="/usr/local/apache22/VEIANEW/"
+#VEIANEW_ANT2="/usr/src/VEIANEW/"
+#
+#if [ -d "${VEIANEW_ANT1}" ] ; then
+#echo -e "Excluindo ${VEIANEW_ANT1} ..."
+#rm -rf "${VEIANEW_ANT1}"
+#else
+#fi
+#
+#if [ -d "${VEIANEW_ANT2}" ] ; then
+#echo -e "Excluindo ${VEIANEW_ANT2} ..."
+#rm -rf "${VEIANEW_ANT2}"
+#else
+#fi
 
 if [ -e "/bin/veianew_velho" ] ; then
 echo -e "Excluindo /bin/veianew_velho ..."
@@ -46,13 +46,13 @@ fi
 
 
 #Criando link limbolico
-VEIANEW_SIMB=`ll -ltr /bin/veianew* |  awk '{print $9 $10 $11}'`
-if [ ${VEIANEW_SIMB} == "/bin/veianew->/usr/local/VEIANEW/veianew" ] ; then
-echo -e "Validando ${VEIANEW_SIMB} ..."
-else
-rm -rf /bin/veianew
-ln -s ${VEIANEW}veianew /bin/veianew ;
-fi
+#VEIANEW_SIMB=`ll -ltr /bin/veianew* |  awk '{print $9 $10 $11}'`
+#if [ ${VEIANEW_SIMB} == "/bin/veianew->/usr/local/VEIANEW/veianew" ] ; then
+#echo -e "Validando ${VEIANEW_SIMB} ..."
+#else
+#rm -rf /bin/veianew
+#ln -s ${VEIANEW}veianew /bin/veianew ;
+#fi
 
 sleep 1 &&
 echo -e "" &&

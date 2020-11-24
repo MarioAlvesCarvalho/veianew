@@ -2,12 +2,12 @@
 ############################################
 ############################################
 #              SCRIPT VEIANEW              #
-#            19/11/2020 - 20324            #
+#            24/11/2020 - 20329            #
 #  github.com/MarioAlvesCarvalho/veianew   #
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v8.2"
+export VERSION_VN="v8.3"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
@@ -22,7 +22,7 @@ export Cor_Fundo_Cinza="\033[47;1;37m"
 export PATH_COMUM="/Zanthus/Zeus/path_comum"
 export APACHE2="/usr/local/apache22"
 export moduloPHPPDV="/Zanthus/Zeus/pdvJava/GERAL/SINCRO/WEB/moduloPHPPDV"
-export VEIANEW="/usr/local/VEIANEW" ##Tambem existe no 01.sh
+export VEIANEW="/usr/local/apache22/VEIANEW" ##Tambem existe no 01.sh
 export HTDOCS="${APACHE2}/htdocs"
 export MANAGER="${HTDOCS}/manager"
 export FTP_PUB="ftp://200.201.215.247:2142/pub/"
