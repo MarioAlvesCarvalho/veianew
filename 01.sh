@@ -1,7 +1,7 @@
 #!/bin/bash
-#Data alteração 20329
+#Data alteração 20337
 
-echo -e "#REV. 6"
+echo -e "#REV. 7"
 
 unset VEIANEW
 VEIANEW="/usr/local/apache22/VEIANEW"  ##Tambem existe no veianew
