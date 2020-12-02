@@ -34,13 +34,13 @@ sudo rm -rf ${VEIANEW}/master.zip ${VEIANEW}/veianew-master
 
 if [ -e "/bin/veianew_velho" ] ; then
 echo -e "Excluindo /bin/veianew_velho ..."
-rm -rf "/bin/veianew_velho"
+rm -rf /bin/veianew_velho
 else
 fi
 
 if [ -e "/bin/veianew.ini" ] ; then
 echo -e "Excluindo /bin/veianew.ini ..."
-rm -rf "/bin/veianew.ini"
+rm -rf /bin/veianew.ini
 else
 fi
 
