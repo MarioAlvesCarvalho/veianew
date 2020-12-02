@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 20337
 
-echo -e "#REV. 7"
+echo -e "#REV. 8"
 
 unset VEIANEW
 VEIANEW="/usr/local/apache22/VEIANEW"  ##Tambem existe no veianew
@@ -36,12 +36,14 @@ if [ -e "/bin/veianew_velho" ] ; then
 echo -e "Excluindo /bin/veianew_velho ..."
 rm -rf /bin/veianew_velho
 else
+echo -e "else"
 fi
 
 if [ -e "/bin/veianew.ini" ] ; then
 echo -e "Excluindo /bin/veianew.ini ..."
 rm -rf /bin/veianew.ini
 else
+echo -e "else"
 fi
 
 
