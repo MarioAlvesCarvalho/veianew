@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 20337
 
-echo -e "#REV. 8"
+echo -e "#REV. 9"
 
 unset VEIANEW
 VEIANEW="/usr/local/apache22/VEIANEW"  ##Tambem existe no veianew
@@ -30,20 +30,20 @@ sudo rm -rf ${VEIANEW}/master.zip ${VEIANEW}/veianew-master
 #echo -e "Excluindo ${VEIANEW_ANT2} ..."
 #rm -rf "${VEIANEW_ANT2}"
 #else
-#fi
+#fiecho -e "else"
 
 if [ -e "/bin/veianew_velho" ] ; then
 echo -e "Excluindo /bin/veianew_velho ..."
 rm -rf /bin/veianew_velho
 else
-echo -e "else"
+echo -e "..."
 fi
 
 if [ -e "/bin/veianew.ini" ] ; then
 echo -e "Excluindo /bin/veianew.ini ..."
 rm -rf /bin/veianew.ini
 else
-echo -e "else"
+echo -e "..."
 fi
 
 
