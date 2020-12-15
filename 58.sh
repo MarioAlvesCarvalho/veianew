@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.10"
+echo -e "#REV. 4.11"
 
 sleep 2
 
@@ -16,7 +16,7 @@ sleep 2
 cd ${HTDOCS}
 pwd
 sleep 2
-if [ -e "ZMWSInfo*.ini" ]
+if [ -d "${HTDOCS}/ZMWSInfo*.ini" ]
 then
 echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
 mv "${HTDOCS}/ZMWSInfo*.*" "${HTDOCS}/ZMWSINFO/" 
@@ -49,7 +49,7 @@ CASE="${CASE}
    00)  ${VEIANEW}/00.sh ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos_ZMWSInfo;;
 esac"
-clear
+#clear
 echo -e ""
 echo -e "\t\t***** ZMWSInfo *****"
 echo -e ""
