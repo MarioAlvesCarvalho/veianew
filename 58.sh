@@ -1,6 +1,7 @@
 #!/bin/bash
 #Data alteração 20350
 
+
 echo -e "#REV. 2.1"
 
 ListaArquivos_ZMWSInfo(){
