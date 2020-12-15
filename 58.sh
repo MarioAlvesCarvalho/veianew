@@ -1,8 +1,20 @@
 #!/bin/bash
 #Data alteração 20350
+echo -e "#REV. 3"
 
+if [ -d "${HTDOCS}/ZMWSINFO"] ; then
+echo -e "Validando ${HTDOCS}/ZMWSINFO ..."
+else
+echo -e "Criando ${HTDOCS}/ZMWSINFO ..."
+mkdir ${HTDOCS}/ZMWSINFO
+fi
 
-echo -e "#REV. 2.1"
+if [-e ${HTDOCS}/ZMWSInfo*.* ]; then
+echo -e "Copiando ZMWSInfo para ${HTDOCS}/ZMWSINFO"
+cp ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO 
+else
+echo -e "Não há ZMWSInfo para copiar!"
+fi
 
 ListaArquivos_ZMWSInfo(){
 if [ `find /web/ -maxdepth 1 -name 'ZMWSInfo*.ini' | wc -l` -gt 0 ]; then
@@ -10,11 +22,11 @@ clear; i=1
 
 echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZMWSInfo Config  ********************************${Cor_Preto}"
 CASE='case $opt in'
-for arq in `ls /web/ -1tr ZMWSInfo*.ini`
+for zmws in `ls /web/ -1tr ZMWSInfo*.ini`
 do
-    echo -e "#\t\b\b\b\b$i    ${arq}"
+    echo -e "#\t\b\b\b\b$i    ${zmws}"
     CASE="${CASE}
-  $i)  ; sleep 1 ;;"
+  $i) cp ${HTDOCS}/ZMWSINFO/${zmws} ${MANAGER}/ZMWSInfo.ini && sleep 1 ;;"
   i=$((i+1))
 done
 
@@ -46,7 +58,7 @@ clear
 fi
 }
 
-ListaArquivos_manut
+ListaArquivos_ZMWSInfo
 echo -e "" &&
 echo -e "" &&
 echo -e "" &&
