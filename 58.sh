@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.14"
+echo -e "#REV. 4.15"
 
 sleep 2
 
@@ -18,7 +18,7 @@ file_zmws=`ls ${HTDOCS}/ZMWSInfo*.* | wc -l`
 if [ $file_zmws -gt 0 ]
 then
 echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
-mv "${HTDOCS}/ZMWSInfo*.*" "${HTDOCS}/ZMWSINFO/" 
+mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO/
 else
 echo -e "Não há ZMWSInfo para copiar!"
 fi
