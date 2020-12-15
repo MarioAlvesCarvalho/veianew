@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.6"
+echo -e "#REV. 4.8"
 
 sleep 2
 
@@ -13,7 +13,9 @@ fi
 
 
 sleep 2
-cd ${HTDOCS}/
+cd ${HTDOCS}
+pwd
+sleep 2
 if [ -e "ZMWSInfo*.*" ]
 then
 echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
