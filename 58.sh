@@ -7,7 +7,7 @@ sleep 2
 if [ -d "${HTDOCS}/ZMWSINFO"] ; then
 echo -e "Validando ${HTDOCS}/ZMWSINFO ..."
 else
-echo -e "Criando ${HTDOCS}/ZMWSINFO ..."
+echo -e "Criando ${HTDOCS}/ZMWSINFO ...."
 mkdir ${HTDOCS}/ZMWSINFO
 fi
 
