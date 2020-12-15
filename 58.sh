@@ -2,6 +2,8 @@
 #Data alteração 20350
 echo -e "#REV. 4"
 
+sleep 2
+
 if [ -d "${HTDOCS}/ZMWSINFO"] ; then
 echo -e "Validando ${HTDOCS}/ZMWSINFO ..."
 else
@@ -17,7 +19,7 @@ echo -e "Não há ZMWSInfo para copiar!"
 fi
 
 ListaArquivos_ZMWSInfo(){
-if [ `find /web/ -maxdepth 1 -name 'ZMWSInfo*.ini' | wc -l` -gt 0 ]; then
+if [ `find ${HTDOCS} -maxdepth 1 -name 'ZMWSInfo*.ini' | wc -l` -gt 0 ]; then
 clear; i=1
 
 echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZMWSInfo Config  ********************************${Cor_Preto}"
