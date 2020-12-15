@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4"
+echo -e "#REV. 4.1"
 
 sleep 2
 
@@ -11,6 +11,8 @@ echo -e "Criando ${HTDOCS}/ZMWSINFO ..."
 mkdir ${HTDOCS}/ZMWSINFO
 fi
 
+sleep 5
+
 if [-e ${HTDOCS}/ZMWSInfo*.* ]; then
 echo -e "Copiando ZMWSInfo para ${HTDOCS}/ZMWSINFO"
 mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO/ 
@@ -18,13 +20,16 @@ else
 echo -e "Não há ZMWSInfo para copiar!"
 fi
 
+
+sleep 5
+
 ListaArquivos_ZMWSInfo(){
 if [ `find ${HTDOCS} -maxdepth 1 -name 'ZMWSInfo*.ini' | wc -l` -gt 0 ]; then
 clear; i=1
 
 echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZMWSInfo Config  ********************************${Cor_Preto}"
 CASE='case $opt in'
-for zmws in `ls ${HTDOCS}/ZMWSINFO/ -1tr ZMWSInfo*.*`
+for zmws in `ls -1tr ${HTDOCS}/ZMWSINFO/ZMWSInfo*.*`
 do
     echo -e "#\t\b\b\b\b$i    ${zmws}"
     CASE="${CASE}
