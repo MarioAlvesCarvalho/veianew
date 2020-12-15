@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.15"
+echo -e "#REV. 4.16"
 
 sleep 2
 
@@ -19,6 +19,7 @@ if [ $file_zmws -gt 0 ]
 then
 echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
 mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO/
+chmod 750 ${HTDOCS}/ZMWSINFO/*
 else
 echo -e "Não há ZMWSInfo para copiar!"
 fi
@@ -27,7 +28,7 @@ fi
 sleep 2
 
 ListaArquivos_ZMWSInfo(){
-if [ `find ${HTDOCS} -maxdepth 1 -iname 'ZMWSInfo*.ini' | wc -l` -gt 0 ]; then
+if [ `find ${HTDOCS}/ZMWSINFO -maxdepth 1 -iname  ZMWSInfo*.* | awk -F"/" '{print $4}' | wc -l` -gt 0 ]; then
 clear; i=1
 
 echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZMWSInfo Config  ********************************${Cor_Preto}"
