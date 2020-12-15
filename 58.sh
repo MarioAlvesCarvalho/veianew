@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.4"
+echo -e "#REV. 4.5"
 
 sleep 2
 
@@ -11,17 +11,17 @@ echo -e "Criando ${HTDOCS}/ZMWSINFO ..."
 mkdir ${HTDOCS}/ZMWSINFO
 fi
 
-sleep 5
-
-if [ -e '${HTDOCS}/ZMWSInfo*.*' ]; then
-echo -e "Copiando ZMWSInfo para ${HTDOCS}/ZMWSINFO"
+sleep 2
+if [ -e "${HTDOCS}/ZMWSInfo*.*" ]
+then
+echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
 mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO/ 
 else
 echo -e "Não há ZMWSInfo para copiar!"
 fi
 
 
-sleep 5
+sleep 2
 
 ListaArquivos_ZMWSInfo(){
 if [ `find ${HTDOCS} -maxdepth 1 -name 'ZMWSInfo*.ini' | wc -l` -gt 0 ]; then
@@ -42,11 +42,11 @@ CASE="${CASE}
    01B) ${VEIANEW}/01B.sh ;;
    BKP) ${VEIANEW}/BKP.sh ;;
    00)  ${VEIANEW}/00.sh ;;
-   *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos_manut;;
+   *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos_ZMWSInfo;;
 esac"
 clear
 echo -e ""
-#echo -e "\t\t***** MANUTENCAO *****"
+echo -e "\t\t***** ZMWSInfo *****"
 echo -e ""
 echo -e "#\t\b\b\b\b01B          ATUALIZAR VEIANEW BETA"
 echo -e "#\t\b\b\b\bBKP          BKP MANAGER +20 DIAS NO HTDOCS"
@@ -66,14 +66,6 @@ fi
 }
 
 ListaArquivos_ZMWSInfo
-echo -e "" &&
-echo -e "" &&
-echo -e "" &&
-echo -e "****************" &&
-echo -e "Termino do 99.sh" &&
-echo -e "****************" ;
-
-
 
 #cp -rf ${HTDOCS}/ZMWSInfo_COMLOG.* ${MANAGER}/ZMWSInfo.ini &&
 #sleep 1 &&
