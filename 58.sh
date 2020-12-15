@@ -13,7 +13,7 @@ fi
 
 if [-e ${HTDOCS}/ZMWSInfo*.* ]; then
 echo -e "Copiando ZMWSInfo para ${HTDOCS}/ZMWSINFO"
-mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO 
+mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO/ 
 else
 echo -e "Não há ZMWSInfo para copiar!"
 fi
