@@ -201,7 +201,6 @@ CASE="${CASE}
    64) ${VEIANEW}/64.sh ;;
 
    59) ${VEIANEW}/59.sh ;;
-   599) ${VEIANEW}/599.sh ;;
    58) ${VEIANEW}/58.sh ;;
    57) ${VEIANEW}/57.sh ;;
    56) ${VEIANEW}/56.sh ;;
@@ -244,12 +243,9 @@ echo -e "#\t\b\b\b\b69    START     APACHE e MIRAGE                          66 
 echo -e "#\t\b\b\b\b68    STOP      APACHE e MIRAGE                          65   STOP      APACHE, MIRAGE e NODE"
 echo -e "#\t\b\b\b\b67    RESTART   APACHE e MIRAGE                          64   RESTART   APACHE, MIRAGE e NODE"
 echo -e ""
-echo -e "#\t\b\b\b\b59 \t LIMPAR DIRETÓRIO MANAGER + COPIAR CERTIFICADO + ZMWSInfo"
-echo -e "#\t\b\b\b\b599 \t EXCLUI PACOTES MANAGER +20 DIAS DO 'HTDOCS'"
-echo -e "#\t\b\b\b\b58    SELECIONAR ZMWSInfo.ini"
-#echo -e "#\t\b\b\b\b58    ZMWSInfo COM LOG"
-echo -e "#\t\b\b\b\b57    ZMWSInfo SEM LOG"
-echo -e "#\t\b\b\b\b56    ZMWSInfo COM LOG FULL                                 09    CP MANAGER OFICIAL"
+echo -e "#\t\b\b\b\b59    LIMPAR DIRETÓRIO MANAGER + COPIAR CERTIFICADO + ZMWSInfo"
+echo -e "#\t\b\b\b\b58    EXCLUI PACOTES MANAGER +20 DIAS DO 'HTDOCS'"
+echo -e "#\t\b\b\b\b57    SELECIONAR ZMWSInfo.ini                               09    CP MANAGER OFICIAL"
 echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                              08    CP ZEUSMANAGER.ZLG HOJE P/ PATH_COMUM"
 echo -e "#\t\b\b\b\b54    LIMPAR LOGS ../MANAGER                                07    ZERA CONTEUDO ZEUSMANAGER.ZLG HOJE"
 echo -e "#\t\b\b\b\b53    LIMPAR LOGS ../HTDOCS                                 06    WGET BIBLIOTECAS FTP > PATH_COMUM"
