@@ -2,12 +2,12 @@
 ############################################
 ############################################
 #              SCRIPT VEIANEW              #
-#            02/12/2020 - 20337            #
+#            15/12/2020 - 20350            #
 #  github.com/MarioAlvesCarvalho/veianew   #
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v8.6"
+export VERSION_VN="v8.7"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
@@ -246,7 +246,8 @@ echo -e "#\t\b\b\b\b67    RESTART   APACHE e MIRAGE                          64 
 echo -e ""
 echo -e "#\t\b\b\b\b59    LIMPAR DIRETÓRIO MANAGER + COPIAR CERTIFICADO + ZMWSInfo"
 echo -e "#\t\b\b\b\b599   EXCLUI PACOTES MANAGER +20 DIAS DO 'HTDOCS'"
-echo -e "#\t\b\b\b\b58    ZMWSInfo COM LOG"
+echo -e "#\t\b\b\b\b58    SELECIONAR ZMWSInfo.ini"
+#echo -e "#\t\b\b\b\b58    ZMWSInfo COM LOG"
 echo -e "#\t\b\b\b\b57    ZMWSInfo SEM LOG"
 echo -e "#\t\b\b\b\b56    ZMWSInfo COM LOG FULL                                 09    CP MANAGER OFICIAL"
 echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                              08    CP ZEUSMANAGER.ZLG HOJE P/ PATH_COMUM"
