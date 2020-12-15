@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.13"
+echo -e "#REV. 4.14"
 
 sleep 2
 
@@ -14,8 +14,8 @@ fi
 
 sleep 2
 
-file="ZMWSInfo*.ini"
-if [ -e "${HTDOCS}/${file}" ]
+file_zmws=`ls ${HTDOCS}/ZMWSInfo*.* | wc -l`
+if [ $file_zmws -gt 0 ]
 then
 echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
 mv "${HTDOCS}/ZMWSInfo*.*" "${HTDOCS}/ZMWSINFO/" 
