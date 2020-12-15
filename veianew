@@ -7,7 +7,7 @@
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v8.7.1"
+export VERSION_VN="v8.8"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
