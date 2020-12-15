@@ -1,7 +1,7 @@
 #!/bin/bash
 #Data alteração 20350
 
-echo -e "#REV. 2"
+echo -e "#REV. 2.1"
 
 ListaArquivos_ZMWSInfo(){
 if [ `find /web/ -maxdepth 1 -name 'ZMWSInfo*.ini' | wc -l` -gt 0 ]; then
