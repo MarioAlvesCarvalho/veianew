@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.1"
+echo -e "#REV. 4.2"
 
 sleep 2
 
@@ -13,7 +13,7 @@ fi
 
 sleep 5
 
-if [-e ${HTDOCS}/ZMWSInfo*.* ]; then
+if [-e "${HTDOCS}/ZMWSInfo*.*" ]; then
 echo -e "Copiando ZMWSInfo para ${HTDOCS}/ZMWSINFO"
 mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO/ 
 else
