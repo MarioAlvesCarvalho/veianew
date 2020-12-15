@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.17"
+echo -e "#REV. 4.18"
 
 sleep 2
 
@@ -33,7 +33,7 @@ clear; i=1
 
 echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZMWSInfo Config  ********************************${Cor_Preto}"
 CASE='case $opt in'
-for zmws in `ls -1tr ${HTDOCS}/ZMWSINFO/ZMWSInfo*.* | awk -F"/" '{print $4}'`
+for zmws in `ls -1tr ${HTDOCS}/ZMWSINFO/ZMWSInfo*.* | awk -F"/" '{print $7}'`
 do
     echo -e "#\t\b\b\b\b$i    ${zmws}"
      CASE="${CASE}
