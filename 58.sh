@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 5"
+echo -e "#REV. 6"
 sleep 1
 
 if [ -d "${HTDOCS}/ZMWSINFO" ]; then
@@ -28,7 +28,7 @@ echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZM
 CASE='case $opt in'
 for zmws in `ls -1tr ${HTDOCS}/ZMWSINFO/ZMWSInfo*.* | awk -F"/" '{print $7}'`
 do
-    echo -e "#\t\b\b\b\b$i    ${zmws}"
+    echo -e "#\t\b\b\b\b$i \t ${zmws}"
      CASE="${CASE}
   $i) cp ${HTDOCS}/ZMWSINFO/${zmws} ${MANAGER}/ZMWSInfo.ini && sleep 1 ;;"
   i=$((i+1))
