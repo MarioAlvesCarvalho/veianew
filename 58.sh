@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.11"
+echo -e "#REV. 4.12"
 
 sleep 2
 
@@ -13,10 +13,9 @@ fi
 
 
 sleep 2
-cd ${HTDOCS}
-pwd
-sleep 2
-if [ -d "${HTDOCS}/ZMWSInfo*.ini" ]
+
+file="ZMWSInfo*.ini"
+if [ -d "${HTDOCS}/${file}" ]
 then
 echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
 mv "${HTDOCS}/ZMWSInfo*.*" "${HTDOCS}/ZMWSINFO/" 
@@ -35,9 +34,8 @@ echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZM
 CASE='case $opt in'
 for zmws in `ls -1tr ${HTDOCS}/ZMWSINFO/ZMWSInfo*.*`
 do
-    #echo -e "#\t\b\b\b\b$i    ${zmws}"
-    echo -e "#$i    ${zmws}"
-    CASE="${CASE}
+    echo -e "#\t\b\b\b\b$i    ${zmws}"
+     CASE="${CASE}
   $i) cp ${HTDOCS}/ZMWSINFO/${zmws} ${MANAGER}/ZMWSInfo.ini && sleep 1 ;;"
   i=$((i+1))
 done
