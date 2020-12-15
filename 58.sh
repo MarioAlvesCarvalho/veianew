@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.5"
+echo -e "#REV. 4.6"
 
 sleep 2
 
@@ -11,8 +11,10 @@ echo -e "Criando ${HTDOCS}/ZMWSINFO ..."
 mkdir ${HTDOCS}/ZMWSINFO
 fi
 
+
 sleep 2
-if [ -e "${HTDOCS}/ZMWSInfo*.*" ]
+cd ${HTDOCS}/
+if [ -e "ZMWSInfo*.*" ]
 then
 echo -e "Movendo ZMWSInfo para ${HTDOCS}/ZMWSINFO ..."
 mv ${HTDOCS}/ZMWSInfo*.* ${HTDOCS}/ZMWSINFO/ 
