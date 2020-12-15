@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 4.16"
+echo -e "#REV. 4.17"
 
 sleep 2
 
@@ -28,12 +28,12 @@ fi
 sleep 2
 
 ListaArquivos_ZMWSInfo(){
-if [ `find ${HTDOCS}/ZMWSINFO -maxdepth 1 -iname  ZMWSInfo*.* | awk -F"/" '{print $4}' | wc -l` -gt 0 ]; then
+if [ `find ${HTDOCS}/ZMWSINFO -maxdepth 1 -iname  ZMWSInfo*.* | wc -l` -gt 0 ]; then
 clear; i=1
 
 echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  ZMWSInfo Config  ********************************${Cor_Preto}"
 CASE='case $opt in'
-for zmws in `ls -1tr ${HTDOCS}/ZMWSINFO/ZMWSInfo*.*`
+for zmws in `ls -1tr ${HTDOCS}/ZMWSINFO/ZMWSInfo*.* | awk -F"/" '{print $4}'`
 do
     echo -e "#\t\b\b\b\b$i    ${zmws}"
      CASE="${CASE}
