@@ -1,6 +1,6 @@
 #!/bin/bash
 #Data alteração 20350
-echo -e "#REV. 6"
+echo -e "#REV. 7"
 sleep 1
 
 if [ -d "${HTDOCS}/ZMWSINFO" ]; then
@@ -35,7 +35,7 @@ do
 done
 
 CASE="${CASE}
-   581)  ${VEIANEW}/581.sh ;;
+   571)  ${VEIANEW}/571.sh ;;
    00)  ${VEIANEW}/00.sh ;;
    *) echo 'OPÇÃO INVÁLIDA! TENTE NOVAMENTE'; sleep 2; clear; ListaArquivos_ZMWSInfo;;
 esac"
@@ -43,7 +43,7 @@ esac"
 echo -e ""
 echo -e "\t\b\b\b\b***** ZMWSInfo *****"
 echo -e ""
-echo -e "#\t\b\b\b\b581          CRIAR ZMWSInfo.ini"
+echo -e "#\t\b\b\b\b571          CRIAR ZMWSInfo.ini"
 echo -e "#\t\b\b\b\b00           SAIR"
 echo -e "#\t\b\b\b\b                                                                              ${Cor_FundoCinza} ${Cor_Vermelho} ${VERSION_VN} ${Cor_Preto}"
 echo -ne "#${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "
@@ -65,7 +65,7 @@ echo -e "" &&
 echo -e "" &&
 echo -e "" &&
 echo -e "****************" &&
-echo -e "Termino do 58.sh" &&
+echo -e "Termino do 57.sh" &&
 echo -e "****************" &&
 
 veianew ;
