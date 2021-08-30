@@ -1,0 +1,5 @@
+{
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideActivityBar": false,
+    "workbench.statusBar.visible": true
+}
