@@ -231,8 +231,8 @@ echo -e "${Cor_Preto}"
 ###echo -e "#\t\b\b\b\b97 \t RESTART   APACHE               87    RESTART   MIRAGE              77    RESTART   NODE"
 
 #echo -e "\t\t***** APACHE *****                                                   ***** NODE *****"
-echo -e "#\t\b\b\b\b99 \t START     APACHE                                      79    START     NODE"
-echo -e "#\t\b\b\b\b98 \t STOP      APACHE                                      78    STOP      NODE"
+echo -e "#\t\b\b\b\b99 \t START     APACHE                                         79    START     NODE"
+echo -e "#\t\b\b\b\b98 \t STOP      APACHE                                        78    STOP      NODE"
 
 echo -e ""
 #echo -e "\t\t***** APACHE / MIRAGE *****                                  ***** APACHE / MIRAGE / NODE *****"
