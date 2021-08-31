@@ -1,3 +1,5 @@
+
+
 #!/bin/bash
 ############################################
 ############################################
@@ -7,7 +9,7 @@
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v9.0.4"
+export VERSION_VN="v9.0.6"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
@@ -168,8 +170,8 @@ ListaArquivos(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
 clear; i=1
 
-echo -e "# ${Cor_Amarelo} ####################################################################################################${Cor_Preto}"
-echo -e "# ${Cor_Amarelo} OPÇÕES\t\b\b********************************  PACOTES  MANAGER  ********************************${Cor_Preto}"
+
+echo -e "# ${Cor_Amarelo} OPÇÕES\t\b\b***********************************  PACOTES  MANAGER  ***********************************${Cor_Preto}"
 CASE='case $opt in'
 for arq in `ls -1tr *anager*.zip`
 do
@@ -224,7 +226,7 @@ CASE="${CASE}
 esac"
 
 echo -e ""
-echo -e "#\b\b\b\b\t${Cor_Amarelo}\b\b\b\bMANAGER EM USO: ${Cor_Vermelho} ${MANAGER_USO}"
+echo -e "# \t${Cor_Amarelo} MANAGER EM USO: ${Cor_Vermelho} ${MANAGER_USO}"
 echo -e "${Cor_Preto}"
 #echo -e "\t\t***** APACHE *****                           ***** MIRAGE *****                  ***** NODE *****"
 #echo -e "#\t\b\b\b\b99 \t START     APACHE               89    START     MIRAGE              79    START     NODE"
@@ -261,7 +263,7 @@ read -p "" opt
 
 sed -i '1 i'${opt}'  ' ${VEIANEW}/history_all.vnw
 sed -n '1,7p' ${VEIANEW}/history_all.vnw > ${VEIANEW}/history.vnw
-sed -i '1s/^/\t\b\b\b\b\b\b\b\bHISTORICO DE USO: /' ${VEIANEW}/history.vnw
+sed -i '1s/^/\t         HISTORICO DE USO: /' ${VEIANEW}/history.vnw
 
 echo -e "${Cor_Preto}"
 eval "${CASE}"
