@@ -1,21 +1,20 @@
 #!/bin/bash
-#Data alteração 20322
+#Data alteração 21243
 
 echo -e "#REV. 1"
 
-echo -e 'Essa opção não está ativa!!!' &&
-sleep 3 &&
-veianew
+#echo -e 'Essa opção não está ativa!!!' &&
+#sleep 3 &&
+#veianew
 
 
 echo -e 'Aguarde, conectando no ftp.zanthus.com.br' &&
 echo -e 'Copiando manager mais recente para sua pasta HTDOCS!!!' &&
+php -f 09_baixar_manager.php5 "/Zanthus/Zeus/TESTE/"
+
+
 sleep 3 &&
-wget -N --tries=2 -P ${PATH_COMUM}/so/ ftp://${FTP_COMPLEMENTARES}/so/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_co5 ftp://${FTP_COMPLEMENTARES}/so_co5/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_r64 ftp://${FTP_COMPLEMENTARES}/so_r64/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_u64 ftp://${FTP_COMPLEMENTARES}/so_u64/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_ubu ftp://${FTP_COMPLEMENTARES}/so_ubu/*  &&
+
 sleep 1 &&
 echo -e "" &&
 echo -e "" &&
