@@ -7,7 +7,7 @@
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v9.0"
+export VERSION_VN="v9.1"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
@@ -168,7 +168,7 @@ ListaArquivos(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
 clear; i=1
 
-echo -e "#     ${Cor_Amarelo} OPÇÕES\t\b\b********************************  PACOTES  MANAGER  ********************************${Cor_Preto}"
+echo -e "\b ${Cor_Amarelo} OPÇÕES\t\b\b********************************  PACOTES  MANAGER  ********************************${Cor_Preto}"
 CASE='case $opt in'
 for arq in `ls -1tr *anager*.zip`
 do
