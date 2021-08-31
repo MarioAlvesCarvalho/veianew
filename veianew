@@ -7,7 +7,7 @@
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v9.1"
+export VERSION_VN="v9.0.1"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
@@ -168,11 +168,12 @@ ListaArquivos(){
 if [ `find . -name '*anager*.zip' | wc -l` -gt 0 ]; then
 clear; i=1
 
+echo -e "\b ${Cor_Amarelo} ####################################################################################################${Cor_Preto}"
 echo -e "\b ${Cor_Amarelo} OPÇÕES\t\b\b********************************  PACOTES  MANAGER  ********************************${Cor_Preto}"
 CASE='case $opt in'
 for arq in `ls -1tr *anager*.zip`
 do
-    echo -e "#\t\b\b\b\b$i \t ${arq}"
+    echo -e "\b\t\b\b\b\b$i \t ${arq}"
     CASE="${CASE}
   $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/.*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} && unzip -oq ${MANAGER}/\"${arq}\" -d ${MANAGER} && touch ${HTDOCS}/\".${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chmod -R 777 ${MANAGER}/Logs/ && chown -R zanthus.zanthus ${MANAGER}/Logs/ ; sleep 1 ;;"
   i=$((i+1))
@@ -223,44 +224,44 @@ CASE="${CASE}
 esac"
 
 echo -e ""
-echo -e "#\t${Cor_Amarelo}\b\b\b\bMANAGER EM USO: ${Cor_Vermelho} ${MANAGER_USO}"
+echo -e "\b\b\b\b\b\t${Cor_Amarelo}\b\b\b\bMANAGER EM USO: ${Cor_Vermelho} ${MANAGER_USO}"
 echo -e "${Cor_Preto}"
 #echo -e "\t\t***** APACHE *****                           ***** MIRAGE *****                  ***** NODE *****"
-#echo -e "#\t\b\b\b\b99 \t START     APACHE               89    START     MIRAGE              79    START     NODE"
-#echo -e "#\t\b\b\b\b98 \t STOP      APACHE               88    STOP      MIRAGE              78    STOP      NODE"
-###echo -e "#\t\b\b\b\b97 \t RESTART   APACHE               87    RESTART   MIRAGE              77    RESTART   NODE"
+#echo -e "\b\t\b\b\b\b99 \t START     APACHE               89    START     MIRAGE              79    START     NODE"
+#echo -e "\b\t\b\b\b\b98 \t STOP      APACHE               88    STOP      MIRAGE              78    STOP      NODE"
+#echo -e "\b\t\b\b\b\b97 \t RESTART   APACHE               87    RESTART   MIRAGE              77    RESTART   NODE"
 
 #echo -e "\t\t***** APACHE *****                                                   ***** NODE *****"
-echo -e "#\t\b\b\b\b99 \t START     APACHE                                       79    START     NODE"
-echo -e "#\t\b\b\b\b98 \t STOP      APACHE                                       78    STOP      NODE"
+echo -e "\b\t\b\b\b\b99 \t START     APACHE                                       79    START     NODE"
+echo -e "\b\t\b\b\b\b98 \t STOP      APACHE                                       78    STOP      NODE"
 
 echo -e ""
 #echo -e "\t\t***** APACHE / MIRAGE *****                                  ***** APACHE / MIRAGE / NODE *****"
-echo -e "#\t\b\b\b\b69    START     APACHE e MIRAGE                             66   START     APACHE, MIRAGE e NODE"
-echo -e "#\t\b\b\b\b68    STOP      APACHE e MIRAGE                             65   STOP      APACHE, MIRAGE e NODE"
-###echo -e "#\t\b\b\b\b67    RESTART   APACHE e MIRAGE                          64   RESTART   APACHE, MIRAGE e NODE"
+echo -e "\b\t\b\b\b\b69    START     APACHE e MIRAGE                             66   START     APACHE, MIRAGE e NODE"
+echo -e "\b\t\b\b\b\b68    STOP      APACHE e MIRAGE                             65   STOP      APACHE, MIRAGE e NODE"
+###echo -e "\b\t\b\b\b\b67    RESTART   APACHE e MIRAGE                          64   RESTART   APACHE, MIRAGE e NODE"
 echo -e ""
-echo -e "#\t\b\b\b\b59    LIMPAR DIRETÓRIO MANAGER + COPIAR CERTIFICADO + ZMWSInfo"
-echo -e "#\t\b\b\b\b58    EXCLUI PACOTES MANAGER +20 DIAS DO 'HTDOCS'"
-echo -e "#\t\b\b\b\b57    SELECIONAR ZMWSInfo.ini                               09    CP MANAGER OFICIAL"
-echo -e "#\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                              08    CP ZEUSMANAGER.ZLG HOJE P/ PATH_COMUM"
-echo -e "#\t\b\b\b\b54    LIMPAR LOGS ../MANAGER                                07    ZERA CONTEUDO ZEUSMANAGER.ZLG HOJE"
-echo -e "#\t\b\b\b\b53    LIMPAR LOGS ../HTDOCS                                 06    WGET BIBLIOTECAS FTP > PATH_COMUM"
-echo -e "#\t\b\b\b\b52    LIMPAR ./Kernel                                       05    RESERVADO"
-echo -e "#\t\b\b\b\b51    ATIVAR 'INSPEC_ELEMENTO' E 'CHECK_JS'                 04    REINICIAR MEMCACHED"
-echo -e "#\t\b\b\b\b50    ATIVAR 'DEBUG_CLAZ'                                   03    ATUALIZAR BIBLIOTECA"
-echo -e "#\t\b\b\b\b49    DESATIVAR INSPEC_ELEMENTO CHECK_JS DEBUG_CLAZ         01    ATUALIZAR VEIANEW"
-echo -e "#\t\b\b\b\b48    PERMISSÃO DIRETORIO 'ARQUIVOS'                        00    SAIR"
-echo -e "#\t\b\b\b\b                                                                              ${Cor_FundoCinza} ${Cor_Vermelho} ${VERSION_VN} ${Cor_Preto}"
-echo -ne "#${Cor_Amarelo}"
+echo -e "\b\t\b\b\b\b59    LIMPAR DIRETÓRIO MANAGER + COPIAR CERTIFICADO + ZMWSInfo"
+echo -e "\b\t\b\b\b\b58    EXCLUI PACOTES MANAGER +20 DIAS DO 'HTDOCS'"
+echo -e "\b\t\b\b\b\b57    SELECIONAR ZMWSInfo.ini                               09    CP MANAGER OFICIAL"
+echo -e "\b\t\b\b\b\b55    FAZER BACKUP CERTIFICADO                              08    CP ZEUSMANAGER.ZLG HOJE P/ PATH_COMUM"
+echo -e "\b\t\b\b\b\b54    LIMPAR LOGS ../MANAGER                                07    ZERA CONTEUDO ZEUSMANAGER.ZLG HOJE"
+echo -e "\b\t\b\b\b\b53    LIMPAR LOGS ../HTDOCS                                 06    WGET BIBLIOTECAS FTP > PATH_COMUM"
+echo -e "\b\t\b\b\b\b52    LIMPAR ./Kernel                                       05    RESERVADO"
+echo -e "\b\t\b\b\b\b51    ATIVAR 'INSPEC_ELEMENTO' E 'CHECK_JS'                 04    REINICIAR MEMCACHED"
+echo -e "\b\t\b\b\b\b50    ATIVAR 'DEBUG_CLAZ'                                   03    ATUALIZAR BIBLIOTECA"
+echo -e "\b\t\b\b\b\b49    DESATIVAR INSPEC_ELEMENTO CHECK_JS DEBUG_CLAZ         01    ATUALIZAR VEIANEW"
+echo -e "\b\t\b\b\b\b48    PERMISSÃO DIRETORIO 'ARQUIVOS'                        00    SAIR"
+echo -e "\b\t\b\b\b\b                                                                              ${Cor_FundoCinza} ${Cor_Vermelho} ${VERSION_VN} ${Cor_Preto}"
+echo -ne "\b${Cor_Amarelo}"
 sed ':a;$!N;s/\n//;ta;' ${VEIANEW}/history.vnw
 
-echo -ne "${Cor_Preto}#${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "
+echo -ne "\b${Cor_VerdeClaro}   INFORME A OPÇÃO DESEJADA: "
 read -p "" opt
 
 sed -i '1 i'${opt}'  ' ${VEIANEW}/history_all.vnw
 sed -n '1,7p' ${VEIANEW}/history_all.vnw > ${VEIANEW}/history.vnw
-sed -i '1s/^/           HISTORICO DE USO: /' ${VEIANEW}/history.vnw
+sed -i '1s/^/\b\b\b\b\b\b\b\bHISTORICO DE USO: /' ${VEIANEW}/history.vnw
 
 echo -e "${Cor_Preto}"
 eval "${CASE}"
