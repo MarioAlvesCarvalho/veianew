@@ -7,7 +7,7 @@
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v9.1.2"
+export VERSION_VN="v9.2"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
