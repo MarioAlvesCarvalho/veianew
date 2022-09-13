@@ -2,12 +2,12 @@
 ############################################
 ############################################
 #              SCRIPT VEIANEW              #
-#            01/09/2021 - 21243            #
+#            13/09/2022 - 22256            #
 #  github.com/MarioAlvesCarvalho/veianew   #
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v9.2"
+export VERSION_VN="v9.3"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
