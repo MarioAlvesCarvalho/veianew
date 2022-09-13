@@ -1,5 +1,5 @@
 #!/bin/bash
-#Data alteração 22255
+#Data alteração 22256
 
 echo -e "#REV. 4"
 echo -e 'Informe os dados de acesso ao FTP "ftp.zanthus.com.br"' &&
