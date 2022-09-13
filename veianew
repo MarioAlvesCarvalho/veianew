@@ -7,7 +7,7 @@
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v9.4"
+export VERSION_VN="v9.5"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
@@ -244,15 +244,15 @@ echo -e "#\t\b\b\b\b69 \t START     APACHE e MIRAGE                             
 echo -e "#\t\b\b\b\b68 \t STOP      APACHE e MIRAGE                             65   STOP      APACHE, MIRAGE e NODE"
 ###echo -e "#\t\b\b\b\b67    RESTART   APACHE e MIRAGE                          64   RESTART   APACHE, MIRAGE e NODE"
 echo -e ""
-echo -e "#\t\b\b\b\b59 \t LIMPAR DIRETÓRIO MANAGER + COPIAR CERTIFICADO + ZMWSInfo"
+echo -e "#\t\b\b\b\b59 \t LIMPAR DIR MANAGER/ MANTEM Arquivos certificados ZMWSInfo.ini exec_cmd_qz.php5 robo_qz.sh"
 echo -e "#\t\b\b\b\b58 \t EXCLUI PACOTES MANAGER +20 DIAS DO 'HTDOCS'"
-echo -e "#\t\b\b\b\b57 \t SELECIONAR ZMWSInfo.ini                               09   CP MANAGER OFICIAL"
+echo -e "#\t\b\b\b\b57 \t SELECIONAR ZMWSInfo.ini                               09   RESERVADO"
 echo -e "#\t\b\b\b\b55 \t FAZER BACKUP CERTIFICADO                              08   CP ZEUSMANAGER.ZLG HOJE P/ PATH_COMUM"
 echo -e "#\t\b\b\b\b54 \t LIMPAR LOGS ../MANAGER                                07   ZERA CONTEUDO ZEUSMANAGER.ZLG HOJE"
 echo -e "#\t\b\b\b\b53 \t LIMPAR LOGS ../HTDOCS                                 06   WGET BIBLIOTECAS FTP > PATH_COMUM"
 echo -e "#\t\b\b\b\b52 \t LIMPAR ./Kernel                                       05   RESERVADO"
 echo -e "#\t\b\b\b\b51 \t ATIVAR 'INSPEC_ELEMENTO' E 'CHECK_JS'                 04   REINICIAR MEMCACHED"
-echo -e "#\t\b\b\b\b50 \t ATIVAR 'DEBUG_CLAZ'                                   03   ATUALIZAR BIBLIOTECA"
+echo -e "#\t\b\b\b\b50 \t ATIVAR 'DEBUG_CLAZ'                                   03   ATUALIZAR BIBLIOTECA PATH_COMUM > LIBS"
 echo -e "#\t\b\b\b\b49 \t DESATIVAR INSPEC_ELEMENTO CHECK_JS DEBUG_CLAZ         01   ATUALIZAR VEIANEW"
 echo -e "#\t\b\b\b\b48 \t PERMISSÃO DIRETORIO 'ARQUIVOS'                        00   SAIR"
 echo -e "#\b\b\b\b                                                                              ${Cor_FundoCinza} ${Cor_Vermelho} ${VERSION_VN} ${Cor_Preto}"
