@@ -1,10 +1,17 @@
 #!/bin/bash
-#Data alteração 21243
+#Data alteração 22255
 
-echo -e "#REV. 3"
+echo -e "#REV. 4"
+echo -e 'Informe os dados de acesso ao FTP "ftp.zanthus.com.br"' &&
+
+echo -e 'Informe o "USUARIO"' &&
+read USUARIO
+
+echo -e 'Informe a "SENHA"' &&
+read -ers SENHA
 
 echo -e 'Aguarde, conectando no ftp.zanthus.com.br' &&
-echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!' &&
+echo -e 'Validando estrutura para baixar bibliotecas para o PATH_COMUM!!!' &&
 sleep 3 &&
 
 if [ -d "${PATH_COMUM}/so" ] ; then
@@ -64,21 +71,22 @@ fi
 
 if [ -d "${PATH_COMUM}/dlls" ] ; then
 echo -e "Validando ${PATH_COMUM}/dlls ..."
-chmod 777 "${PATH_COMUM}/dlls" 
+chmod 777 "${PATH_COMUM}/dlls"
 chown root.root "${PATH_COMUM}/dlls"
 else
 echo -e "Criando diretorio ${PATH_COMUM}/dlls"
 mkdir "${PATH_COMUM}/dlls"
-chmod 777 "${PATH_COMUM}/dlls" 
+chmod 777 "${PATH_COMUM}/dlls"
 chown root.root "${PATH_COMUM}/dlls"
 fi
 
-wget -N --tries=2 -P ${PATH_COMUM}/so/    ${FTP_COMPLEMENTARES}/so/*      &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_co5 ${FTP_COMPLEMENTARES}/so_co5/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_r64 ${FTP_COMPLEMENTARES}/so_r64/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_u64 ${FTP_COMPLEMENTARES}/so_u64/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/so_ubu ${FTP_COMPLEMENTARES}/so_ubu/*  &&
-wget -N --tries=2 -P ${PATH_COMUM}/dlls   ${FTP_COMPLEMENTARES}/dlls/*    &&
+echo -e 'Atualizando bibliotecas para o PATH_COMUM!!!' &&
+wget -N --tries=2 --user=${USUARIO} --password=${SENHA} -P ${PATH_COMUM}/so/    ${FTP_COMPLEMENTARES}/so/*      &&
+wget -N --tries=2 --user=${USUARIO} --password=${SENHA} -P ${PATH_COMUM}/so_co5 ${FTP_COMPLEMENTARES}/so_co5/*  &&
+wget -N --tries=2 --user=${USUARIO} --password=${SENHA} -P ${PATH_COMUM}/so_r64 ${FTP_COMPLEMENTARES}/so_r64/*  &&
+wget -N --tries=2 --user=${USUARIO} --password=${SENHA} -P ${PATH_COMUM}/so_u64 ${FTP_COMPLEMENTARES}/so_u64/*  &&
+wget -N --tries=2 --user=${USUARIO} --password=${SENHA} -P ${PATH_COMUM}/so_ubu ${FTP_COMPLEMENTARES}/so_ubu/*  &&
+wget -N --tries=2 --user=${USUARIO} --password=${SENHA} -P ${PATH_COMUM}/dlls   ${FTP_COMPLEMENTARES}/dlls/*    &&
 
 sleep 1 &&
 echo -e "" &&
