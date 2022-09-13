@@ -7,7 +7,7 @@
 ############################################
 
 #Variaveis de Versao e idioma
-export VERSION_VN="v9.3"
+export VERSION_VN="v9.4"
 #export VERSION_VN="v6.0_BETA"
 export LANG=pt_BR
 
@@ -142,11 +142,13 @@ sleep 1
 #segue o script
 #fi
 
-for padraozip in ${HTDOCS}/*.ZIP
-do
-padraozipnew=$(basename ${padraozip} ZIP)zip
-mv ${padraozip} ${padraozipnew}
-done
+
+#DEMORANDO MUITO, hoje já copio o arquivo com .zip
+#for padraozip in ${HTDOCS}/*.ZIP
+#do
+#padraozipnew=$(basename ${padraozip} ZIP)zip
+#mv ${padraozip} ${padraozipnew}
+#done
 
 #VALIDAR SE PRECISA MESMO DISSO
 chown root.root ${HTDOCS}/*
@@ -175,7 +177,8 @@ for arq in `ls -1tr *anager*.zip`
 do
     echo -e "#\t\b\b\b\b$i \t ${arq}"
     CASE="${CASE}
-  $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/.*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} && unzip -oq ${MANAGER}/\"${arq}\" -d ${MANAGER} && touch ${HTDOCS}/\".${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chmod -R 777 ${MANAGER}/Logs/ && chown -R zanthus.zanthus ${MANAGER}/Logs/ ; sleep 1 ;;"
+  $i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/.*.zip.TEMP && unzip -oq ${HTDOCS}/\"${arq}\" -d ${MANAGER} && touch ${HTDOCS}/\".${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chmod -R 777 ${MANAGER}/Logs/ && chown -R zanthus.zanthus ${MANAGER}/Logs/ ; sleep 1 ;;"
+  #$i) ${APACHE2}/bin/apachectl stop ; rm -rf ${HTDOCS}/.*.zip.TEMP ; rsync -uv ${HTDOCS}/\"${arq}\" ${MANAGER} && unzip -oq ${MANAGER}/\"${arq}\" -d ${MANAGER} && touch ${HTDOCS}/\".${arq}.TEMP\" && echo -e '#\tEXTRACAO CONCLUIDA' && chown -R zanthus.zanthus * && chmod -R 777 * && ${APACHE2}/bin/apachectl start && mkdir ${MANAGER}/Logs && chmod -R 777 ${MANAGER}/Logs/ && chown -R zanthus.zanthus ${MANAGER}/Logs/ ; sleep 1 ;;"
   i=$((i+1))
 done
 
